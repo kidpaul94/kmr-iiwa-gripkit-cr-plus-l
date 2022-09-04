@@ -13,6 +13,6 @@ To visual the URDF in rviz:
 
     roslaunch (gripper_name)_description display.launch
     
-To visual the URDF in rviz:
+To visual the URDF in gazebo:
 
     roslaunch (gripper_name)_description gazebo.launch 
