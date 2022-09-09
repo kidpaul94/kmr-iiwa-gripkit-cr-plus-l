@@ -16,3 +16,5 @@ To visual the URDF in rviz:
 To visual the URDF in gazebo:
 
     roslaunch (folder_name)_description gazebo.launch 
+
+[Note] Currently, there are bugs in gazebo.launch
