@@ -1,5 +1,5 @@
 # KMR-iiwa-Gripkit-CR-Plus
-URDF files of [Gripkit-CR-Plus-L](https://weiss-robotics.com/gripkit/) and [KUKA KRM-iiwa](https://www.kuka.com/en-us/products/mobility/mobile-robot-systems/kmr-iiwa)
+URDF files of [Gripkit-CR-Plus-L](https://weiss-robotics.com/gripkit/) and [KRM-iiwa](https://www.kuka.com/en-us/products/mobility/mobile-robot-systems/kmr-iiwa)
 
 **How to use**
 
