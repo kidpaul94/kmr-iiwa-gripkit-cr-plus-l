@@ -1,5 +1,5 @@
 # Gripkit-CR-Plus-L
-URDF files of [Gripkit-CR-Plus-L](https://weiss-robotics.com/gripkit/)
+URDF files of [Gripkit-CR-Plus-L](https://weiss-robotics.com/gripkit/) and [KUKA KRM-iiwa](https://www.kuka.com/en-us/products/mobility/mobile-robot-systems/kmr-iiwa)
 
 **How to use**
 
@@ -11,8 +11,8 @@ Place the unzipped folder into *~/catkin_ws/src* and run the following commands:
     
 To visual the URDF in rviz:  
 
-    roslaunch (gripper_name)_description display.launch
+    roslaunch (folder_name)_description display.launch
     
 To visual the URDF in gazebo:
 
-    roslaunch (gripper_name)_description gazebo.launch 
+    roslaunch (folder_name)_description gazebo.launch 
