@@ -32,4 +32,4 @@ To run the MoveIt:
 
     roslaunch (folder_name)_moveit_config demo.launch 
 
-Note: Currently, there are bugs in gazebo.launch
+Note: Currently, gazebo.launch does not run properly. This is because physical properties of some parts are not defined.
