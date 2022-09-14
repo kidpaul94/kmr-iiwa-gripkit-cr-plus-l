@@ -23,12 +23,12 @@ Place the unzipped folder into *~/catkin_ws/src* and run the following commands:
     
 To visual the URDF in rviz:  
 
-    roslaunch (folder_name)_description display.launch
+    roslaunch (robot or gripper name)_description display.launch
     
 To visual the URDF in gazebo:
 
-    roslaunch (folder_name)_description gazebo.launch 
+    roslaunch (robot or gripper name)_description gazebo.launch 
     
 To run the MoveIt:
 
-    roslaunch (folder_name)_moveit_config demo.launch 
+    roslaunch (robot or gripper name)_moveit_config demo.launch 
