@@ -15,7 +15,7 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
 Note: For completness, all URDF models have corresponding MoveIt configurations. However, MoveIt for ROS1 has limited support on mobile base path planning. Hence, path execution in a real robot may be limited. ROS navigation and move_base package can be alternatives for mobile base path planning.
 
 ## How to use
-Place the unzipped folder into *~/catkin_ws/src* and run the following commands:
+**Each zip file is a compressed ros package**. Place the unzipped folder into *~/catkin_ws/src* and run the following commands:
 
     cd ~/catkin_ws/
     catkin_make
