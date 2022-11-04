@@ -1,5 +1,5 @@
 iiwa_controller:
-  type: position_controllers/JointTrajectoryController
+  type: effort_controllers/JointTrajectoryController
   joints:
     - Rev39
     - Rev40
@@ -10,53 +10,53 @@ iiwa_controller:
     - Rev45
   gains:
     Rev39:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+      p: 10000
+      d: 50
+      i: 10
+      i_clamp: 0
     Rev40:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+      p: 50000
+      d: 50
+      i: 10
+      i_clamp: 0
     Rev41:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+      p: 50000
+      d: 50
+      i: 10
+      i_clamp: 0
     Rev42:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+      p: 50000
+      d: 50
+      i: 10
+      i_clamp: 0
     Rev43:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+      p: 2000
+      d: 20
+      i: 10
+      i_clamp: 0
     Rev44:
-      p: 100
-      d: 1
+      p: 1000
+      d: 10
       i: 1
-      i_clamp: 1
+      i_clamp: 0
     Rev45:
-      p: 100
-      d: 1
+      p: 1000
+      d: 10
       i: 1
-      i_clamp: 1
+      i_clamp: 0
 gripper_controller:
-  type: position_controllers/JointTrajectoryController
+  type: effort_controllers/JointTrajectoryController
   joints:
     - Slider26
     - Slider27
   gains:
     Slider26:
-      p: 100
+      p: 1000
       d: 1
-      i: 1
+      i: 10
       i_clamp: 1
     Slider27:
-      p: 100
+      p: 1000
       d: 1
-      i: 1
+      i: 10
       i_clamp: 1
