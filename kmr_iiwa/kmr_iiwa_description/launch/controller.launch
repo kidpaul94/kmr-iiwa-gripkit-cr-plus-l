@@ -1,0 +1,9 @@
+<launch>
+
+<rosparam file="$(find kmr_iiwa_description)/launch/controller.yaml" command="load"/>
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="kmr_iiwa" args="Rev25_position_controller Rev26_position_controller Rev27_position_controller Rev28_position_controller Rev29_position_controller Rev30_position_controller Rev31_position_controller joint_state_controller "/>
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+  <remap from="/joint_states" to="/kmr_iiwa/joint_states"/>
+</node>
+
+</launch>

@@ -1,0 +1,8 @@
+controller_list:
+  - name: gripper_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - Slider26
+      - Slider27

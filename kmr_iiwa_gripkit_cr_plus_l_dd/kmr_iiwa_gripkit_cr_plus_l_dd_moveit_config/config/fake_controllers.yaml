@@ -1,0 +1,25 @@
+controller_list:
+  - name: fake_iiwa7_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - Rev41
+      - Rev42
+      - Rev43
+      - Rev44
+      - Rev45
+      - Rev46
+      - Rev47
+  - name: fake_kmp200_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - virtual_joint
+  - name: fake_gripkit_cr_plus_l_dd_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - Slider26
+      - Slider27
+initial:  # Define initial robot poses per group
+  - group: iiwa7
+    pose: rest
+  - group: gripkit_cr_plus_l_dd
+    pose: rest

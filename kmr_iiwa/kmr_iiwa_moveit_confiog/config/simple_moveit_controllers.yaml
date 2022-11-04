@@ -1,0 +1,19 @@
+controller_list:
+  - name: iiwa_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - Rev25
+      - Rev26
+      - Rev27
+      - Rev28
+      - Rev29
+      - Rev30
+      - Rev31
+  - name: kmp_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - virtual_joint

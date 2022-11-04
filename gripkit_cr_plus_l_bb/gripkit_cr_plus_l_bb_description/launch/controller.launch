@@ -1,0 +1,9 @@
+<launch>
+
+<rosparam file="$(find gripkit_cr_plus_l_bb_description)/launch/controller.yaml" command="load"/>
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="gripkit_cr_plus_l_bb" args="Slider26_position_controller Slider27_position_controller joint_state_controller "/>
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+  <remap from="/joint_states" to="/gripkit_cr_plus_l_bb/joint_states"/>
+</node>
+
+</launch>

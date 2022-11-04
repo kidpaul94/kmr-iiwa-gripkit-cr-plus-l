@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: gripkit_cr_plus_l_dd_description
+    relative_path: urdf/gripkit_cr_plus_l_dd.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/gripkit_cr_plus_l_dd.srdf
+  CONFIG:
+    author_name: Hojun_Lee
+    author_email: hjunlee@umich.edu
+    generated_timestamp: 1662930826

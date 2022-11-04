@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: kmr_iiwa_gripkit_cr_plus_l_ad_description
+    relative_path: urdf/kmr_iiwa_gripkit_cr_plus_l_ad.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/kmr_iiwa_gripkit_cr_plus_l_ad.srdf
+  CONFIG:
+    author_name: Hojun_Lee
+    author_email: hjunlee@umich.edu
+    generated_timestamp: 1663111353

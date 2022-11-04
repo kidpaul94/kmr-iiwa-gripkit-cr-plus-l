@@ -1,0 +1,864 @@
+<?xml version="1.0" ?>
+<robot name="kmr_iiwa_gripkit_cr_plus_l_bb" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find kmr_iiwa_gripkit_cr_plus_l_bb_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find kmr_iiwa_gripkit_cr_plus_l_bb_description)/urdf/kmr_iiwa_gripkit_cr_plus_l_bb.trans" />
+<xacro:include filename="$(find kmr_iiwa_gripkit_cr_plus_l_bb_description)/urdf/kmr_iiwa_gripkit_cr_plus_l_bb.gazebo" />
+<link name="base_footprint">
+</link>
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.020515213667604986 0.002068531170249581 0.3630998951074648" rpy="0 0 0"/>
+    <mass value="3266.3922537057438"/>
+    <inertia ixx="226.744522" iyy="400.752195" izz="384.998869" ixy="-2.223757" iyz="-1.110451" ixz="10.295288"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="cover_1">
+  <inertial>
+    <origin xyz="0.013259215496338461 8.957889117285577e-07 -0.22267480287769292" rpy="0 0 0"/>
+    <mass value="7.737707490873716"/>
+    <inertia ixx="0.059177" iyy="0.024648" izz="0.03712" ixy="0.0" iyz="-0.0" ixz="0.001342"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.535053 -0.000231 -0.640951" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/cover_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.535053 -0.000231 -0.640951" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/cover_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="screw_1_1">
+  <inertial>
+    <origin xyz="-0.0010383151931182 1.5290054920402696e-05 6.532959045735254e-06" rpy="0 0 0"/>
+    <mass value="0.002693161929654313"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.307551 0.183764 -1.947581" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/screw_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.307551 0.183764 -1.947581" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/screw_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="screw_2_1">
+  <inertial>
+    <origin xyz="5.714592123950979e-07 0.00103831737455376 -1.6324793074229405e-05" rpy="0 0 0"/>
+    <mass value="0.0026932173030154573"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.357851 0.133464 -1.947581" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/screw_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.357851 0.133464 -1.947581" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/screw_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="screw_3_1">
+  <inertial>
+    <origin xyz="0.0010372853508435753 4.606666350964739e-06 1.5748352895528228e-05" rpy="0 0 0"/>
+    <mass value="0.002693745664184645"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.408151 0.183764 -1.947581" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/screw_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.408151 0.183764 -1.947581" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/screw_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="screw_4_1">
+  <inertial>
+    <origin xyz="-1.6377558880731335e-05 -0.0010374445267475607 -1.5025015294156674e-06" rpy="0 0 0"/>
+    <mass value="0.0026933743563882172"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.357851 0.234064 -1.947581" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/screw_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.357851 0.234064 -1.947581" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/screw_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="screw_5_1">
+  <inertial>
+    <origin xyz="-0.0007448081237820814 -0.0007219408135624439 -7.082599373653409e-08" rpy="0 0 0"/>
+    <mass value="0.002693701452940877"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.322285 0.219336 -1.942651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/screw_5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.322285 0.219336 -1.942651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/screw_5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="screw_6_1">
+  <inertial>
+    <origin xyz="0.0007224081106718683 0.0007451348138282354 2.4838702485929787e-06" rpy="0 0 0"/>
+    <mass value="0.0026933936118932553"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.39342 0.148201 -1.942651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/screw_6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.39342 0.148201 -1.942651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/screw_6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="SF-ISO50-CRG200_Customer_1">
+  <inertial>
+    <origin xyz="0.024999689962269533 0.0008398445272315425 0.005627810904500485" rpy="0 0 0"/>
+    <mass value="0.16831092346442011"/>
+    <inertia ixx="0.000144" iyy="5.7e-05" izz="0.000197" ixy="0.0" iyz="-1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.332853 0.183769 -1.965651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/SF-ISO50-CRG200_Customer_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.332853 0.183769 -1.965651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/SF-ISO50-CRG200_Customer_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="CRG200_body_1">
+  <inertial>
+    <origin xyz="0.023499603738047548 0.04601387680421054 0.029719387850074774" rpy="0 0 0"/>
+    <mass value="1.024019455093708"/>
+    <inertia ixx="0.001224" iyy="0.000598" izz="0.001229" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.334353 0.229769 -1.976651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/CRG200_body_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.334353 0.229769 -1.976651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/CRG200_body_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="CRG200_base_jaw_1">
+  <inertial>
+    <origin xyz="-4.4272235466547016e-07 0.0011170540277325725 0.004896847488431" rpy="0 0 0"/>
+    <mass value="0.028974809674202275"/>
+    <inertia ixx="5e-06" iyy="0.0" izz="5e-06" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.339353 0.183769 -2.034251" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/CRG200_base_jaw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.339353 0.183769 -2.034251" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/CRG200_base_jaw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="CRG200_base_jaw__1__1">
+  <inertial>
+    <origin xyz="-4.427223548320036e-07 -0.001116139463904181 0.004896847488430112" rpy="0 0 0"/>
+    <mass value="0.028974809674202275"/>
+    <inertia ixx="5e-06" iyy="0.0" izz="5e-06" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.376353 0.183769 -2.034251" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/CRG200_base_jaw__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.376353 0.183769 -2.034251" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/CRG200_base_jaw__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="CRG200_top_cover_1">
+  <inertial>
+    <origin xyz="-4.354385360061386e-07 4.6011901824738466e-07 0.004043936573377316" rpy="0 0 0"/>
+    <mass value="0.117790703444327"/>
+    <inertia ixx="0.000112" iyy="3.5e-05" izz="0.000144" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.357853 0.183769 -2.036751" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/CRG200_top_cover_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.357853 0.183769 -2.036751" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/CRG200_top_cover_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ISO_4762_-_M4_x_12ISO_1">
+  <inertial>
+    <origin xyz="-4.4272195093286726e-07 4.572819156389851e-07 0.002248018824806186" rpy="0 0 0"/>
+    <mass value="0.002203374250243251"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.334353 0.137769 -1.972151" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/ISO_4762_-_M4_x_12ISO_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.334353 0.137769 -1.972151" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/ISO_4762_-_M4_x_12ISO_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ISO_4762_-_M4_x_12ISO__1__1">
+  <inertial>
+    <origin xyz="-4.427219527092241e-07 4.572819142789619e-07 0.002248018824805742" rpy="0 0 0"/>
+    <mass value="0.002203374250243251"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.334353 0.229769 -1.972151" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/ISO_4762_-_M4_x_12ISO__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.334353 0.229769 -1.972151" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/ISO_4762_-_M4_x_12ISO__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ISO_4762_-_M4_x_12ISO__2__1">
+  <inertial>
+    <origin xyz="-4.427219525982018e-07 4.5728191433447307e-07 0.002248018824805742" rpy="0 0 0"/>
+    <mass value="0.002203374250243251"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.381353 0.229769 -1.972151" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/ISO_4762_-_M4_x_12ISO__2__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.381353 0.229769 -1.972151" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/ISO_4762_-_M4_x_12ISO__2__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ISO_4762_-_M4_x_12ISO__3__1">
+  <inertial>
+    <origin xyz="-4.4272195059980035e-07 4.5728191561122955e-07 0.002248018824805742" rpy="0 0 0"/>
+    <mass value="0.002203374250243251"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.381353 0.137769 -1.972151" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/ISO_4762_-_M4_x_12ISO__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.381353 0.137769 -1.972151" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/ISO_4762_-_M4_x_12ISO__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="BE_20-030_CUSTOMER_v1_1">
+  <inertial>
+    <origin xyz="0.010206746405233835 0.01548632774349501 0.004903029781361479" rpy="0 0 0"/>
+    <mass value="0.07101056528211638"/>
+    <inertia ixx="8e-06" iyy="7e-06" izz="1.4e-05" ixy="-4e-06" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.339353 0.181769 -2.046651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/BE_20-030_CUSTOMER_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.339353 0.181769 -2.046651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/BE_20-030_CUSTOMER_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="BE_20-030_CUSTOMER_v1__1__1">
+  <inertial>
+    <origin xyz="-0.010207631849943 -0.015485413179666424 0.004903029781362811" rpy="0 0 0"/>
+    <mass value="0.07101056528211638"/>
+    <inertia ixx="8e-06" iyy="7e-06" izz="1.4e-05" ixy="-4e-06" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.376353 0.185769 -2.046651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/BE_20-030_CUSTOMER_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.376353 0.185769 -2.046651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/BE_20-030_CUSTOMER_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="AC_20-025_CUSTOMER_v1_1">
+  <inertial>
+    <origin xyz="-4.4272235283360217e-07 0.0019442173161939857 0.014328399285867377" rpy="0 0 0"/>
+    <mass value="0.07018824497649055"/>
+    <inertia ixx="9e-06" iyy="9e-06" izz="4e-06" ixy="0.0" iyz="-1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.357853 0.156769 -2.056651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/AC_20-025_CUSTOMER_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.357853 0.156769 -2.056651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/AC_20-025_CUSTOMER_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="AC_20-025_CUSTOMER_v1__1__1">
+  <inertial>
+    <origin xyz="-4.427223544989367e-07 -0.0019433027523645396 0.014328399285869153" rpy="0 0 0"/>
+    <mass value="0.07018824497649055"/>
+    <inertia ixx="9e-06" iyy="9e-06" izz="4e-06" ixy="0.0" iyz="1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.357853 0.210769 -2.056651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/AC_20-025_CUSTOMER_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.357853 0.210769 -2.056651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/AC_20-025_CUSTOMER_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="FT_20-CR_CUSTOMER_v1_1">
+  <inertial>
+    <origin xyz="-4.427223568859162e-07 -0.005674075185078842 0.02091953128933044" rpy="0 0 0"/>
+    <mass value="0.13587538757333883"/>
+    <inertia ixx="3.2e-05" iyy="3e-05" izz="1.1e-05" ixy="0.0" iyz="5e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.357853 0.156769 -2.081651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/FT_20-CR_CUSTOMER_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.357853 0.156769 -2.081651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/FT_20-CR_CUSTOMER_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="FT_20-CR_CUSTOMER_v1__1__1">
+  <inertial>
+    <origin xyz="-4.427223507796896e-07 0.005674989748908316 0.020919531289331328" rpy="0 0 0"/>
+    <mass value="0.13587538757333883"/>
+    <inertia ixx="3.2e-05" iyy="3e-05" izz="1.1e-05" ixy="0.0" iyz="-5e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.357853 0.210769 -2.081651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/FT_20-CR_CUSTOMER_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.357853 0.210769 -2.081651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/FT_20-CR_CUSTOMER_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link_1_1">
+  <inertial>
+    <origin xyz="-0.03473395295978632 3.6113188467412627e-07 0.12351617099598033" rpy="0 0 0"/>
+    <mass value="21.213888253656222"/>
+    <inertia ixx="0.127957" iyy="0.13413" izz="0.047327" ixy="-0.0" iyz="-0.0" ixz="0.023881"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.358053 0.183769 -0.846651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/link_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.358053 0.183769 -0.846651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/link_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link_2_1">
+  <inertial>
+    <origin xyz="0.04491467912862068 4.0331995332376636e-07 0.06732558518440146" rpy="0 0 0"/>
+    <mass value="21.397098230942653"/>
+    <inertia ixx="0.127529" iyy="0.133838" izz="0.047851" ixy="0.0" iyz="-0.0" ixz="0.02227"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.347553 0.183769 -1.039651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/link_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.347553 0.183769 -1.039651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/link_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link_3_1">
+  <inertial>
+    <origin xyz="0.02956324343973593 4.452096670770622e-07 0.13650355043632456" rpy="0 0 0"/>
+    <mass value="24.923668408341197"/>
+    <inertia ixx="0.186887" iyy="0.196866" izz="0.059721" ixy="0.0" iyz="0.0" ixz="-0.038259"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.358053 0.183769 -1.214151" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/link_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.358053 0.183769 -1.214151" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/link_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link_4_1">
+  <inertial>
+    <origin xyz="-0.04491618283394999 5.121327569523881e-07 0.0673254131979093" rpy="0 0 0"/>
+    <mass value="21.397084006482324"/>
+    <inertia ixx="0.127521" iyy="0.133811" izz="0.047832" ixy="-0.0" iyz="0.0" ixz="-0.022267"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.368553 0.183769 -1.439651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/link_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.368553 0.183769 -1.439651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/link_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link_5_1">
+  <inertial>
+    <origin xyz="-0.021387033035674075 4.661166980446385e-07 0.08546854775423429" rpy="0 0 0"/>
+    <mass value="13.296685148643036"/>
+    <inertia ixx="0.068318" iyy="0.079123" izz="0.035085" ixy="0.0" iyz="-0.0" ixz="0.024261"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.358053 0.183769 -1.614151" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/link_5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.358053 0.183769 -1.614151" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/link_5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link_6_1">
+  <inertial>
+    <origin xyz="0.07098644215842037 7.356824563431452e-07 0.0021156275002001124" rpy="0 0 0"/>
+    <mass value="14.421198781272748"/>
+    <inertia ixx="0.038461" iyy="0.040001" izz="0.027817" ixy="-0.0" iyz="-0.0" ixz="0.00196"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.287353 0.183769 -1.839651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/link_6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.287353 0.183769 -1.839651" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/link_6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="flange_1">
+  <inertial>
+    <origin xyz="-4.254306989470713e-07 -4.201772230677525e-06 0.009981863918172573" rpy="0 0 0"/>
+    <mass value="2.1030620192288976"/>
+    <inertia ixx="0.001534" iyy="0.001534" izz="0.00251" ixy="1.5e-05" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.357853 0.183769 -1.930551" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/flange_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.357853 0.183769 -1.930551" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/flange_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link_0_1">
+  <inertial>
+    <origin xyz="-4.883599085125923e-07 0.012832888322679536 0.06810427246604212" rpy="0 0 0"/>
+    <mass value="30.321448900186642"/>
+    <inertia ixx="0.139451" iyy="0.111656" izz="0.133146" ixy="0.0" iyz="-0.004809" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.358053 0.183769 -0.701151" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/link_0_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.358053 0.183769 -0.701151" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://kmr_iiwa_gripkit_cr_plus_l_bb_description/meshes/link_0_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="base_footprint_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="base_footprint"/>
+  <child link="base_link"/>
+</joint>
+
+<joint name="Rigid1" type="fixed">
+  <origin xyz="0.535053 0.000231 0.640951" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="cover_1"/>
+</joint>
+
+<joint name="Rigid18" type="fixed">
+  <origin xyz="-0.050302 5e-06 0.01703" rpy="0 0 0"/>
+  <parent link="flange_1"/>
+  <child link="screw_1_1"/>
+</joint>
+
+<joint name="Rigid19" type="fixed">
+  <origin xyz="-2e-06 0.050305 0.01703" rpy="0 0 0"/>
+  <parent link="flange_1"/>
+  <child link="screw_2_1"/>
+</joint>
+
+<joint name="Rigid20" type="fixed">
+  <origin xyz="0.050298 5e-06 0.01703" rpy="0 0 0"/>
+  <parent link="flange_1"/>
+  <child link="screw_3_1"/>
+</joint>
+
+<joint name="Rigid21" type="fixed">
+  <origin xyz="-2e-06 -0.050295 0.01703" rpy="0 0 0"/>
+  <parent link="flange_1"/>
+  <child link="screw_4_1"/>
+</joint>
+
+<joint name="Rigid22" type="fixed">
+  <origin xyz="-0.035568 -0.035567 0.0121" rpy="0 0 0"/>
+  <parent link="flange_1"/>
+  <child link="screw_5_1"/>
+</joint>
+
+<joint name="Rigid23" type="fixed">
+  <origin xyz="0.035567 0.035568 0.0121" rpy="0 0 0"/>
+  <parent link="flange_1"/>
+  <child link="screw_6_1"/>
+</joint>
+
+<joint name="Rigid24" type="fixed">
+  <origin xyz="-0.025 0.0 0.0351" rpy="0 0 0"/>
+  <parent link="flange_1"/>
+  <child link="SF-ISO50-CRG200_Customer_1"/>
+</joint>
+
+<joint name="Rigid25" type="fixed">
+  <origin xyz="0.0015 -0.046 0.011" rpy="0 0 0"/>
+  <parent link="SF-ISO50-CRG200_Customer_1"/>
+  <child link="CRG200_body_1"/>
+</joint>
+
+<joint name="Slider26" type="prismatic">
+  <origin xyz="0.005 0.046 0.0576" rpy="0 0 0"/>
+  <parent link="CRG200_body_1"/>
+  <child link="CRG200_base_jaw_1"/>
+  <axis xyz="-0.0 -1.0 -0.0"/>
+  <limit upper="0.021" lower="-0.021" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Slider27" type="prismatic">
+  <origin xyz="0.042 0.046 0.0576" rpy="0 0 0"/>
+  <parent link="CRG200_body_1"/>
+  <child link="CRG200_base_jaw__1__1"/>
+  <axis xyz="-0.0 -1.0 -0.0"/>
+  <limit upper="0.021" lower="-0.021" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rigid28" type="fixed">
+  <origin xyz="0.0235 0.046 0.0601" rpy="0 0 0"/>
+  <parent link="CRG200_body_1"/>
+  <child link="CRG200_top_cover_1"/>
+</joint>
+
+<joint name="Rigid29" type="fixed">
+  <origin xyz="0.0015 0.046 0.0065" rpy="0 0 0"/>
+  <parent link="SF-ISO50-CRG200_Customer_1"/>
+  <child link="ISO_4762_-_M4_x_12ISO_1"/>
+</joint>
+
+<joint name="Rigid30" type="fixed">
+  <origin xyz="0.0015 -0.046 0.0065" rpy="0 0 0"/>
+  <parent link="SF-ISO50-CRG200_Customer_1"/>
+  <child link="ISO_4762_-_M4_x_12ISO__1__1"/>
+</joint>
+
+<joint name="Rigid31" type="fixed">
+  <origin xyz="0.0485 -0.046 0.0065" rpy="0 0 0"/>
+  <parent link="SF-ISO50-CRG200_Customer_1"/>
+  <child link="ISO_4762_-_M4_x_12ISO__2__1"/>
+</joint>
+
+<joint name="Rigid32" type="fixed">
+  <origin xyz="0.0485 0.046 0.0065" rpy="0 0 0"/>
+  <parent link="SF-ISO50-CRG200_Customer_1"/>
+  <child link="ISO_4762_-_M4_x_12ISO__3__1"/>
+</joint>
+
+<joint name="Rigid33" type="fixed">
+  <origin xyz="0.0 0.002 0.0124" rpy="0 0 0"/>
+  <parent link="CRG200_base_jaw_1"/>
+  <child link="BE_20-030_CUSTOMER_v1_1"/>
+</joint>
+
+<joint name="Rigid34" type="fixed">
+  <origin xyz="0.0 -0.002 0.0124" rpy="0 0 0"/>
+  <parent link="CRG200_base_jaw__1__1"/>
+  <child link="BE_20-030_CUSTOMER_v1__1__1"/>
+</joint>
+
+<joint name="Rigid35" type="fixed">
+  <origin xyz="0.0185 0.025 0.01" rpy="0 0 0"/>
+  <parent link="BE_20-030_CUSTOMER_v1_1"/>
+  <child link="AC_20-025_CUSTOMER_v1_1"/>
+</joint>
+
+<joint name="Rigid36" type="fixed">
+  <origin xyz="-0.0185 -0.025 0.01" rpy="0 0 0"/>
+  <parent link="BE_20-030_CUSTOMER_v1__1__1"/>
+  <child link="AC_20-025_CUSTOMER_v1__1__1"/>
+</joint>
+
+<joint name="Rigid37" type="fixed">
+  <origin xyz="0.0 0.0 0.025" rpy="0 0 0"/>
+  <parent link="AC_20-025_CUSTOMER_v1_1"/>
+  <child link="FT_20-CR_CUSTOMER_v1_1"/>
+</joint>
+
+<joint name="Rigid38" type="fixed">
+  <origin xyz="0.0 0.0 0.025" rpy="0 0 0"/>
+  <parent link="AC_20-025_CUSTOMER_v1__1__1"/>
+  <child link="FT_20-CR_CUSTOMER_v1__1__1"/>
+</joint>
+
+<joint name="Rev39" type="revolute">
+  <origin xyz="0.0 0.0 0.1455" rpy="0 0 0"/>
+  <parent link="link_0_1"/>
+  <child link="link_1_1"/>
+  <axis xyz="-0.0 -0.0 1.0"/>
+  <limit upper="2.96706" lower="-2.96706" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rev40" type="revolute">
+  <origin xyz="-0.0105 0.0 0.193" rpy="0 0 0"/>
+  <parent link="link_1_1"/>
+  <child link="link_2_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit upper="2.094395" lower="-2.094395" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rev41" type="revolute">
+  <origin xyz="0.0105 0.0 0.1745" rpy="0 0 0"/>
+  <parent link="link_2_1"/>
+  <child link="link_3_1"/>
+  <axis xyz="-0.0 -0.0 1.0"/>
+  <limit upper="2.96706" lower="-2.96706" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rev42" type="revolute">
+  <origin xyz="0.0105 0.0 0.2255" rpy="0 0 0"/>
+  <parent link="link_3_1"/>
+  <child link="link_4_1"/>
+  <axis xyz="-1.0 -0.0 -0.0"/>
+  <limit upper="2.094395" lower="-2.094395" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rev43" type="revolute">
+  <origin xyz="-0.0105 0.0 0.1745" rpy="0 0 0"/>
+  <parent link="link_4_1"/>
+  <child link="link_5_1"/>
+  <axis xyz="-0.0 -0.0 1.0"/>
+  <limit upper="2.96706" lower="-2.96706" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rev44" type="revolute">
+  <origin xyz="-0.0707 0.0 0.2255" rpy="0 0 0"/>
+  <parent link="link_5_1"/>
+  <child link="link_6_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit upper="2.094395" lower="-2.094395" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rev45" type="revolute">
+  <origin xyz="0.0705 0.0 0.0909" rpy="0 0 0"/>
+  <parent link="link_6_1"/>
+  <child link="flange_1"/>
+  <axis xyz="-0.0 -0.0 1.0"/>
+  <limit upper="3.054326" lower="-3.054326" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rigid46" type="fixed">
+  <origin xyz="0.358053 -0.183769 0.701151" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="link_0_1"/>
+</joint>
+
+</robot>

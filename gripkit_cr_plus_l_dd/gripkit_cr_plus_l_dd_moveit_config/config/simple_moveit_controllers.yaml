@@ -1,0 +1,8 @@
+controller_list:
+  - name: gripper_controller
+    action_ns: gripper_action
+    type: GripperCommand
+    default: True
+    joints:
+      - Slider26
+      - Slider27

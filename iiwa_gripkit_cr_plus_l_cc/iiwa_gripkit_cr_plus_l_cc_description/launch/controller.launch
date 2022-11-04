@@ -1,0 +1,9 @@
+<launch>
+
+<rosparam file="$(find iiwa_gripkit_cr_plus_l_cc_description)/launch/controller.yaml" command="load"/>
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="iiwa_gripkit_cr_plus_l_cc" args="Slider26_position_controller Slider27_position_controller Rev45_position_controller Rev46_position_controller Rev47_position_controller Rev48_position_controller Rev49_position_controller Rev50_position_controller Rev51_position_controller joint_state_controller "/>
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+  <remap from="/joint_states" to="/iiwa_gripkit_cr_plus_l_cc/joint_states"/>
+</node>
+
+</launch>

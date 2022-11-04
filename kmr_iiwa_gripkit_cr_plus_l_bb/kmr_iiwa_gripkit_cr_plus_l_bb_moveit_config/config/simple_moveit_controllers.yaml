@@ -1,0 +1,26 @@
+controller_list:
+  - name: iiwa_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - Rev39
+      - Rev40
+      - Rev41
+      - Rev42
+      - Rev43
+      - Rev44
+      - Rev45
+  - name: kmp_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - virtual_joint
+  - name: gripper_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - Slider26
+      - Slider27
