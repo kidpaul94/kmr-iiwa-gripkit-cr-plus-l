@@ -51,12 +51,12 @@ gripper_controller:
     - Slider27
   gains:
     Slider26:
-      p: 1000
+      p: 10000
       d: 1
       i: 10
       i_clamp: 1
     Slider27:
-      p: 1000
+      p: 10000
       d: 1
       i: 10
       i_clamp: 1
