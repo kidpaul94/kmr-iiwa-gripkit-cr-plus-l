@@ -3,21 +3,23 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
 
 ## Repository Structure
 
-    ├── gripkit_cr_plus_l_ad.zip 
+    ├── gripkit_cr_plus_l_ad 
     │   ├── gripkit_cr_plus_l_ad_description   # URDF description folder
     |   └── gripkit_cr_plus_l_ad_moveit_config # MoveIt configuration folder
-    ├── iiwa.zip              
-    ├── kmp200.zip                            
+    ├── iiwa7              
+    ├── kmp200                           
     │   └── kmp200_description
     |   └── kmp200_moveit_config
-    └── kmr_iiwa_gripkit_cr_plus_l_dd.zip
+    └── kmr_iiwa_gripkit_cr_plus_l_dd
 
 Note: For completness, all URDF models have corresponding MoveIt configurations. However, MoveIt for ROS1 has limited support on mobile base path planning. Hence, path execution in a real robot may be limited. ROS navigation and move_base package can be alternatives for mobile base path planning.
 
 ## How to use
-**Each zip file is a compressed ros package**. Place the unzipped folder into *~/catkin_ws/src* and run the following commands:
+Download the repository:
 
-    cd ~/catkin_ws/
+    cd ~/catkin_ws/src
+    git clone https://github.com/kidpaul94/KMR-iiwa-Gripkit-CR-Plus-L.git
+    cd ~/catkin_ws
     catkin_make
     source devel/setup.bash
     
@@ -32,3 +34,7 @@ To visual the URDF in gazebo:
 To run the MoveIt:
 
     roslaunch (robot or gripper name)_moveit_config demo.launch 
+
+To run the MoveIt with gazebo:
+
+    roslaunch (robot or gripper name)_moveit_config demo_gazebo.launch 
