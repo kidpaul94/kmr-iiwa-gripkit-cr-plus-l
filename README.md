@@ -41,3 +41,7 @@ To run the MoveIt:
 To run the MoveIt with gazebo:
 
     roslaunch (robot or gripper name)_moveit_config demo_gazebo.launch 
+    
+**ToDo Lists**
+- [ ] Tune physical paramters in moveit packages
+- [ ] Edit mobile base planner
