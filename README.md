@@ -50,4 +50,4 @@ To run the MoveIt with gazebo:
     
 **ToDo Lists**
 - [ ] Tune physical paramters in moveit packages
-- [ ] Edit mobile base planner
+- [ ] Add ROS navigation stack for the mobile base
