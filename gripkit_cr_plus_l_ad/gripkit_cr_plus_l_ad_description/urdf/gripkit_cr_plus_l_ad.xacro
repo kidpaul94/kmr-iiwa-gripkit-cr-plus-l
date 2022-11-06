@@ -4,6 +4,9 @@
 <xacro:include filename="$(find gripkit_cr_plus_l_ad_description)/urdf/materials.xacro" />
 <xacro:include filename="$(find gripkit_cr_plus_l_ad_description)/urdf/gripkit_cr_plus_l_ad.trans" />
 <xacro:include filename="$(find gripkit_cr_plus_l_ad_description)/urdf/gripkit_cr_plus_l_ad.gazebo" />
+
+<link name="world">
+</link>
 <link name="base_footprint">
 </link>
 <link name="base_link">
@@ -425,6 +428,12 @@
     </geometry>
   </collision>
 </link>
+
+<joint name="world_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="world"/>
+  <child link="base_footprint"/>
+</joint>
 
 <joint name="base_footprint_joint" type="fixed">
   <origin xyz="0 0 0" rpy="0 0 0"/>

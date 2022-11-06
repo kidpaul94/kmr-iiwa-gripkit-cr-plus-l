@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.1.3)
-project(gripkit_cr_plus_l_bb_moveit_config)
+project(gripkit_cr_plus_l_bb_move_config)
 
 find_package(catkin REQUIRED)
 

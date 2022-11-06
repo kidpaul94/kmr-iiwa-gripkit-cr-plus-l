@@ -3,6 +3,6 @@
   <param name="moveit_controller_manager" value="moveit_simple_controller_manager/MoveItSimpleControllerManager" />
 
   <!-- Load controller list to the parameter server -->
-  <rosparam file="$(find gripkit_cr_plus_l_bb_moveit_config)/config/simple_moveit_controllers.yaml" />
-  <rosparam file="$(find gripkit_cr_plus_l_bb_moveit_config)/config/ros_controllers.yaml" />
+  <rosparam file="$(find gripkit_cr_plus_l_bb_move_config)/config/simple_moveit_controllers.yaml" />
+  <rosparam file="$(find gripkit_cr_plus_l_bb_move_config)/config/ros_controllers.yaml" />
 </launch>

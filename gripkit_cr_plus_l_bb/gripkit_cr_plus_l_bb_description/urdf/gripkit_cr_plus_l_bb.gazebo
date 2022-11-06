@@ -23,15 +23,23 @@
 
 <gazebo reference="CRG200_base_jaw_1">
   <material>${body_color}</material>
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
+  <minDepth>0.001</minDepth>
+  <maxVel>0</maxVel> 
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="CRG200_base_jaw__1__1">
   <material>${body_color}</material>
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
+  <minDepth>0.001</minDepth>
+  <maxVel>0</maxVel> 
   <selfCollide>true</selfCollide>
 </gazebo>
 
@@ -100,15 +108,23 @@
 
 <gazebo reference="FT_20-CR_CUSTOMER_v1_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+  <mu1>200.0</mu1>
+  <mu2>200.0</mu2>
+  <minDepth>0.001</minDepth>
+  <maxVel>0</maxVel> 
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="FT_20-CR_CUSTOMER_v1__1__1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+  <mu1>200.0</mu1>
+  <mu2>200.0</mu2>
+  <minDepth>0.001</minDepth>
+  <maxVel>0</maxVel> 
   <selfCollide>true</selfCollide>
 </gazebo>
 

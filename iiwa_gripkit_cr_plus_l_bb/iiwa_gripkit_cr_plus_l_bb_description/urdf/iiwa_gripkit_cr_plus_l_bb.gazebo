@@ -159,8 +159,8 @@
   <material>${body_color}</material>
   <kp>1000000.0</kp>
   <kd>1.0</kd>
-  <mu1>250.0</mu1>
-  <mu2>250.0</mu2>
+  <mu1>200.0</mu1>
+  <mu2>200.0</mu2>
   <minDepth>0.001</minDepth>
   <maxVel>0</maxVel> 
   <selfCollide>true</selfCollide>
@@ -170,8 +170,8 @@
   <material>${body_color}</material>
   <kp>1000000.0</kp>
   <kd>1.0</kd>
-  <mu1>250.0</mu1>
-  <mu2>250.0</mu2>
+  <mu1>200.0</mu1>
+  <mu2>200.0</mu2>
   <minDepth>0.001</minDepth> 
   <maxVel>0</maxVel> 
   <selfCollide>true</selfCollide>
