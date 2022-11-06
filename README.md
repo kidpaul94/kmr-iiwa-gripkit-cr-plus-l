@@ -15,7 +15,13 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
 Note: For completness, all URDF models have corresponding MoveIt configurations. However, MoveIt for ROS1 has limited support on mobile base path planning. Hence, path execution in a real robot may be limited. ROS navigation and move_base package can be alternatives for mobile base path planning.
 
 ## Warning
-At a moment, we are currently tuning paramters of iiwa_gripkit_cr_plus_l_bb. Other packages are not well tuned for physics simulation yet.
+At a moment, we are currently tuning paramters of each package. Below is the list of completely tuned packages:
+
+    gripkit_cr_plus_l_ad
+    gripkit_cr_plus_l_bb
+    gripkit_cr_plus_l_cc
+    gripkit_cr_plus_l_dd
+    iiwa7
 
 ## How to use
 Download the repository:
