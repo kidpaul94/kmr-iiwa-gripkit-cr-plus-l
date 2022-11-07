@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<robot name="iiwa_gripper" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find iiwa7_description)/urdf/iiwa7.xacro" />
+<xacro:include filename="$(find iiwa_gripkit_cr_plus_l_bb_description)/urdf/iiwa_gripkit_cr_plus_l_bb.xacro" />
+
+<joint name="coupler_joint" type="fixed">
+    <origin xyz="0 0 0.004" rpy="0 0 ${-pi/2.0}" />
+    <parent link="flange_1"/>
+    <child link="CRG200_body_1"/>
+</joint>
+
+<xacro:iiwa_gripper prefix="" parent="coupler_joint"
+
+
+</robot>
