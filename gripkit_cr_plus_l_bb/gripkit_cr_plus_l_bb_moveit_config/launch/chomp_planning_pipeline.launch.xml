@@ -19,5 +19,5 @@
   <!-- Add MoveGroup capabilities specific to this pipeline -->
   <!-- <param name="capabilities" value="" /> -->
 
-  <rosparam command="load" file="$(find gripkit_cr_plus_l_bb_moveit_config)/config/chomp_planning.yaml" />
+  <rosparam command="load" file="$(find gripkit_cr_plus_l_bb_move_config)/config/chomp_planning.yaml" />
 </launch>

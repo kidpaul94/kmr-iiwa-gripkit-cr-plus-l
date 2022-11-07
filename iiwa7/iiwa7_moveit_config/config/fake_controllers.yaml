@@ -1,5 +1,5 @@
 controller_list:
-  - name: fake_iiwa7_controller
+  - name: fake_iiwa_controller
     type: $(arg fake_execution_type)
     joints:
       - Rev44
@@ -10,5 +10,5 @@ controller_list:
       - Rev49
       - Rev50
 initial:  # Define initial robot poses per group
-  - group: iiwa7
+  - group: iiwa
     pose: rest

@@ -1,6 +1,6 @@
 <package>
 
-  <name>gripkit_cr_plus_l_bb_moveit_config</name>
+  <name>gripkit_cr_plus_l_bb_move_config</name>
   <version>0.3.0</version>
   <description>
      An automatically generated package with all the configuration and launch files for using the gripkit_cr_plus_l_bb with the MoveIt Motion Planning Framework

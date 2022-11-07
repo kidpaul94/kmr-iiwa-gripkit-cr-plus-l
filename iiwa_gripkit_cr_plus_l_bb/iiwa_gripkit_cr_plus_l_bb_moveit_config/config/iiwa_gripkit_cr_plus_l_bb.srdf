@@ -32,11 +32,19 @@
         <joint name="Rev42" value="0"/>
         <joint name="Rev43" value="0"/>
         <joint name="Rev44" value="0"/>
-        <joint name="Rev45" value="3.05433"/>
+        <joint name="Rev45" value="0"/>
     </group_state>
     <group_state name="rest" group="gripkit_cr_plus_l_bb">
         <joint name="Slider26" value="0"/>
         <joint name="Slider27" value="0"/>
+    </group_state>
+    <group_state name="close" group="gripkit_cr_plus_l_bb">
+        <joint name="Slider26" value="0.0065"/>
+        <joint name="Slider27" value="-0.0065"/>
+    </group_state>
+    <group_state name="open" group="gripkit_cr_plus_l_bb">
+        <joint name="Slider26" value="-0.021"/>
+        <joint name="Slider27" value="0.021"/>
     </group_state>
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="base_footprint"/>
