@@ -38,6 +38,14 @@
         <joint name="Slider26" value="0"/>
         <joint name="Slider27" value="0"/>
     </group_state>
+    <group_state name="close" group="gripkit_cr_plus_l_ad">
+        <joint name="Slider26" value="0.0065"/>
+        <joint name="Slider27" value="-0.0065"/>
+    </group_state>
+    <group_state name="open" group="gripkit_cr_plus_l_ad">
+        <joint name="Slider26" value="-0.021"/>
+        <joint name="Slider27" value="0.021"/>
+    </group_state>
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virtual_join" type="fixed" parent_frame="world" child_link="base_footprint"/>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->

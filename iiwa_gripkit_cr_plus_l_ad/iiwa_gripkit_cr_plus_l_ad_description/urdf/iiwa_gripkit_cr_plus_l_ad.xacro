@@ -4,6 +4,9 @@
 <xacro:include filename="$(find iiwa_gripkit_cr_plus_l_ad_description)/urdf/materials.xacro" />
 <xacro:include filename="$(find iiwa_gripkit_cr_plus_l_ad_description)/urdf/iiwa_gripkit_cr_plus_l_ad.trans" />
 <xacro:include filename="$(find iiwa_gripkit_cr_plus_l_ad_description)/urdf/iiwa_gripkit_cr_plus_l_ad.gazebo" />
+
+<link name="world">
+</link>
 <link name="base_footprint">
 </link>
 <link name="base_link">
@@ -576,8 +579,8 @@
 <link name="link_1_1">
   <inertial>
     <origin xyz="9.615003024343416e-08 -0.03473351023743466 0.12351616001638635" rpy="0 0 0"/>
-    <mass value="21.213888253656222"/>
-    <inertia ixx="0.13413" iyy="0.127957" izz="0.047327" ixy="0.0" iyz="0.023881" ixz="0.0"/>
+    <mass value="3.4525"/>
+    <inertia ixx="0.02183" ixy="0" ixz="0" iyy="0.007703" iyz="-0.003887" izz="0.02083"/>
   </inertial>
   <visual>
     <origin xyz="-0.0 0.0 -0.1475" rpy="0 0 0"/>
@@ -597,8 +600,8 @@
 <link name="link_2_1">
   <inertial>
     <origin xyz="5.3961961621630917e-08 0.04491512185097363 0.06732557420480756" rpy="0 0 0"/>
-    <mass value="21.397098230942653"/>
-    <inertia ixx="0.133838" iyy="0.127529" izz="0.047851" ixy="-0.0" iyz="0.02227" ixz="0.0"/>
+    <mass value="3.4821"/>
+    <inertia ixx="0.02076"  ixy="0"  ixz="-0.003626" iyy="0.02179" iyz="0" izz="0.00779"/>
   </inertial>
   <visual>
     <origin xyz="0.0 0.0105 -0.3405" rpy="0 0 0"/>
@@ -618,8 +621,8 @@
 <link name="link_3_1">
   <inertial>
     <origin xyz="1.207224751269193e-08 0.029563686162089268 0.13650353945673122" rpy="0 0 0"/>
-    <mass value="24.923668408341197"/>
-    <inertia ixx="0.196866" iyy="0.186887" izz="0.059721" ixy="-0.0" iyz="-0.038259" ixz="-0.0"/>
+    <mass value="4.05623"/>
+    <inertia ixx="0.03204"  ixy="0"  ixz="0" iyy="0.00972" iyz="0.006227" izz="0.03042"/>
   </inertial>
   <visual>
     <origin xyz="0.0 0.0 -0.515" rpy="0 0 0"/>
@@ -639,8 +642,8 @@
 <link name="link_4_1">
   <inertial>
     <origin xyz="-5.485084286249875e-08 -0.044915740111597394 0.06732540221831629" rpy="0 0 0"/>
-    <mass value="21.397084006482324"/>
-    <inertia ixx="0.133811" iyy="0.127521" izz="0.047832" ixy="0.0" iyz="-0.022267" ixz="-0.0"/>
+    <mass value="3.4822"/>
+    <inertia ixx="0.02178"  ixy="0"  ixz="0" iyy="0.02075" iyz="-0.003625" izz="0.007785"/>
   </inertial>
   <visual>
     <origin xyz="0.0 -0.0105 -0.7405" rpy="0 0 0"/>
@@ -660,8 +663,8 @@
 <link name="link_5_1">
   <inertial>
     <origin xyz="-8.834784191987874e-09 -0.02138659031332106 0.08546853677464128" rpy="0 0 0"/>
-    <mass value="13.296685148643036"/>
-    <inertia ixx="0.079123" iyy="0.068318" izz="0.035085" ixy="-0.0" iyz="0.024261" ixz="0.0"/>
+    <mass value="2.1633"/>
+    <inertia ixx="0.01287"  ixy="0"  ixz="0" iyy="0.005708" iyz="-0.003946" izz="0.01112"/>
   </inertial>
   <visual>
     <origin xyz="0.0 0.0 -0.915" rpy="0 0 0"/>
@@ -681,8 +684,8 @@
 <link name="link_6_1">
   <inertial>
     <origin xyz="-2.784005425940048e-07 0.07098688488077398 0.002115616520607766" rpy="0 0 0"/>
-    <mass value="14.421198781272748"/>
-    <inertia ixx="0.040001" iyy="0.038461" izz="0.027817" ixy="0.0" iyz="0.00196" ixz="0.0"/>
+    <mass value="2.3466"/>
+    <inertia ixx="0.006509"  ixy="0"  ixz="0" iyy="0.006259" iyz="0.00031891" izz="0.004527"/>
   </inertial>
   <visual>
     <origin xyz="0.0 0.0707 -1.1405" rpy="0 0 0"/>
@@ -702,8 +705,8 @@
 <link name="flange_1">
   <inertial>
     <origin xyz="4.659054144329294e-06 1.7291653306211654e-08 0.009981852938580671" rpy="0 0 0"/>
-    <mass value="2.1030620192288976"/>
-    <inertia ixx="0.001534" iyy="0.001534" izz="0.00251" ixy="-1.5e-05" iyz="-0.0" ixz="-0.0"/>
+    <mass value="3.129"/>
+    <inertia ixx="0.01464"  ixy="0.0005912"  ixz="0" iyy="0.01465" iyz="0" izz="0.002872"/>
   </inertial>
   <visual>
     <origin xyz="0.0 0.0002 -1.2314" rpy="0 0 0"/>
@@ -719,6 +722,12 @@
     </geometry>
   </collision>
 </link>
+
+<joint name="world_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="world"/>
+  <child link="base_footprint"/>
+</joint>
 
 <joint name="base_footprint_joint" type="fixed">
   <origin xyz="0 0 0" rpy="0 0 0"/>
