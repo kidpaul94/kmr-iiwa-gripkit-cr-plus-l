@@ -8,7 +8,7 @@
 </link>
 <link name="base_footprint">
 </link>
-<link name="base_link">
+<link name="link_0">
   <inertial>
     <origin xyz="-0.012832431040764161 -4.5637556731516346e-08 0.07010426148644754" rpy="0 0 0"/>
     <mass value="5"/>
@@ -17,14 +17,14 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://iiwa7_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://iiwa7_description/meshes/link_0.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://iiwa7_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://iiwa7_description/meshes/link_0.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -311,7 +311,7 @@
 <joint name="base_footprint_joint" type="fixed">
   <origin xyz="0 0 0" rpy="0 0 0"/>
   <parent link="base_footprint"/>
-  <child link="base_link"/>
+  <child link="link_0"/>
 </joint>
 
 <joint name="Rigid01" type="fixed">
@@ -352,7 +352,7 @@
 
 <joint name="Rev01" type="revolute">
   <origin xyz="0.0 0.0 0.1475" rpy="0 0 0"/>
-  <parent link="base_link"/>
+  <parent link="link_0"/>
   <child link="link_1"/>
   <axis xyz="0.0 0.0 1.0"/>
   <limit upper="2.96706" lower="-2.96706" effort="100" velocity="100"/>
