@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(kmr_iiwa_gripkit_cr_plus_l_bb_description)
+project(kmr_iiwa_gripkit_cr_plus_l_description)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
