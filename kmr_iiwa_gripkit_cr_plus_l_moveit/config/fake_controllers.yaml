@@ -1,0 +1,21 @@
+controller_list:
+  - name: fake_iiwa_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - Rev01
+      - Rev02
+      - Rev03
+      - Rev04
+      - Rev05
+      - Rev06
+      - Rev07
+  - name: fake_gripper_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - Slider01
+      - Slider02
+initial:  # Define initial robot poses per group
+  - group: iiwa
+    pose: home
+  - group: gripper
+    pose: home

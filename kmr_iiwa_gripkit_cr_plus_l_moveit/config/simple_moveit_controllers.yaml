@@ -1,0 +1,20 @@
+controller_list:
+  - name: iiwa_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - Rev01
+      - Rev02
+      - Rev03
+      - Rev04
+      - Rev05
+      - Rev06
+      - Rev07
+  - name: gripper_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - Slider01
+      - Slider02
