@@ -6,11 +6,13 @@
   <!-- Gazebo specific options -->
   <arg name="gazebo_gui" default="true"/>
   <arg name="paused" default="false"/>
+  <arg name="controller_type" default="Effort" />
 
   <!-- launch the gazebo simulator and spawn the robot -->
   <include file="$(dirname)/gazebo.launch" >
     <arg name="paused" value="$(arg paused)"/>
     <arg name="gazebo_gui" value="$(arg gazebo_gui)"/>
+    <arg name="controller_type" value="$(arg controller_type)" />
   </include>
 
   <include file="$(dirname)/demo.launch" pass_all_args="true">

@@ -1,4 +1,4 @@
-iiwa_controller:
+iiwa_Effort_controller:
   type: effort_controllers/JointTrajectoryController
   joints:
     - Rev01
@@ -44,7 +44,7 @@ iiwa_controller:
       d: 1
       i: 0.1
       i_clamp: 100
-gripper_controller:
+gripper_Effort_controller:
   type: effort_controllers/JointTrajectoryController
   joints:
     - Slider01
@@ -60,3 +60,140 @@ gripper_controller:
       d: 1
       i: 10
       i_clamp: 1
+iiwa_Position_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - Rev01
+    - Rev02
+    - Rev03
+    - Rev04
+    - Rev05
+    - Rev06
+    - Rev07
+  gains:
+    Rev01:
+      p: 1000
+      d: 50
+      i: 10
+      i_clamp: 100
+    Rev02:
+      p: 5000
+      d: 30
+      i: 100
+      i_clamp: 400
+    Rev03:
+      p: 5000
+      d: 50
+      i: 10
+      i_clamp: 100
+    Rev04:
+      p: 200
+      d: 20
+      i: 10
+      i_clamp: 100
+    Rev05:
+      p: 100
+      d: 10
+      i: 0.1
+      i_clamp: 100
+    Rev06:
+      p: 50
+      d: 5
+      i: 0.1
+      i_clamp: 100
+    Rev07:
+      p: 10
+      d: 1
+      i: 0.1
+      i_clamp: 100
+gripper_Position_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - Slider01
+    - Slider02
+  gains:
+    Slider01:
+      p: 10000
+      d: 1
+      i: 10
+      i_clamp: 1
+    Slider02:
+      p: 10000
+      d: 1
+      i: 10
+      i_clamp: 1
+iiwa_Velocity_controller:
+  type: velocity_controllers/JointTrajectoryController
+  joints:
+    - Rev01
+    - Rev02
+    - Rev03
+    - Rev04
+    - Rev05
+    - Rev06
+    - Rev07
+  gains:
+    Rev01:
+      p: 1000
+      d: 50
+      i: 10
+      i_clamp: 100
+    Rev02:
+      p: 5000
+      d: 30
+      i: 100
+      i_clamp: 400
+    Rev03:
+      p: 5000
+      d: 50
+      i: 10
+      i_clamp: 100
+    Rev04:
+      p: 200
+      d: 20
+      i: 10
+      i_clamp: 100
+    Rev05:
+      p: 100
+      d: 10
+      i: 0.1
+      i_clamp: 100
+    Rev06:
+      p: 50
+      d: 5
+      i: 0.1
+      i_clamp: 100
+    Rev07:
+      p: 10
+      d: 1
+      i: 0.1
+      i_clamp: 100
+gripper_Velocity_controller:
+  type: velocity_controllers/JointTrajectoryController
+  joints:
+    - Slider01
+    - Slider02
+  gains:
+    Slider01:
+      p: 10000
+      d: 1
+      i: 10
+      i_clamp: 1
+    Slider02:
+      p: 10000
+      d: 1
+      i: 10
+      i_clamp: 1
+# Provide random PID gains to gazebo_ros_control 
+# to suppress ERROR when using position_controllers and velocity_controllers
+gazebo_ros_control:
+  pid_gains:
+    Rev01: {p: 100.0, i: 0.01, d: 10.0}
+    Rev02: {p: 100.0, i: 0.01, d: 10.0}
+    Rev03: {p: 100.0, i: 0.01, d: 10.0}
+    Rev04: {p: 100.0, i: 0.01, d: 10.0}
+    Rev05: {p: 100.0, i: 0.01, d: 10.0}
+    Rev06: {p: 100.0, i: 0.01, d: 10.0}
+    Rev07: {p: 100.0, i: 0.01, d: 10.0}
+    Slider01: {p: 100.0, i: 0.01, d: 10.0}
+    Slider02: {p: 100.0, i: 0.01, d: 10.0}

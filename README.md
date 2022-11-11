@@ -25,13 +25,9 @@ Download the repository:
     catkin_make
     source devel/setup.bash
     
-To visual the URDF in rviz:  
-
-    roslaunch kmr_iiwa_gripkit_cr_plus_l_description display.launch
-    
 To visual the URDF in gazebo:
 
-    roslaunch kmr_iiwa_gripkit_cr_plus_l_description gazebo.launch 
+    roslaunch kmr_iiwa_gripkit_cr_plus_l_description gazebo.launch ee_type:=(choose ad, bb, cc, or dd) mobile_base:=(choose kmp200 or None)
     
 To run the MoveIt:
 
@@ -39,7 +35,7 @@ To run the MoveIt:
 
 To run the MoveIt with gazebo:
 
-    roslaunch kmr_iiwa_gripkit_cr_plus_l_moveit_config demo_gazebo.launch 
+    roslaunch kmr_iiwa_gripkit_cr_plus_l_moveit_config demo_gazebo.launch controller_type:=(choose Position, Velocity, Effort)
     
 **ToDo Lists**
 - [ ] prepare the reconfigurable moveit file

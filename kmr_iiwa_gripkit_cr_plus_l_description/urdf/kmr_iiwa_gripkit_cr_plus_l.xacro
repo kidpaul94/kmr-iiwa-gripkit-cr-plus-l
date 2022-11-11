@@ -5,13 +5,13 @@
 <xacro:property name="ee_type" value="$(arg ee_type)" />
 <xacro:arg name="mobile_base" default="kmp200" />
 <xacro:property name="mobile_base" value="$(arg mobile_base)" />
-
 <xacro:include filename="$(find kmr_iiwa_gripkit_cr_plus_l_description)/urdf/materials.xacro" />
 
 <gazebo>
   <plugin name="control" filename="libgazebo_ros_control.so"/>
 </gazebo>
 
+<xacro:arg name="controller_type" default="Effort"/>
 <xacro:property name="body_color" value="Gazebo/Silver" />
 <xacro:include filename="$(find iiwa7_description)/urdf/iiwa7.xacro" />
 
@@ -28,8 +28,14 @@
   <xacro:include filename="$(find gripkit_cr_plus_l_dd_description)/urdf/gripkit_cr_plus_l_dd.xacro" />
 </xacro:if>
 
+<link name="world"/>
 <xacro:if value="${mobile_base == 'kmp200'}"> 
   <xacro:include filename="$(find kmp200_description)/urdf/kmp200.xacro" />
+  <joint name="world_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
   <joint name="Rigid01" type="fixed">
     <origin xyz="0.3633 -0.1842 0.7011" rpy="0 0 -1.5708"/>
     <parent link="base_link"/>
@@ -37,7 +43,6 @@
   </joint>
 </xacro:if>
 <xacro:if value="${mobile_base == 'None'}"> 
-  <link name="world"/>
   <joint name="world_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="world"/>

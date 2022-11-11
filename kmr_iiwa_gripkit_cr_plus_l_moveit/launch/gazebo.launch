@@ -13,7 +13,9 @@
   </include>
 
   <!-- send robot urdf to param server -->
-  <param name="robot_description" command="xacro  '$(find kmr_iiwa_gripkit_cr_plus_l_description)/urdf/kmr_iiwa_gripkit_cr_plus_l.xacro'" />
+  <arg name="controller_type" default="Effort" />
+  <param name="robot_description" command="xacro  '$(find kmr_iiwa_gripkit_cr_plus_l_description)/urdf/kmr_iiwa_gripkit_cr_plus_l.xacro'
+  controller_type:=$(arg controller_type)" />
 
   <!-- unpause only after loading robot model -->
   <arg name="unpause" value="$(eval '' if arg('paused') else '-unpause')" />
@@ -27,6 +29,7 @@
   <!-- Spawn Gazebo ROS controllers -->
   <node name="gazebo_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="joint_state_controller" />
   <!-- Load ROS controllers -->
-  <include file="$(dirname)/ros_controllers.launch"/>
-
+  <include file="$(dirname)/ros_controllers.launch">
+    <arg name="controller_type" value="$(arg controller_type)" />
+  </include>
 </launch>
