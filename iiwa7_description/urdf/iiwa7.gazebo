@@ -1,14 +1,6 @@
 <?xml version="1.0" ?>
 <robot name="iiwa7" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-<gazebo reference="link_0">
-  <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
-  <selfCollide>true</selfCollide>
-  <gravity>true</gravity>
-</gazebo>
-
 <gazebo reference="screw_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
@@ -49,6 +41,14 @@
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="link_0">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+  <gravity>true</gravity>
 </gazebo>
 
 <gazebo reference="link_1">

@@ -9,7 +9,7 @@
   <gravity>true</gravity>
 </gazebo>
 
-<gazebo reference="CRG200_body">
+<gazebo reference="CRG200_body_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
@@ -38,7 +38,7 @@
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="CRG200_top_cover">
+<gazebo reference="CRG200_top_cover_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>

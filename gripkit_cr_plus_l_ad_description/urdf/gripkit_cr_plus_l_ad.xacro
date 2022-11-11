@@ -6,19 +6,19 @@
 
 <link name="SF-ISO50-CRG200_Customer">
   <inertial>
-    <origin xyz="-0.0008393872453184747 0.02500013268462229 0.005627799924905474" rpy="0 0 0"/>
+    <origin xyz="-0.000839387245317249 1.3268462236734284e-07 0.0056277999249054874" rpy="0 0 0"/>
     <mass value="0.16831092346442011"/>
     <inertia ixx="5.7e-05" iyy="0.000144" izz="0.000197" ixy="-0.0" iyz="0.0" ixz="1e-06"/>
   </inertial>
   <visual>
-    <origin xyz="0.0 0.0252 -1.2665" rpy="0 0 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/SF-ISO50-CRG200_Customer.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="0.0 0.0252 -1.2665" rpy="0 0 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/SF-ISO50-CRG200_Customer.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -27,19 +27,19 @@
 
 <link name="CRG200_body">
   <inertial>
-    <origin xyz="-0.04601341952229748 0.023500046460400287 0.029719376870479985" rpy="0 0 0"/>
+    <origin xyz="-0.046013419522296255 0.023500046460400374 0.029719376870480135" rpy="0 0 0"/>
     <mass value="1.024019455093708"/>
     <inertia ixx="0.000598" iyy="0.001224" izz="0.001229" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
   </inertial>
   <visual>
-    <origin xyz="-0.046 0.0237 -1.2775" rpy="0 0 0"/>
+    <origin xyz="-0.046 0.0235 -0.011" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/CRG200_body.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="-0.046 0.0237 -1.2775" rpy="0 0 0"/>
+    <origin xyz="-0.046 0.0235 -0.011" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/CRG200_body.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -48,19 +48,19 @@
 
 <link name="CRG200_base_jaw_1">
   <inertial>
-    <origin xyz="-0.0011165967458195837 -1.0408340855860843e-16 0.004896836508835323" rpy="0 0 0"/>
+    <origin xyz="-0.001116596745818358 -2.0816681711721685e-17 0.004896836508835337" rpy="0 0 0"/>
     <mass value="0.028974809674202275"/>
-    <inertia ixx="0.0" iyy="5e-06" izz="5e-06" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+    <inertia ixx="0.0" iyy="5e-06" izz="5e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
   </inertial>
   <visual>
-    <origin xyz="0.0 0.0187 -1.3351" rpy="0 0 0"/>
+    <origin xyz="-0.0 0.0185 -0.0686" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/CRG200_base_jaw_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="0.0 0.0187 -1.3351" rpy="0 0 0"/>
+    <origin xyz="-0.0 0.0185 -0.0686" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/CRG200_base_jaw_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -69,19 +69,19 @@
 
 <link name="CRG200_base_jaw_2">
   <inertial>
-    <origin xyz="0.0011165967458171484 -7.632783294297951e-17 0.004896836508835323" rpy="0 0 0"/>
+    <origin xyz="0.001116596745818374 1.0408340855860843e-17 0.004896836508835337" rpy="0 0 0"/>
     <mass value="0.028974809674202275"/>
     <inertia ixx="0.0" iyy="5e-06" izz="5e-06" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
   </inertial>
   <visual>
-    <origin xyz="0.0 -0.0183 -1.3351" rpy="0 0 0"/>
+    <origin xyz="-0.0 -0.0185 -0.0686" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/CRG200_base_jaw_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="0.0 -0.0183 -1.3351" rpy="0 0 0"/>
+    <origin xyz="-0.0 -0.0185 -0.0686" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/CRG200_base_jaw_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -90,19 +90,19 @@
 
 <link name="CRG200_top_cover">
   <inertial>
-    <origin xyz="-2.837105234770214e-09 7.283818406739586e-09 0.004043925593782083" rpy="0 0 0"/>
+    <origin xyz="-2.837104009083995e-09 7.283818491274739e-09 0.0040439255937821245" rpy="0 0 0"/>
     <mass value="0.117790703444327"/>
     <inertia ixx="3.5e-05" iyy="0.000112" izz="0.000144" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
   </inertial>
   <visual>
-    <origin xyz="0.0 0.0002 -1.3376" rpy="0 0 0"/>
+    <origin xyz="-0.0 0.0 -0.0711" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/CRG200_top_cover.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="0.0 0.0002 -1.3376" rpy="0 0 0"/>
+    <origin xyz="-0.0 0.0 -0.0711" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/CRG200_top_cover.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -111,19 +111,19 @@
 
 <link name="ISO_4762_-_M4_x_12ISO_1">
   <inertial>
-    <origin xyz="-1.2420620087993939e-15 4.005164255804772e-13 0.0022480078452118413" rpy="0 0 0"/>
+    <origin xyz="-6.938893903907228e-18 4.0060663120122797e-13 0.0022480078452116357" rpy="0 0 0"/>
     <mass value="0.002203374250243251"/>
     <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
   </inertial>
   <visual>
-    <origin xyz="0.046 0.0237 -1.273" rpy="0 0 0"/>
+    <origin xyz="0.046 0.0235 -0.0065" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/ISO_4762_-_M4_x_12ISO_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="0.046 0.0237 -1.273" rpy="0 0 0"/>
+    <origin xyz="0.046 0.0235 -0.0065" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/ISO_4762_-_M4_x_12ISO_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -132,19 +132,19 @@
 
 <link name="ISO_4762_-_M4_x_12ISO_2">
   <inertial>
-    <origin xyz="-1.2073675392798577e-15 4.005164255804772e-13 0.0022480078452118413" rpy="0 0 0"/>
+    <origin xyz="6.938893903907228e-18 4.0060663120122797e-13 0.0022480078452116357" rpy="0 0 0"/>
     <mass value="0.002203374250243251"/>
-    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
   </inertial>
   <visual>
-    <origin xyz="-0.046 0.0237 -1.273" rpy="0 0 0"/>
+    <origin xyz="-0.046 0.0235 -0.0065" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/ISO_4762_-_M4_x_12ISO_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="-0.046 0.0237 -1.273" rpy="0 0 0"/>
+    <origin xyz="-0.046 0.0235 -0.0065" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/ISO_4762_-_M4_x_12ISO_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -153,19 +153,19 @@
 
 <link name="ISO_4762_-_M4_x_12ISO_3">
   <inertial>
-    <origin xyz="-1.2073675392798577e-15 4.005441811560928e-13 0.0022480078452118413" rpy="0 0 0"/>
+    <origin xyz="6.938893903907228e-18 4.006101006481799e-13 0.0022480078452116357" rpy="0 0 0"/>
     <mass value="0.002203374250243251"/>
-    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="-0.0"/>
   </inertial>
   <visual>
-    <origin xyz="-0.046 -0.0233 -1.273" rpy="0 0 0"/>
+    <origin xyz="-0.046 -0.0235 -0.0065" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/ISO_4762_-_M4_x_12ISO_3.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="-0.046 -0.0233 -1.273" rpy="0 0 0"/>
+    <origin xyz="-0.046 -0.0235 -0.0065" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/ISO_4762_-_M4_x_12ISO_3.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -174,19 +174,19 @@
 
 <link name="ISO_4762_-_M4_x_12ISO_4">
   <inertial>
-    <origin xyz="-1.2420620087993939e-15 4.005441811560928e-13 0.0022480078452118413" rpy="0 0 0"/>
+    <origin xyz="-6.938893903907228e-18 4.006101006481799e-13 0.0022480078452116357" rpy="0 0 0"/>
     <mass value="0.002203374250243251"/>
     <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
   </inertial>
   <visual>
-    <origin xyz="0.046 -0.0233 -1.273" rpy="0 0 0"/>
+    <origin xyz="0.046 -0.0235 -0.0065" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/ISO_4762_-_M4_x_12ISO_4.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="0.046 -0.0233 -1.273" rpy="0 0 0"/>
+    <origin xyz="0.046 -0.0235 -0.0065" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/ISO_4762_-_M4_x_12ISO_4.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -195,19 +195,19 @@
 
 <link name="BE_20-030_CUSTOMER_v1_1">
   <inertial>
-    <origin xyz="0.015485870461579525 -0.010207189127588253 0.004903018801766246" rpy="0 0 0"/>
+    <origin xyz="0.015485870461580746 -0.010207189127588168 0.00490301880176619" rpy="0 0 0"/>
     <mass value="0.07101056528211638"/>
     <inertia ixx="7e-06" iyy="8e-06" izz="1.4e-05" ixy="4e-06" iyz="0.0" ixz="-0.0"/>
   </inertial>
   <visual>
-    <origin xyz="-0.002 -0.0183 -1.3475" rpy="0 0 0"/>
+    <origin xyz="-0.002 -0.0185 -0.081" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/BE_20-030_CUSTOMER_v1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="-0.002 -0.0183 -1.3475" rpy="0 0 0"/>
+    <origin xyz="-0.002 -0.0185 -0.081" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/BE_20-030_CUSTOMER_v1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -216,19 +216,19 @@
 
 <link name="BE_20-030_CUSTOMER_v1_2">
   <inertial>
-    <origin xyz="-0.015485870461581964 0.010207189127588083 0.004903018801766246" rpy="0 0 0"/>
+    <origin xyz="-0.01548587046158074 0.010207189127588164 0.004903018801766482" rpy="0 0 0"/>
     <mass value="0.07101056528211638"/>
     <inertia ixx="7e-06" iyy="8e-06" izz="1.4e-05" ixy="4e-06" iyz="-0.0" ixz="0.0"/>
   </inertial>
   <visual>
-    <origin xyz="0.002 0.0187 -1.3475" rpy="0 0 0"/>
+    <origin xyz="0.002 0.0185 -0.081" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/BE_20-030_CUSTOMER_v1_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="0.002 0.0187 -1.3475" rpy="0 0 0"/>
+    <origin xyz="0.002 0.0185 -0.081" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/BE_20-030_CUSTOMER_v1_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -237,19 +237,19 @@
 
 <link name="FE_20-050_CUSTOMER_v1_1">
   <inertial>
-    <origin xyz="-0.02490840766558951 -4.1823098803628334e-17 6.768003808832468e-05" rpy="0 0 0"/>
+    <origin xyz="-0.024908407665588283 4.2697955629571524e-17 6.768003808842182e-05" rpy="0 0 0"/>
     <mass value="0.11001397809346045"/>
     <inertia ixx="8e-06" iyy="4.5e-05" izz="4.4e-05" ixy="0.0" iyz="0.0" ixz="-7e-06"/>
   </inertial>
   <visual>
-    <origin xyz="0.027 0.0002 -1.3575" rpy="0 0 0"/>
+    <origin xyz="0.027 -0.0 -0.091" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/FE_20-050_CUSTOMER_v1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="0.027 0.0002 -1.3575" rpy="0 0 0"/>
+    <origin xyz="0.027 -0.0 -0.091" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/FE_20-050_CUSTOMER_v1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -258,19 +258,19 @@
 
 <link name="FE_20-050_CUSTOMER_v1_2">
   <inertial>
-    <origin xyz="0.02490840766558706 -1.2053617652607596e-16 6.768003808832468e-05" rpy="0 0 0"/>
+    <origin xyz="0.024908407665588283 -3.5973615060177414e-17 6.768003808813039e-05" rpy="0 0 0"/>
     <mass value="0.11001397809346045"/>
-    <inertia ixx="8e-06" iyy="4.5e-05" izz="4.4e-05" ixy="0.0" iyz="-0.0" ixz="7e-06"/>
+    <inertia ixx="8e-06" iyy="4.5e-05" izz="4.4e-05" ixy="0.0" iyz="0.0" ixz="7e-06"/>
   </inertial>
   <visual>
-    <origin xyz="-0.027 0.0002 -1.3575" rpy="0 0 0"/>
+    <origin xyz="-0.027 -0.0 -0.091" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/FE_20-050_CUSTOMER_v1_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="-0.027 0.0002 -1.3575" rpy="0 0 0"/>
+    <origin xyz="-0.027 -0.0 -0.091" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/FE_20-050_CUSTOMER_v1_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -279,19 +279,19 @@
 
 <link name="AC_20-025_CUSTOMER_v1_1">
   <inertial>
-    <origin xyz="-0.0019437600342801509 -3.553472620321241e-17 0.01432838830627281" rpy="0 0 0"/>
+    <origin xyz="-0.0019437600342789296 4.9016599869557765e-17 0.014328388306272866" rpy="0 0 0"/>
     <mass value="0.07018824497649055"/>
-    <inertia ixx="9e-06" iyy="9e-06" izz="4e-06" ixy="0.0" iyz="-0.0" ixz="1e-06"/>
+    <inertia ixx="9e-06" iyy="9e-06" izz="4e-06" ixy="-0.0" iyz="-0.0" ixz="1e-06"/>
   </inertial>
   <visual>
-    <origin xyz="0.077 0.0002 -1.3575" rpy="0 0 0"/>
+    <origin xyz="0.077 -0.0 -0.091" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/AC_20-025_CUSTOMER_v1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="0.077 0.0002 -1.3575" rpy="0 0 0"/>
+    <origin xyz="0.077 -0.0 -0.091" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/AC_20-025_CUSTOMER_v1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -300,19 +300,19 @@
 
 <link name="AC_20-025_CUSTOMER_v1_2">
   <inertial>
-    <origin xyz="0.0019437600342776667 -8.798300629719868e-17 0.01432838830627281" rpy="0 0 0"/>
+    <origin xyz="0.0019437600342788741 -3.4542467379448414e-18 0.014328388306272866" rpy="0 0 0"/>
     <mass value="0.07018824497649055"/>
     <inertia ixx="9e-06" iyy="9e-06" izz="4e-06" ixy="-0.0" iyz="0.0" ixz="-1e-06"/>
   </inertial>
   <visual>
-    <origin xyz="-0.077 0.0002 -1.3575" rpy="0 0 0"/>
+    <origin xyz="-0.077 0.0 -0.091" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/AC_20-025_CUSTOMER_v1_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="-0.077 0.0002 -1.3575" rpy="0 0 0"/>
+    <origin xyz="-0.077 0.0 -0.091" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/AC_20-025_CUSTOMER_v1_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -321,19 +321,19 @@
 
 <link name="FT_20-UNI_CUSTOMER_v1_1">
   <inertial>
-    <origin xyz="-0.009779007136436382 2.224221783315994e-14 6.0466063424691185e-05" rpy="0 0 0"/>
+    <origin xyz="-0.009779007136435161 2.232677242265524e-14 6.046606342535732e-05" rpy="0 0 0"/>
     <mass value="0.05314853137521012"/>
     <inertia ixx="3e-06" iyy="3e-06" izz="3e-06" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
   </inertial>
   <visual>
-    <origin xyz="-0.077 0.0002 -1.3825" rpy="0 0 0"/>
+    <origin xyz="-0.077 0.0 -0.116" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/FT_20-UNI_CUSTOMER_v1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="-0.077 0.0002 -1.3825" rpy="0 0 0"/>
+    <origin xyz="-0.077 0.0 -0.116" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/FT_20-UNI_CUSTOMER_v1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -342,19 +342,19 @@
 
 <link name="DP_20-005_CUSTOMER_v1">
   <inertial>
-    <origin xyz="0.0024999999999987116 -3.5670251474773096e-17 8.43769498715119e-15" rpy="0 0 0"/>
+    <origin xyz="0.0024999999999999467 4.884362327714104e-17 8.895661984809067e-15" rpy="0 0 0"/>
     <mass value="0.013785256620825458"/>
-    <inertia ixx="1e-06" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+    <inertia ixx="1e-06" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="-0.0"/>
   </inertial>
   <visual>
-    <origin xyz="0.077 0.0002 -1.3825" rpy="0 0 0"/>
+    <origin xyz="0.077 -0.0 -0.116" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/DP_20-005_CUSTOMER_v1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="0.077 0.0002 -1.3825" rpy="0 0 0"/>
+    <origin xyz="0.077 -0.0 -0.116" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/DP_20-005_CUSTOMER_v1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -363,19 +363,19 @@
 
 <link name="TE_20-060_CUSTOMER_v1">
   <inertial>
-    <origin xyz="-0.0008571292023898808 -1.199661572338917e-14 -4.440892098500626e-16" rpy="0 0 0"/>
+    <origin xyz="-0.0008571292023886595 -1.1912076126518881e-14 -6.522560269672795e-16" rpy="0 0 0"/>
     <mass value="0.14167393741313877"/>
     <inertia ixx="7e-05" iyy="9e-06" izz="6.9e-05" ixy="-0.0" iyz="0.0" ixz="0.0"/>
   </inertial>
   <visual>
-    <origin xyz="0.072 0.0002 -1.3825" rpy="0 0 0"/>
+    <origin xyz="0.072 -0.0 -0.116" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/TE_20-060_CUSTOMER_v1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="0.072 0.0002 -1.3825" rpy="0 0 0"/>
+    <origin xyz="0.072 -0.0 -0.116" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/TE_20-060_CUSTOMER_v1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -384,19 +384,19 @@
 
 <link name="FT_20-UNI_CUSTOMER_v1_2">
   <inertial>
-    <origin xyz="0.009779007136433884 6.0466063425076294e-05 2.0872192862952943e-14" rpy="0 0 0"/>
+    <origin xyz="0.009779007136435106 6.046606342518038e-05 2.1690982343613996e-14" rpy="0 0 0"/>
     <mass value="0.05314853137521012"/>
     <inertia ixx="3e-06" iyy="3e-06" izz="3e-06" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
   </inertial>
   <visual>
-    <origin xyz="0.072 -0.0298 -1.3825" rpy="0 0 0"/>
+    <origin xyz="0.072 -0.03 -0.116" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/FT_20-UNI_CUSTOMER_v1_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="0.072 -0.0298 -1.3825" rpy="0 0 0"/>
+    <origin xyz="0.072 -0.03 -0.116" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/FT_20-UNI_CUSTOMER_v1_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -405,27 +405,27 @@
 
 <link name="FT_20-UNI_CUSTOMER_v1_3">
   <inertial>
-    <origin xyz="0.009779007136433843 -6.0466063425260175e-05 -2.3092638912203256e-14" rpy="0 0 0"/>
+    <origin xyz="0.009779007136435092 -6.046606342515262e-05 -2.210731597784843e-14" rpy="0 0 0"/>
     <mass value="0.05314853137521012"/>
     <inertia ixx="3e-06" iyy="3e-06" izz="3e-06" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
   </inertial>
   <visual>
-    <origin xyz="0.072 0.0302 -1.3825" rpy="0 0 0"/>
+    <origin xyz="0.072 0.03 -0.116" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/FT_20-UNI_CUSTOMER_v1_3.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="0.072 0.0302 -1.3825" rpy="0 0 0"/>
+    <origin xyz="0.072 0.03 -0.116" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://gripkit_cr_plus_l_ad_description/meshes/FT_20-UNI_CUSTOMER_v1_3.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<joint name="Rigid08" type="fixed">
-  <origin xyz="0.046 0.0015 0.011" rpy="0 0 0"/>
+<joint name="Rigid10" type="fixed">
+  <origin xyz="0.046 -0.0235 0.011" rpy="0 0 0"/>
   <parent link="SF-ISO50-CRG200_Customer"/>
   <child link="CRG200_body"/>
 </joint>
@@ -446,97 +446,97 @@
   <limit upper="0.021" lower="-0.021" effort="100" velocity="100"/>
 </joint>
 
-<joint name="Rigid09" type="fixed">
+<joint name="Rigid11" type="fixed">
   <origin xyz="-0.046 0.0235 0.0601" rpy="0 0 0"/>
   <parent link="CRG200_body"/>
   <child link="CRG200_top_cover"/>
 </joint>
 
-<joint name="Rigid10" type="fixed">
-  <origin xyz="-0.046 0.0015 0.0065" rpy="0 0 0"/>
+<joint name="Rigid12" type="fixed">
+  <origin xyz="-0.046 -0.0235 0.0065" rpy="0 0 0"/>
   <parent link="SF-ISO50-CRG200_Customer"/>
   <child link="ISO_4762_-_M4_x_12ISO_1"/>
 </joint>
 
-<joint name="Rigid11" type="fixed">
-  <origin xyz="0.046 0.0015 0.0065" rpy="0 0 0"/>
+<joint name="Rigid13" type="fixed">
+  <origin xyz="0.046 -0.0235 0.0065" rpy="0 0 0"/>
   <parent link="SF-ISO50-CRG200_Customer"/>
   <child link="ISO_4762_-_M4_x_12ISO_2"/>
 </joint>
 
-<joint name="Rigid12" type="fixed">
-  <origin xyz="0.046 0.0485 0.0065" rpy="0 0 0"/>
+<joint name="Rigid14" type="fixed">
+  <origin xyz="0.046 0.0235 0.0065" rpy="0 0 0"/>
   <parent link="SF-ISO50-CRG200_Customer"/>
   <child link="ISO_4762_-_M4_x_12ISO_3"/>
 </joint>
 
-<joint name="Rigid13" type="fixed">
-  <origin xyz="-0.046 0.0485 0.0065" rpy="0 0 0"/>
+<joint name="Rigid15" type="fixed">
+  <origin xyz="-0.046 0.0235 0.0065" rpy="0 0 0"/>
   <parent link="SF-ISO50-CRG200_Customer"/>
   <child link="ISO_4762_-_M4_x_12ISO_4"/>
 </joint>
 
-<joint name="Rigid14" type="fixed">
+<joint name="Rigid16" type="fixed">
   <origin xyz="0.002 0.0 0.0124" rpy="0 0 0"/>
   <parent link="CRG200_base_jaw_2"/>
   <child link="BE_20-030_CUSTOMER_v1_1"/>
 </joint>
 
-<joint name="Rigid15" type="fixed">
+<joint name="Rigid17" type="fixed">
   <origin xyz="-0.002 0.0 0.0124" rpy="0 0 0"/>
   <parent link="CRG200_base_jaw_1"/>
   <child link="BE_20-030_CUSTOMER_v1_2"/>
 </joint>
 
-<joint name="Rigid16" type="fixed">
+<joint name="Rigid18" type="fixed">
   <origin xyz="-0.025 0.0185 0.01" rpy="0 0 0"/>
   <parent link="BE_20-030_CUSTOMER_v1_2"/>
   <child link="FE_20-050_CUSTOMER_v1_1"/>
 </joint>
 
-<joint name="Rigid17" type="fixed">
+<joint name="Rigid19" type="fixed">
   <origin xyz="0.025 -0.0185 0.01" rpy="0 0 0"/>
   <parent link="BE_20-030_CUSTOMER_v1_1"/>
   <child link="FE_20-050_CUSTOMER_v1_2"/>
 </joint>
 
-<joint name="Rigid18" type="fixed">
+<joint name="Rigid20" type="fixed">
   <origin xyz="-0.05 0.0 0.0" rpy="0 0 0"/>
   <parent link="FE_20-050_CUSTOMER_v1_1"/>
   <child link="AC_20-025_CUSTOMER_v1_1"/>
 </joint>
 
-<joint name="Rigid19" type="fixed">
-  <origin xyz="0.05 0.0 0.0" rpy="0 0 0"/>
+<joint name="Rigid21" type="fixed">
+  <origin xyz="0.05 -0.0 0.0" rpy="0 0 0"/>
   <parent link="FE_20-050_CUSTOMER_v1_2"/>
   <child link="AC_20-025_CUSTOMER_v1_2"/>
 </joint>
 
-<joint name="Rigid20" type="fixed">
+<joint name="Rigid22" type="fixed">
   <origin xyz="0.0 0.0 0.025" rpy="0 0 0"/>
   <parent link="AC_20-025_CUSTOMER_v1_2"/>
   <child link="FT_20-UNI_CUSTOMER_v1_1"/>
 </joint>
 
-<joint name="Rigid21" type="fixed">
+<joint name="Rigid23" type="fixed">
   <origin xyz="0.0 0.0 0.025" rpy="0 0 0"/>
   <parent link="AC_20-025_CUSTOMER_v1_1"/>
   <child link="DP_20-005_CUSTOMER_v1"/>
 </joint>
 
-<joint name="Rigid22" type="fixed">
+<joint name="Rigid24" type="fixed">
   <origin xyz="0.005 0.0 0.0" rpy="0 0 0"/>
   <parent link="DP_20-005_CUSTOMER_v1"/>
   <child link="TE_20-060_CUSTOMER_v1"/>
 </joint>
 
-<joint name="Rigid23" type="fixed">
+<joint name="Rigid25" type="fixed">
   <origin xyz="0.0 0.03 0.0" rpy="0 0 0"/>
   <parent link="TE_20-060_CUSTOMER_v1"/>
   <child link="FT_20-UNI_CUSTOMER_v1_2"/>
 </joint>
 
-<joint name="Rigid24" type="fixed">
+<joint name="Rigid26" type="fixed">
   <origin xyz="0.0 -0.03 0.0" rpy="0 0 0"/>
   <parent link="TE_20-060_CUSTOMER_v1"/>
   <child link="FT_20-UNI_CUSTOMER_v1_3"/>

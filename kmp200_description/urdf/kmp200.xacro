@@ -46,7 +46,7 @@
   </collision>
 </link>
 
-<joint name="Rigid2" type="fixed">
+<joint name="Rigid02" type="fixed">
   <origin xyz="0.54 0.0 0.64" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="cover"/>

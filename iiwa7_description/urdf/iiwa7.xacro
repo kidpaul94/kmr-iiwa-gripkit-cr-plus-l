@@ -4,10 +4,132 @@
 <xacro:include filename="$(find iiwa7_description)/urdf/iiwa7.trans" />
 <xacro:include filename="$(find iiwa7_description)/urdf/iiwa7.gazebo" />
 
-<link name="world">
+<link name="screw_1">
+  <inertial>
+    <origin xyz="-1.4832773006889655e-05 -0.0010378724707667056 6.521979453832927e-06" rpy="0 0 0"/>
+    <mass value="0.002693161929654313"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="5e-06 0.050502 -1.24843" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://iiwa7_description/meshes/screw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="5e-06 0.050502 -1.24843" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://iiwa7_description/meshes/screw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
 </link>
-<link name="base_footprint">
+
+<link name="screw_2">
+  <inertial>
+    <origin xyz="-0.0010378600926400153 1.0141815646168306e-06 -1.6335772665687642e-05" rpy="0 0 0"/>
+    <mass value="0.0026932173030154564"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.050305 0.000202 -1.24843" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://iiwa7_description/meshes/screw_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.050305 0.000202 -1.24843" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://iiwa7_description/meshes/screw_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
 </link>
+
+<link name="screw_3">
+  <inertial>
+    <origin xyz="-4.149384437101288e-06 0.0010377280731967073 1.5737373303847946e-05" rpy="0 0 0"/>
+    <mass value="0.002693745664184645"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="5e-06 -0.050098 -1.24843" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://iiwa7_description/meshes/screw_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="5e-06 -0.050098 -1.24843" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://iiwa7_description/meshes/screw_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="screw_4">
+  <inertial>
+    <origin xyz="0.0010379018086611527 -1.593483652835768e-05 -1.5134811208739052e-06" rpy="0 0 0"/>
+    <mass value="0.0026933743563882172"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.050295 0.000202 -1.24843" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://iiwa7_description/meshes/screw_4.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.050295 0.000202 -1.24843" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://iiwa7_description/meshes/screw_4.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="screw_5">
+  <inertial>
+    <origin xyz="0.0007223980954759596 -0.0007453654014303521 -8.180558541681648e-08" rpy="0 0 0"/>
+    <mass value="0.002693701452940877"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.035567 0.035767 -1.2435" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://iiwa7_description/meshes/screw_5.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.035567 0.035767 -1.2435" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://iiwa7_description/meshes/screw_5.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="screw_6">
+  <inertial>
+    <origin xyz="-0.0007456775319143946 0.0007228508330246464 2.4728906569126963e-06" rpy="0 0 0"/>
+    <mass value="0.0026933936118932553"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.035567 -0.035367 -1.2435" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://iiwa7_description/meshes/screw_6.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.035567 -0.035367 -1.2435" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://iiwa7_description/meshes/screw_6.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
 <link name="link_0">
   <inertial>
     <origin xyz="-0.012832431040764161 -4.5637556731516346e-08 0.07010426148644754" rpy="0 0 0"/>
@@ -25,132 +147,6 @@
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://iiwa7_description/meshes/link_0.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
-
-<link name="screw_1">
-  <inertial>
-    <origin xyz="0.00010532202107516823 0.0010327802160219474 6.521979454054971e-06" rpy="0 0 0"/>
-    <mass value="0.002693161929654313"/>
-    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
-  </inertial>
-  <visual>
-    <origin xyz="-0.004389 -0.04991 -1.24843" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="package://iiwa7_description/meshes/screw_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin xyz="-0.004389 -0.04991 -1.24843" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="package://iiwa7_description/meshes/screw_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
-
-<link name="screw_2">
-  <inertial>
-    <origin xyz="0.0010335709288897404 -9.08430390645712e-05 -1.6335772665687642e-05" rpy="0 0 0"/>
-    <mass value="0.0026932173030154564"/>
-    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
-  </inertial>
-  <visual>
-    <origin xyz="-0.050114 0.004583 -1.24843" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="package://iiwa7_description/meshes/screw_2.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin xyz="-0.050114 0.004583 -1.24843" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="package://iiwa7_description/meshes/screw_2.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
-
-<link name="screw_3">
-  <inertial>
-    <origin xyz="-8.608894144667995e-05 -0.001034177550594477 1.573737330406999e-05" rpy="0 0 0"/>
-    <mass value="0.002693745664184645"/>
-    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
-  </inertial>
-  <visual>
-    <origin xyz="0.004379 0.050307 -1.24843" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="package://iiwa7_description/meshes/screw_3.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin xyz="0.004379 0.050307 -1.24843" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="package://iiwa7_description/meshes/screw_3.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
-
-<link name="screw_4">
-  <inertial>
-    <origin xyz="-0.0010320014954562015 0.00010682377358710391 -1.5134811206518606e-06" rpy="0 0 0"/>
-    <mass value="0.0026933743563882172"/>
-    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
-  </inertial>
-  <visual>
-    <origin xyz="0.050104 -0.004185 -1.24843" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="package://iiwa7_description/meshes/screw_4.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin xyz="0.050104 -0.004185 -1.24843" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="package://iiwa7_description/meshes/screw_4.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
-
-<link name="screw_5">
-  <inertial>
-    <origin xyz="-0.0006544748021702906 0.0008050153329516724 -8.180558541681648e-08" rpy="0 0 0"/>
-    <mass value="0.002693701452940877"/>
-    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
-  </inertial>
-  <visual>
-    <origin xyz="0.032332 -0.038332 -1.2435" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="package://iiwa7_description/meshes/screw_5.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin xyz="0.032332 -0.038332 -1.2435" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="package://iiwa7_description/meshes/screw_5.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
-
-<link name="screw_6">
-  <inertial>
-    <origin xyz="0.0006796279272519301 -0.0007846153758497079 2.472890657134741e-06" rpy="0 0 0"/>
-    <mass value="0.0026933936118932553"/>
-    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
-  </inertial>
-  <visual>
-    <origin xyz="-0.032332 0.038732 -1.2435" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="package://iiwa7_description/meshes/screw_6.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin xyz="-0.032332 0.038732 -1.2435" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="package://iiwa7_description/meshes/screw_6.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -262,7 +258,7 @@
 
 <link name="link_6">
   <inertial>
-    <origin xyz="-2.784005425984457e-07 0.07098688488077398 0.002115616520607766" rpy="0 0 0"/>
+    <origin xyz="-2.784005425940048e-07 0.07098688488077398 0.002115616520607766" rpy="0 0 0"/>
     <mass value="2.3466"/>
     <inertia ixx="0.006509"  ixy="0"  ixz="0" iyy="0.006259" iyz="0.00031891" izz="0.004527"/>
   </inertial>
@@ -283,7 +279,7 @@
 
 <link name="flange">
   <inertial>
-    <origin xyz="-4.642832106049604e-06 3.8883747105610965e-07 0.009981852938580671" rpy="0 0 0"/>
+    <origin xyz="4.659054144329294e-06 1.7291653306211654e-08 0.009981852938580671" rpy="0 0 0"/>
     <mass value="3.129"/>
     <inertia ixx="0.01464"  ixy="0.0005912"  ixz="0" iyy="0.01465" iyz="0" izz="0.002872"/>
   </inertial>
@@ -302,50 +298,38 @@
   </collision>
 </link>
 
-<joint name="world_joint" type="fixed">
-  <origin xyz="0 0 0" rpy="0 0 0"/>
-  <parent link="world"/>
-  <child link="base_footprint"/>
-</joint>
-
-<joint name="base_footprint_joint" type="fixed">
-  <origin xyz="0 0 0" rpy="0 0 0"/>
-  <parent link="base_footprint"/>
-  <child link="link_0"/>
-</joint>
-
-<joint name="Rigid01" type="fixed">
-  <origin xyz="0.004389 0.05011 0.01703" rpy="0 0 0"/>
+<joint name="Rigid03" type="fixed">
+  <origin xyz="-5e-06 -0.050302 0.01703" rpy="0 0 0"/>
   <parent link="flange"/>
   <child link="screw_1"/>
 </joint>
 
-<joint name="Rigid02" type="fixed">
-  <origin xyz="0.050114 -0.004383 0.01703" rpy="0 0 0"/>
+<joint name="Rigid04" type="fixed">
+  <origin xyz="-0.050305 -2e-06 0.01703" rpy="0 0 0"/>
   <parent link="flange"/>
   <child link="screw_2"/>
 </joint>
 
-<joint name="Rigid03" type="fixed">
-  <origin xyz="-0.004379 -0.050107 0.01703" rpy="0 0 0"/>
+<joint name="Rigid05" type="fixed">
+  <origin xyz="-5e-06 0.050298 0.01703" rpy="0 0 0"/>
   <parent link="flange"/>
   <child link="screw_3"/>
 </joint>
 
-<joint name="Rigid04" type="fixed">
-  <origin xyz="-0.050104 0.004385 0.01703" rpy="0 0 0"/>
+<joint name="Rigid06" type="fixed">
+  <origin xyz="0.050295 -2e-06 0.01703" rpy="0 0 0"/>
   <parent link="flange"/>
   <child link="screw_4"/>
 </joint>
 
-<joint name="Rigid05" type="fixed">
-  <origin xyz="-0.032332 0.038532 0.0121" rpy="0 0 0"/>
+<joint name="Rigid07" type="fixed">
+  <origin xyz="0.035567 -0.035567 0.0121" rpy="0 0 0"/>
   <parent link="flange"/>
   <child link="screw_5"/>
 </joint>
 
-<joint name="Rigid06" type="fixed">
-  <origin xyz="0.032332 -0.038532 0.0121" rpy="0 0 0"/>
+<joint name="Rigid08" type="fixed">
+  <origin xyz="-0.035567 0.035567 0.0121" rpy="0 0 0"/>
   <parent link="flange"/>
   <child link="screw_6"/>
 </joint>

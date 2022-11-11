@@ -1,7 +1,7 @@
 <launch>
-  <arg name="model" default="$(find kmr_iiwa_gripkit_cr_plus_l_bb_description)/urdf/kmr_iiwa_gripkit_cr_plus_l_bb.xacro"/>
+  <arg name="model" default="$(find kmr_iiwa_gripkit_cr_plus_l_description)/urdf/kmr_iiwa_gripkit_cr_plus_l.xacro"/>
   <arg name="gui" default="true"/>
-  <arg name="rvizconfig" default="$(find kmr_iiwa_gripkit_cr_plus_l_bb_description)/launch/urdf.rviz"/>
+  <arg name="rvizconfig" default="$(find kmr_iiwa_gripkit_cr_plus_l_description)/launch/urdf.rviz"/>
   <param name="robot_description" command="$(find xacro)/xacro $(arg model)"/>
   <param name="use_gui" value="$(arg gui)"/>
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
