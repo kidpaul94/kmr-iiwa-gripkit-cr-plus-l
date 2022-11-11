@@ -15,7 +15,7 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
     └── kmr_iiwa_gripkit_cr_plus_l_moveit
 
 ## Note
-At a moment, we are currently preparing a reconfigurable moveit file.
+At the moment, we are currently preparing a reconfigurable moveit file.
 
 ## How to use
 Download the repository:
