@@ -31,7 +31,7 @@
 <xacro:if value="${mobile_base == 'kmp200'}"> 
   <xacro:include filename="$(find kmp200_description)/urdf/kmp200.xacro" />
   <joint name="Rigid01" type="fixed">
-    <origin xyz="0.358053 -0.183769 0.701151" rpy="0 0 -1.5708"/>
+    <origin xyz="0.3633 -0.1842 0.7011" rpy="0 0 -1.5708"/>
     <parent link="base_link"/>
     <child link="link_0"/>
   </joint>
