@@ -10,8 +10,9 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
     ├── gripkit_cr_plus_l_cc_description
     ├── gripkit_cr_plus_l_dd_description
     ├── iiwa7_description              
-    ├── kmp200_description                           
-    └── kmr_iiwa_gripkit_cr_plus_l_description 
+    ├── kmp200_description
+    ├── kmr_iiwa_gripkit_cr_plus_l_description  
+    └── kmr_iiwa_gripkit_cr_plus_l_moveit
 
 ## Note
 At a moment, we are currently preparing a reconfigurable moveit file.
