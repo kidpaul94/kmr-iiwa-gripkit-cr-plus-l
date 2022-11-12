@@ -15,7 +15,7 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
     └── kmr_iiwa_gripkit_cr_plus_l_moveit
 
 ## Note
-At the moment, we are currently preparing a reconfigurable moveit file.
+At the moment, we are currently tuning physical parameters of ROS controller.
 
 ## How to use
 Download the repository:
@@ -39,4 +39,4 @@ To run the MoveIt with gazebo:
     roslaunch kmr_iiwa_gripkit_cr_plus_l_moveit_config demo_gazebo.launch controller_type:=(choose Position, Velocity, Effort)
     
 **ToDo Lists**
-- [ ] prepare the reconfigurable moveit file
+- [X] prepare the reconfigurable moveit file
