@@ -13,9 +13,11 @@
   </include>
 
   <!-- send robot urdf to param server -->
+  <arg name="ee_type" default="bb" />
+  <arg name="mobile_base" default="kmp200" />
   <arg name="controller_type" default="Effort" />
   <param name="robot_description" command="xacro  '$(find kmr_iiwa_gripkit_cr_plus_l_description)/urdf/kmr_iiwa_gripkit_cr_plus_l.xacro'
-  controller_type:=$(arg controller_type)" />
+  ee_type:=$(arg ee_type) mobile_base:=$(arg mobile_base) controller_type:=$(arg controller_type)" />
 
   <!-- unpause only after loading robot model -->
   <arg name="unpause" value="$(eval '' if arg('paused') else '-unpause')" />

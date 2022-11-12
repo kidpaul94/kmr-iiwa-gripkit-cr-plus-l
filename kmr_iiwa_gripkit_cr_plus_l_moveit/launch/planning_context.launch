@@ -4,12 +4,27 @@
 
   <!-- The name of the parameter under which the URDF is loaded -->
   <arg name="robot_description" default="robot_description"/>
-
+  <arg name="ee_type" default="bb" />
+  <arg name="mobile_base" default="kmp200" />
+  <arg name="controller_type" default="Effort" />
+  
   <!-- Load universal robot description format (URDF) -->
-  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="xacro  '$(find kmr_iiwa_gripkit_cr_plus_l_description)/urdf/kmr_iiwa_gripkit_cr_plus_l.xacro'"/>
+  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="xacro  '$(find kmr_iiwa_gripkit_cr_plus_l_description)/urdf/kmr_iiwa_gripkit_cr_plus_l.xacro'
+  ee_type:=$(arg ee_type) mobile_base:=$(arg mobile_base) controller_type:=$(arg controller_type)"/>
 
   <!-- The semantic description that corresponds to the URDF -->
-  <param name="$(arg robot_description)_semantic" textfile="$(find kmr_iiwa_gripkit_cr_plus_l_moveit)/config/kmr_iiwa_gripkit_cr_plus_l.srdf" />
+  <group if="$(eval arg('ee_type') == 'ad')">
+    <param name="$(arg robot_description)_semantic" textfile="$(find kmr_iiwa_gripkit_cr_plus_l_moveit)/config/kmr_iiwa_gripkit_cr_plus_l_ad.srdf" />
+  </group>
+  <group if="$(eval arg('ee_type') == 'bb')">
+    <param name="$(arg robot_description)_semantic" textfile="$(find kmr_iiwa_gripkit_cr_plus_l_moveit)/config/kmr_iiwa_gripkit_cr_plus_l_bb.srdf" />
+  </group>
+  <group if="$(eval arg('ee_type') == 'cc')">
+    <param name="$(arg robot_description)_semantic" textfile="$(find kmr_iiwa_gripkit_cr_plus_l_moveit)/config/kmr_iiwa_gripkit_cr_plus_l_cc.srdf" />
+  </group>
+  <group if="$(eval arg('ee_type') == 'dd')">
+    <param name="$(arg robot_description)_semantic" textfile="$(find kmr_iiwa_gripkit_cr_plus_l_moveit)/config/kmr_iiwa_gripkit_cr_plus_l_dd.srdf" />
+  </group>
 
   <!-- Load updated joint limits (override information from URDF) -->
   <group ns="$(arg robot_description)_planning">

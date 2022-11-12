@@ -44,6 +44,9 @@
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
   </group>
 
+  <arg name="ee_type" default="$(arg ee_type)" />
+  <arg name="mobile_base" default="$(arg mobile_base)" />
+  <arg name="controller_type" default="$(arg controller_type)" />
   <!-- Run the main MoveIt executable without trajectory execution (we do not have controllers configured by default) -->
   <include file="$(dirname)/move_group.launch">
     <arg name="allow_trajectory_execution" value="true"/>
@@ -53,6 +56,9 @@
     <arg name="debug" value="$(arg debug)"/>
     <arg name="pipeline" value="$(arg pipeline)"/>
     <arg name="load_robot_description" value="$(arg load_robot_description)"/>
+    <arg name="ee_type" value="$(arg ee_type)" />
+    <arg name="mobile_base" value="$(arg mobile_base)" />
+    <arg name="controller_type" value="$(arg controller_type)" />
   </include>
 
   <!-- Run Rviz and load the default config to see the state of the move_group node -->
