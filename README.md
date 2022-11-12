@@ -28,7 +28,7 @@ Download the repository:
     
 To visual the URDF in gazebo:
 
-    roslaunch kmr_iiwa_gripkit_cr_plus_l_description gazebo.launch ee_type:=(choose ad, bb, cc, or dd) mobile_base:=(choose kmp200 or None)
+    roslaunch kmr_iiwa_gripkit_cr_plus_l_description gazebo.launch ee_type:=(choose ad, bb, cc, or dd) mobile_base:=(choose kmp200 or None) controller_type:=(choose Position, Velocity, Effort)
     
 To run the MoveIt:
 
@@ -36,7 +36,7 @@ To run the MoveIt:
 
 To run the MoveIt with gazebo:
 
-    roslaunch kmr_iiwa_gripkit_cr_plus_l_moveit_config demo_gazebo.launch controller_type:=(choose Position, Velocity, Effort)
+    roslaunch kmr_iiwa_gripkit_cr_plus_l_moveit_config demo_gazebo.launch ee_type:=(choose ad, bb, cc, or dd) mobile_base:=(choose kmp200 or None) controller_type:=(choose Position, Velocity, Effort)
     
 **ToDo Lists**
 - [X] prepare the reconfigurable moveit file
