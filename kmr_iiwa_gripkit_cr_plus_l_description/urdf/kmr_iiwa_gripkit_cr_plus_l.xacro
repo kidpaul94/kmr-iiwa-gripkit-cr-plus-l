@@ -53,7 +53,7 @@
 <xacro:if value="${ee_type != 'None'}"> 
   <joint name="Rigid09" type="fixed">
     <origin xyz="0 0 0.0351" rpy="0 0 0"/>
-    <parent link="flange"/>
+    <parent link="link_7"/>
     <child link="SF-ISO50-CRG200_Customer"/>
   </joint>
 </xacro:if>

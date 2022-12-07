@@ -277,7 +277,7 @@
   </collision>
 </link>
 
-<link name="flange">
+<link name="link_7">
   <inertial>
     <origin xyz="4.659054144329294e-06 1.7291653306211654e-08 0.009981852938580671" rpy="0 0 0"/>
     <mass value="3.129"/>
@@ -286,51 +286,51 @@
   <visual>
     <origin xyz="0.0 0.0002 -1.2314" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://iiwa7_description/meshes/flange.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://iiwa7_description/meshes/link_7.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="0.0 0.0002 -1.2314" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://iiwa7_description/meshes/flange.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://iiwa7_description/meshes/link_7.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
 <joint name="Rigid03" type="fixed">
   <origin xyz="-5e-06 -0.050302 0.01703" rpy="0 0 0"/>
-  <parent link="flange"/>
+  <parent link="link_7"/>
   <child link="screw_1"/>
 </joint>
 
 <joint name="Rigid04" type="fixed">
   <origin xyz="-0.050305 -2e-06 0.01703" rpy="0 0 0"/>
-  <parent link="flange"/>
+  <parent link="link_7"/>
   <child link="screw_2"/>
 </joint>
 
 <joint name="Rigid05" type="fixed">
   <origin xyz="-5e-06 0.050298 0.01703" rpy="0 0 0"/>
-  <parent link="flange"/>
+  <parent link="link_7"/>
   <child link="screw_3"/>
 </joint>
 
 <joint name="Rigid06" type="fixed">
   <origin xyz="0.050295 -2e-06 0.01703" rpy="0 0 0"/>
-  <parent link="flange"/>
+  <parent link="link_7"/>
   <child link="screw_4"/>
 </joint>
 
 <joint name="Rigid07" type="fixed">
   <origin xyz="0.035567 -0.035567 0.0121" rpy="0 0 0"/>
-  <parent link="flange"/>
+  <parent link="link_7"/>
   <child link="screw_5"/>
 </joint>
 
 <joint name="Rigid08" type="fixed">
   <origin xyz="-0.035567 0.035567 0.0121" rpy="0 0 0"/>
-  <parent link="flange"/>
+  <parent link="link_7"/>
   <child link="screw_6"/>
 </joint>
 
@@ -385,7 +385,7 @@
 <joint name="Rev07" type="revolute">
   <origin xyz="0.0 0.0705 0.0909" rpy="0 0 0"/>
   <parent link="link_6"/>
-  <child link="flange"/>
+  <child link="link_7"/>
   <axis xyz="0.0 0.0 1.0"/>
   <limit upper="3.054326" lower="-3.054326" effort="100" velocity="100"/>
 </joint>
