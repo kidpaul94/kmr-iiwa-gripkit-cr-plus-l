@@ -1,8 +1,9 @@
 <launch>
+  <arg name="robot_name" default="kmriiwa" />
+  <arg name="hardware_interface" default="Effort" />
   <arg name="ee_type" default="bb" />
-  <arg name="mobile_base" default="kmp200" />
   <param name="robot_description" command="$(find xacro)/xacro $(find kmriiwa_description)/urdf/kmriiwa.xacro
-  ee_type:=$(arg ee_type) mobile_base:=$(arg mobile_base)"/>
+  robot_name:=$(arg robot_name) hardware_interface:=$(arg hardware_interface) ee_type:=$(arg ee_type)"/>
   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model kmriiwa"/>
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="paused" value="true"/>

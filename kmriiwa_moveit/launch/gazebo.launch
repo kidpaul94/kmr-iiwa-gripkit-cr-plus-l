@@ -13,11 +13,11 @@
   </include>
 
   <!-- send robot urdf to param server -->
+  <arg name="robot_name" default="kmriiwa" />
+  <arg name="hardware_interface" default="Effort" />
   <arg name="ee_type" default="bb" />
-  <arg name="mobile_base" default="kmp200" />
-  <arg name="controller_type" default="Effort" />
   <param name="robot_description" command="xacro  '$(find kmriiwa_description)/urdf/kmriiwa.xacro'
-  ee_type:=$(arg ee_type) mobile_base:=$(arg mobile_base) controller_type:=$(arg controller_type)" />
+  robot_name:=$(arg robot_name) hardware_interface:=$(arg hardware_interface) ee_type:=$(arg ee_type)" />
 
   <!-- unpause only after loading robot model -->
   <arg name="unpause" value="$(eval '' if arg('paused') else '-unpause')" />
@@ -32,6 +32,6 @@
   <node name="gazebo_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="joint_state_controller" />
   <!-- Load ROS controllers -->
   <include file="$(dirname)/ros_controllers.launch">
-    <arg name="controller_type" value="$(arg controller_type)" />
+    <arg name="hardware_interface" value="$(arg hardware_interface)" />
   </include>
 </launch>

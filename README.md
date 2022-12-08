@@ -11,8 +11,8 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
     ├── gripkit_cr_plus_l_dd_description
     ├── iiwa7_description              
     ├── kmp200_description
-    ├── kmr_iiwa_gripkit_cr_plus_l_description  
-    └── kmr_iiwa_gripkit_cr_plus_l_moveit
+    ├── kmriiwa_description  
+    └── kmriiwa_moveit
 
 ## Note
 At the moment, we are currently tuning physical parameters of ROS controller.
@@ -28,15 +28,15 @@ Download the repository:
     
 To visual the URDF in gazebo:
 
-    roslaunch kmr_iiwa_gripkit_cr_plus_l_description gazebo.launch ee_type:=(choose ad, bb, cc, or dd) mobile_base:=(choose kmp200 or None) controller_type:=(choose Position, Velocity, Effort)
+    roslaunch kmriiwa_description gazebo.launch robot_name:=(choose iiwa or kmriiwa) hardware_interface:=(choose Position, Velocity, or Effort) ee_type:=(choose ad, bb, cc, or dd)
     
 To run the MoveIt:
 
-    roslaunch kmr_iiwa_gripkit_cr_plus_l_moveit_config demo.launch 
+    roslaunch kmriiwa_moveit demo.launch robot_name:=(choose iiwa or kmriiwa) hardware_interface:=(choose Position, Velocity, or Effort) ee_type:=(choose ad, bb, cc, or dd)
 
 To run the MoveIt with gazebo:
 
-    roslaunch kmr_iiwa_gripkit_cr_plus_l_moveit_config demo_gazebo.launch ee_type:=(choose ad, bb, cc, or dd) mobile_base:=(choose kmp200 or None) controller_type:=(choose Position, Velocity, Effort)
+    roslaunch kmriiwa_moveit demo_gazebo.launch robot_name:=(choose iiwa or kmriiwa) hardware_interface:=(choose Position, Velocity, or Effort) ee_type:=(choose ad, bb, cc, or dd)
     
 **ToDo Lists**
 - [X] prepare the reconfigurable moveit file

@@ -6,25 +6,25 @@
   <!-- Gazebo specific options -->
   <arg name="gazebo_gui" default="true"/>
   <arg name="paused" default="false"/>
+  <arg name="robot_name" default="kmriiwa" />
+  <arg name="hardware_interface" default="Effort" />
   <arg name="ee_type" default="bb" />
-  <arg name="mobile_base" default="kmp200" />
-  <arg name="controller_type" default="Effort" />
 
   <!-- launch the gazebo simulator and spawn the robot -->
   <include file="$(dirname)/gazebo.launch" >
     <arg name="paused" value="$(arg paused)"/>
     <arg name="gazebo_gui" value="$(arg gazebo_gui)"/>
+    <arg name="robot_name" value="$(arg robot_name)" />
+    <arg name="hardware_interface" value="$(arg hardware_interface)" />
     <arg name="ee_type" value="$(arg ee_type)" />
-    <arg name="mobile_base" value="$(arg mobile_base)" />
-    <arg name="controller_type" value="$(arg controller_type)" />
   </include>
 
   <include file="$(dirname)/demo.launch" pass_all_args="true">
     <!-- robot description is loaded by gazebo.launch, to enable Gazebo features -->
     <arg name="load_robot_description" value="false" />
     <arg name="moveit_controller_manager" value="ros_control" />
+    <arg name="robot_name" value="$(arg robot_name)" />
+    <arg name="hardware_interface" value="$(arg hardware_interface)" />
     <arg name="ee_type" value="$(arg ee_type)" />
-    <arg name="mobile_base" value="$(arg mobile_base)" />
-    <arg name="controller_type" value="$(arg controller_type)" />
   </include>
 </launch>
