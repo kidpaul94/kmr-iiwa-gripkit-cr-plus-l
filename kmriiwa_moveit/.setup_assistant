@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: kmriiwa_description
+    relative_path: urdf/kmriiwa.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/kmriiwa.srdf
+  CONFIG:
+    author_name: Hojun_Lee
+    author_email: hjunlee@umich.edu
+    generated_timestamp: 1668145768
