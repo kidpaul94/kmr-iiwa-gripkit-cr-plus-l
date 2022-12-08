@@ -3,7 +3,7 @@
     This is a format for representing semantic information about the robot structure.
     A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
 -->
-<robot name="kmr_iiwa_gripkit_cr_plus_l_ad">
+<robot name="kmr_iiwa_gripkit_cr_plus_l">
     <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
     <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
     <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
@@ -60,7 +60,7 @@
         <joint name="Slider02" value="0.021"/>
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="gripper" parent_link="flange" group="gripper"/>
+    <end_effector name="gripper" parent_link="link_7" group="gripper"/>
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="base_link"/>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
@@ -83,7 +83,7 @@
     <disable_collisions link1="AC_20-025_CUSTOMER_v1_1" link2="ISO_4762_-_M4_x_12ISO_4" reason="Never"/>
     <disable_collisions link1="AC_20-025_CUSTOMER_v1_1" link2="SF-ISO50-CRG200_Customer" reason="Never"/>
     <disable_collisions link1="AC_20-025_CUSTOMER_v1_1" link2="TE_20-060_CUSTOMER_v1" reason="Never"/>
-    <disable_collisions link1="AC_20-025_CUSTOMER_v1_1" link2="flange" reason="Never"/>
+    <disable_collisions link1="AC_20-025_CUSTOMER_v1_1" link2="link_7" reason="Never"/>
     <disable_collisions link1="AC_20-025_CUSTOMER_v1_1" link2="link_2" reason="Never"/>
     <disable_collisions link1="AC_20-025_CUSTOMER_v1_1" link2="link_3" reason="Never"/>
     <disable_collisions link1="AC_20-025_CUSTOMER_v1_1" link2="link_4" reason="Never"/>
@@ -113,7 +113,7 @@
     <disable_collisions link1="AC_20-025_CUSTOMER_v1_2" link2="ISO_4762_-_M4_x_12ISO_4" reason="Never"/>
     <disable_collisions link1="AC_20-025_CUSTOMER_v1_2" link2="SF-ISO50-CRG200_Customer" reason="Never"/>
     <disable_collisions link1="AC_20-025_CUSTOMER_v1_2" link2="TE_20-060_CUSTOMER_v1" reason="Never"/>
-    <disable_collisions link1="AC_20-025_CUSTOMER_v1_2" link2="flange" reason="Never"/>
+    <disable_collisions link1="AC_20-025_CUSTOMER_v1_2" link2="link_7" reason="Never"/>
     <disable_collisions link1="AC_20-025_CUSTOMER_v1_2" link2="link_2" reason="Never"/>
     <disable_collisions link1="AC_20-025_CUSTOMER_v1_2" link2="link_3" reason="Never"/>
     <disable_collisions link1="AC_20-025_CUSTOMER_v1_2" link2="link_4" reason="Never"/>
@@ -140,7 +140,7 @@
     <disable_collisions link1="BE_20-030_CUSTOMER_v1_1" link2="ISO_4762_-_M4_x_12ISO_4" reason="Never"/>
     <disable_collisions link1="BE_20-030_CUSTOMER_v1_1" link2="SF-ISO50-CRG200_Customer" reason="Never"/>
     <disable_collisions link1="BE_20-030_CUSTOMER_v1_1" link2="TE_20-060_CUSTOMER_v1" reason="Never"/>
-    <disable_collisions link1="BE_20-030_CUSTOMER_v1_1" link2="flange" reason="Never"/>
+    <disable_collisions link1="BE_20-030_CUSTOMER_v1_1" link2="link_7" reason="Never"/>
     <disable_collisions link1="BE_20-030_CUSTOMER_v1_1" link2="link_1" reason="Never"/>
     <disable_collisions link1="BE_20-030_CUSTOMER_v1_1" link2="link_2" reason="Never"/>
     <disable_collisions link1="BE_20-030_CUSTOMER_v1_1" link2="link_3" reason="Never"/>
@@ -168,7 +168,7 @@
     <disable_collisions link1="BE_20-030_CUSTOMER_v1_2" link2="ISO_4762_-_M4_x_12ISO_4" reason="Never"/>
     <disable_collisions link1="BE_20-030_CUSTOMER_v1_2" link2="SF-ISO50-CRG200_Customer" reason="Never"/>
     <disable_collisions link1="BE_20-030_CUSTOMER_v1_2" link2="TE_20-060_CUSTOMER_v1" reason="Never"/>
-    <disable_collisions link1="BE_20-030_CUSTOMER_v1_2" link2="flange" reason="Never"/>
+    <disable_collisions link1="BE_20-030_CUSTOMER_v1_2" link2="link_7" reason="Never"/>
     <disable_collisions link1="BE_20-030_CUSTOMER_v1_2" link2="link_1" reason="Never"/>
     <disable_collisions link1="BE_20-030_CUSTOMER_v1_2" link2="link_2" reason="Never"/>
     <disable_collisions link1="BE_20-030_CUSTOMER_v1_2" link2="link_3" reason="Never"/>
@@ -196,7 +196,7 @@
     <disable_collisions link1="CRG200_base_jaw_1" link2="ISO_4762_-_M4_x_12ISO_4" reason="Never"/>
     <disable_collisions link1="CRG200_base_jaw_1" link2="SF-ISO50-CRG200_Customer" reason="Never"/>
     <disable_collisions link1="CRG200_base_jaw_1" link2="TE_20-060_CUSTOMER_v1" reason="Never"/>
-    <disable_collisions link1="CRG200_base_jaw_1" link2="flange" reason="Never"/>
+    <disable_collisions link1="CRG200_base_jaw_1" link2="link_7" reason="Never"/>
     <disable_collisions link1="CRG200_base_jaw_1" link2="link_1" reason="Never"/>
     <disable_collisions link1="CRG200_base_jaw_1" link2="link_2" reason="Never"/>
     <disable_collisions link1="CRG200_base_jaw_1" link2="link_3" reason="Never"/>
@@ -223,7 +223,7 @@
     <disable_collisions link1="CRG200_base_jaw_2" link2="ISO_4762_-_M4_x_12ISO_4" reason="Never"/>
     <disable_collisions link1="CRG200_base_jaw_2" link2="SF-ISO50-CRG200_Customer" reason="Never"/>
     <disable_collisions link1="CRG200_base_jaw_2" link2="TE_20-060_CUSTOMER_v1" reason="Never"/>
-    <disable_collisions link1="CRG200_base_jaw_2" link2="flange" reason="Never"/>
+    <disable_collisions link1="CRG200_base_jaw_2" link2="link_7" reason="Never"/>
     <disable_collisions link1="CRG200_base_jaw_2" link2="link_1" reason="Never"/>
     <disable_collisions link1="CRG200_base_jaw_2" link2="link_2" reason="Never"/>
     <disable_collisions link1="CRG200_base_jaw_2" link2="link_3" reason="Never"/>
@@ -249,7 +249,7 @@
     <disable_collisions link1="CRG200_body" link2="ISO_4762_-_M4_x_12ISO_4" reason="Default"/>
     <disable_collisions link1="CRG200_body" link2="SF-ISO50-CRG200_Customer" reason="Adjacent"/>
     <disable_collisions link1="CRG200_body" link2="TE_20-060_CUSTOMER_v1" reason="Never"/>
-    <disable_collisions link1="CRG200_body" link2="flange" reason="Never"/>
+    <disable_collisions link1="CRG200_body" link2="link_7" reason="Never"/>
     <disable_collisions link1="CRG200_body" link2="link_1" reason="Never"/>
     <disable_collisions link1="CRG200_body" link2="link_2" reason="Never"/>
     <disable_collisions link1="CRG200_body" link2="link_3" reason="Never"/>
@@ -274,7 +274,7 @@
     <disable_collisions link1="CRG200_top_cover" link2="ISO_4762_-_M4_x_12ISO_4" reason="Never"/>
     <disable_collisions link1="CRG200_top_cover" link2="SF-ISO50-CRG200_Customer" reason="Never"/>
     <disable_collisions link1="CRG200_top_cover" link2="TE_20-060_CUSTOMER_v1" reason="Never"/>
-    <disable_collisions link1="CRG200_top_cover" link2="flange" reason="Never"/>
+    <disable_collisions link1="CRG200_top_cover" link2="link_7" reason="Never"/>
     <disable_collisions link1="CRG200_top_cover" link2="link_1" reason="Never"/>
     <disable_collisions link1="CRG200_top_cover" link2="link_2" reason="Never"/>
     <disable_collisions link1="CRG200_top_cover" link2="link_3" reason="Never"/>
@@ -298,7 +298,7 @@
     <disable_collisions link1="DP_20-005_CUSTOMER_v1" link2="ISO_4762_-_M4_x_12ISO_4" reason="Never"/>
     <disable_collisions link1="DP_20-005_CUSTOMER_v1" link2="SF-ISO50-CRG200_Customer" reason="Never"/>
     <disable_collisions link1="DP_20-005_CUSTOMER_v1" link2="TE_20-060_CUSTOMER_v1" reason="Adjacent"/>
-    <disable_collisions link1="DP_20-005_CUSTOMER_v1" link2="flange" reason="Never"/>
+    <disable_collisions link1="DP_20-005_CUSTOMER_v1" link2="link_7" reason="Never"/>
     <disable_collisions link1="DP_20-005_CUSTOMER_v1" link2="link_2" reason="Never"/>
     <disable_collisions link1="DP_20-005_CUSTOMER_v1" link2="link_3" reason="Never"/>
     <disable_collisions link1="DP_20-005_CUSTOMER_v1" link2="link_4" reason="Never"/>
@@ -319,7 +319,7 @@
     <disable_collisions link1="FE_20-050_CUSTOMER_v1_1" link2="ISO_4762_-_M4_x_12ISO_4" reason="Never"/>
     <disable_collisions link1="FE_20-050_CUSTOMER_v1_1" link2="SF-ISO50-CRG200_Customer" reason="Never"/>
     <disable_collisions link1="FE_20-050_CUSTOMER_v1_1" link2="TE_20-060_CUSTOMER_v1" reason="Never"/>
-    <disable_collisions link1="FE_20-050_CUSTOMER_v1_1" link2="flange" reason="Never"/>
+    <disable_collisions link1="FE_20-050_CUSTOMER_v1_1" link2="link_7" reason="Never"/>
     <disable_collisions link1="FE_20-050_CUSTOMER_v1_1" link2="link_2" reason="Never"/>
     <disable_collisions link1="FE_20-050_CUSTOMER_v1_1" link2="link_3" reason="Never"/>
     <disable_collisions link1="FE_20-050_CUSTOMER_v1_1" link2="link_4" reason="Never"/>
@@ -340,7 +340,7 @@
     <disable_collisions link1="FE_20-050_CUSTOMER_v1_2" link2="ISO_4762_-_M4_x_12ISO_4" reason="Never"/>
     <disable_collisions link1="FE_20-050_CUSTOMER_v1_2" link2="SF-ISO50-CRG200_Customer" reason="Never"/>
     <disable_collisions link1="FE_20-050_CUSTOMER_v1_2" link2="TE_20-060_CUSTOMER_v1" reason="Never"/>
-    <disable_collisions link1="FE_20-050_CUSTOMER_v1_2" link2="flange" reason="Never"/>
+    <disable_collisions link1="FE_20-050_CUSTOMER_v1_2" link2="link_7" reason="Never"/>
     <disable_collisions link1="FE_20-050_CUSTOMER_v1_2" link2="link_2" reason="Never"/>
     <disable_collisions link1="FE_20-050_CUSTOMER_v1_2" link2="link_3" reason="Never"/>
     <disable_collisions link1="FE_20-050_CUSTOMER_v1_2" link2="link_4" reason="Never"/>
@@ -360,7 +360,7 @@
     <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_1" link2="ISO_4762_-_M4_x_12ISO_4" reason="Never"/>
     <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_1" link2="SF-ISO50-CRG200_Customer" reason="Never"/>
     <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_1" link2="TE_20-060_CUSTOMER_v1" reason="Never"/>
-    <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_1" link2="flange" reason="Never"/>
+    <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_1" link2="link_7" reason="Never"/>
     <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_1" link2="link_2" reason="Never"/>
     <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_1" link2="link_3" reason="Never"/>
     <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_1" link2="link_4" reason="Never"/>
@@ -379,7 +379,7 @@
     <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_2" link2="ISO_4762_-_M4_x_12ISO_4" reason="Never"/>
     <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_2" link2="SF-ISO50-CRG200_Customer" reason="Never"/>
     <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_2" link2="TE_20-060_CUSTOMER_v1" reason="Adjacent"/>
-    <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_2" link2="flange" reason="Never"/>
+    <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_2" link2="link_7" reason="Never"/>
     <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_2" link2="link_2" reason="Never"/>
     <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_2" link2="link_3" reason="Never"/>
     <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_2" link2="link_4" reason="Never"/>
@@ -397,7 +397,7 @@
     <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_3" link2="ISO_4762_-_M4_x_12ISO_4" reason="Never"/>
     <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_3" link2="SF-ISO50-CRG200_Customer" reason="Never"/>
     <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_3" link2="TE_20-060_CUSTOMER_v1" reason="Adjacent"/>
-    <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_3" link2="flange" reason="Never"/>
+    <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_3" link2="link_7" reason="Never"/>
     <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_3" link2="link_2" reason="Never"/>
     <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_3" link2="link_3" reason="Never"/>
     <disable_collisions link1="FT_20-UNI_CUSTOMER_v1_3" link2="link_4" reason="Never"/>
@@ -414,7 +414,7 @@
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_1" link2="ISO_4762_-_M4_x_12ISO_4" reason="Never"/>
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_1" link2="SF-ISO50-CRG200_Customer" reason="Adjacent"/>
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_1" link2="TE_20-060_CUSTOMER_v1" reason="Never"/>
-    <disable_collisions link1="ISO_4762_-_M4_x_12ISO_1" link2="flange" reason="Never"/>
+    <disable_collisions link1="ISO_4762_-_M4_x_12ISO_1" link2="link_7" reason="Never"/>
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_1" link2="link_1" reason="Never"/>
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_1" link2="link_2" reason="Never"/>
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_1" link2="link_3" reason="Never"/>
@@ -431,7 +431,7 @@
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_2" link2="ISO_4762_-_M4_x_12ISO_4" reason="Never"/>
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_2" link2="SF-ISO50-CRG200_Customer" reason="Adjacent"/>
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_2" link2="TE_20-060_CUSTOMER_v1" reason="Never"/>
-    <disable_collisions link1="ISO_4762_-_M4_x_12ISO_2" link2="flange" reason="Never"/>
+    <disable_collisions link1="ISO_4762_-_M4_x_12ISO_2" link2="link_7" reason="Never"/>
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_2" link2="link_1" reason="Never"/>
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_2" link2="link_2" reason="Never"/>
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_2" link2="link_3" reason="Never"/>
@@ -447,7 +447,7 @@
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_3" link2="ISO_4762_-_M4_x_12ISO_4" reason="Never"/>
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_3" link2="SF-ISO50-CRG200_Customer" reason="Adjacent"/>
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_3" link2="TE_20-060_CUSTOMER_v1" reason="Never"/>
-    <disable_collisions link1="ISO_4762_-_M4_x_12ISO_3" link2="flange" reason="Never"/>
+    <disable_collisions link1="ISO_4762_-_M4_x_12ISO_3" link2="link_7" reason="Never"/>
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_3" link2="link_1" reason="Never"/>
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_3" link2="link_2" reason="Never"/>
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_3" link2="link_3" reason="Never"/>
@@ -462,7 +462,7 @@
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_3" link2="screw_6" reason="Never"/>
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_4" link2="SF-ISO50-CRG200_Customer" reason="Adjacent"/>
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_4" link2="TE_20-060_CUSTOMER_v1" reason="Never"/>
-    <disable_collisions link1="ISO_4762_-_M4_x_12ISO_4" link2="flange" reason="Never"/>
+    <disable_collisions link1="ISO_4762_-_M4_x_12ISO_4" link2="link_7" reason="Never"/>
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_4" link2="link_1" reason="Never"/>
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_4" link2="link_2" reason="Never"/>
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_4" link2="link_3" reason="Never"/>
@@ -476,7 +476,7 @@
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_4" link2="screw_5" reason="Never"/>
     <disable_collisions link1="ISO_4762_-_M4_x_12ISO_4" link2="screw_6" reason="Never"/>
     <disable_collisions link1="SF-ISO50-CRG200_Customer" link2="TE_20-060_CUSTOMER_v1" reason="Never"/>
-    <disable_collisions link1="SF-ISO50-CRG200_Customer" link2="flange" reason="Adjacent"/>
+    <disable_collisions link1="SF-ISO50-CRG200_Customer" link2="link_7" reason="Adjacent"/>
     <disable_collisions link1="SF-ISO50-CRG200_Customer" link2="link_1" reason="Never"/>
     <disable_collisions link1="SF-ISO50-CRG200_Customer" link2="link_2" reason="Never"/>
     <disable_collisions link1="SF-ISO50-CRG200_Customer" link2="link_3" reason="Never"/>
@@ -489,7 +489,7 @@
     <disable_collisions link1="SF-ISO50-CRG200_Customer" link2="screw_4" reason="Never"/>
     <disable_collisions link1="SF-ISO50-CRG200_Customer" link2="screw_5" reason="Never"/>
     <disable_collisions link1="SF-ISO50-CRG200_Customer" link2="screw_6" reason="Never"/>
-    <disable_collisions link1="TE_20-060_CUSTOMER_v1" link2="flange" reason="Never"/>
+    <disable_collisions link1="TE_20-060_CUSTOMER_v1" link2="link_7" reason="Never"/>
     <disable_collisions link1="TE_20-060_CUSTOMER_v1" link2="link_2" reason="Never"/>
     <disable_collisions link1="TE_20-060_CUSTOMER_v1" link2="link_3" reason="Never"/>
     <disable_collisions link1="TE_20-060_CUSTOMER_v1" link2="link_4" reason="Never"/>
@@ -511,18 +511,18 @@
     <disable_collisions link1="cover" link2="link_2" reason="Never"/>
     <disable_collisions link1="cover" link2="link_3" reason="Never"/>
     <disable_collisions link1="cover" link2="link_4" reason="Never"/>
-    <disable_collisions link1="flange" link2="link_1" reason="Never"/>
-    <disable_collisions link1="flange" link2="link_2" reason="Never"/>
-    <disable_collisions link1="flange" link2="link_3" reason="Never"/>
-    <disable_collisions link1="flange" link2="link_4" reason="Never"/>
-    <disable_collisions link1="flange" link2="link_5" reason="Never"/>
-    <disable_collisions link1="flange" link2="link_6" reason="Adjacent"/>
-    <disable_collisions link1="flange" link2="screw_1" reason="Adjacent"/>
-    <disable_collisions link1="flange" link2="screw_2" reason="Adjacent"/>
-    <disable_collisions link1="flange" link2="screw_3" reason="Adjacent"/>
-    <disable_collisions link1="flange" link2="screw_4" reason="Adjacent"/>
-    <disable_collisions link1="flange" link2="screw_5" reason="Adjacent"/>
-    <disable_collisions link1="flange" link2="screw_6" reason="Adjacent"/>
+    <disable_collisions link1="link_7" link2="link_1" reason="Never"/>
+    <disable_collisions link1="link_7" link2="link_2" reason="Never"/>
+    <disable_collisions link1="link_7" link2="link_3" reason="Never"/>
+    <disable_collisions link1="link_7" link2="link_4" reason="Never"/>
+    <disable_collisions link1="link_7" link2="link_5" reason="Never"/>
+    <disable_collisions link1="link_7" link2="link_6" reason="Adjacent"/>
+    <disable_collisions link1="link_7" link2="screw_1" reason="Adjacent"/>
+    <disable_collisions link1="link_7" link2="screw_2" reason="Adjacent"/>
+    <disable_collisions link1="link_7" link2="screw_3" reason="Adjacent"/>
+    <disable_collisions link1="link_7" link2="screw_4" reason="Adjacent"/>
+    <disable_collisions link1="link_7" link2="screw_5" reason="Adjacent"/>
+    <disable_collisions link1="link_7" link2="screw_6" reason="Adjacent"/>
     <disable_collisions link1="link_0" link2="link_1" reason="Adjacent"/>
     <disable_collisions link1="link_0" link2="link_2" reason="Never"/>
     <disable_collisions link1="link_0" link2="link_3" reason="Never"/>
