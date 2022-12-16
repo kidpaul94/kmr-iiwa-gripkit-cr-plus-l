@@ -1,6 +1,8 @@
 # KMR-iiwa-Gripkit-CR-Plus-L
 URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-robotics.com/gripkit/) and [KRM-iiwa 7](https://www.kuka.com/en-us/products/mobility/mobile-robot-systems/kmr-iiwa). Depending on user's inputs (e.g., end_effector, mobile_base, controllers), the URDF and MoveIt **reconfigure** themselves.
 
+![Example 0](./images/demo.png)
+
 ## Repository Structure
 
     ├── gripkit_cr_plus_l_ad_description
