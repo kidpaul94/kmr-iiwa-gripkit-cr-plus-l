@@ -16,9 +16,6 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
     ├── kmriiwa_description  
     └── kmriiwa_moveit
 
-## Note
-At the moment, we are currently tuning physical parameters of ROS controller.
-
 ## How to use
 Download the repository:
 
@@ -41,4 +38,4 @@ To run the MoveIt with gazebo:
     roslaunch kmriiwa_moveit demo_gazebo.launch robot_name:=(choose iiwa or kmriiwa) hardware_interface:=(choose Position, Velocity, or Effort) ee_type:=(choose ad, bb, cc, or dd)
     
 **ToDo Lists**
-- [X] prepare the reconfigurable moveit file
+- [ ] Tune physical parameters of ROS controller
