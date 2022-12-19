@@ -7,14 +7,17 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
 
     ├── gripkit_cr_plus_l_ad_description
     │   ├── meshes   # STL files
-    |   └── urdf     # URDF description folder
+    |   └── urdf     # URDF description
     ├── gripkit_cr_plus_l_bb_description
     ├── gripkit_cr_plus_l_cc_description
     ├── gripkit_cr_plus_l_dd_description
-    ├── iiwa7_description              
+    ├── iiwa7_description
+    ├── images              
     ├── kmp200_description
     ├── kmriiwa_description  
     └── kmriiwa_moveit
+        ├── config   # config files
+        └── launch   # ROS-launch files
 
 ## How to use
 Download the repository:
