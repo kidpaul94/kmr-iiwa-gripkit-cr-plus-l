@@ -47,5 +47,5 @@ To run the MoveIt with gazebo:
 To run your own world with other objects, simply put them in the **models** and **worlds** folders.
 
     
-**ToDo Lists**
+## ToDo Lists
 - [ ] Tune physical parameters of ROS controller
