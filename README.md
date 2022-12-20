@@ -22,7 +22,7 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
     │   └── rotary_arm  # object folder
     └── worlds
 
-## How to use
+## Usages
 Download the repository:
 
     cd ~/catkin_ws/src
@@ -42,6 +42,10 @@ To run the MoveIt:
 To run the MoveIt with gazebo:
 
     roslaunch kmriiwa_moveit demo_gazebo.launch robot_name:=(choose iiwa or kmriiwa) hardware_interface:=(choose Position, Velocity, or Effort) ee_type:=(choose ad, bb, cc, or dd)
+
+## Potential Extensions
+To run your own world with other objects, simply put them in the **models** and **worlds** folders.
+
     
 **ToDo Lists**
 - [ ] Tune physical parameters of ROS controller
