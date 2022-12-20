@@ -44,9 +44,9 @@
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
   </group>
 
-  <arg name="robot_name" default="$(arg robot_name)" />
-  <arg name="hardware_interface" default="$(arg hardware_interface)" />
-  <arg name="ee_type" default="$(arg ee_type)" />
+  <arg name="robot_name" default="kmriiwa" />
+  <arg name="hardware_interface" default="Effort" />
+  <arg name="ee_type" default="bb" />
   <!-- Run the main MoveIt executable without trajectory execution (we do not have controllers configured by default) -->
   <include file="$(dirname)/move_group.launch">
     <arg name="allow_trajectory_execution" value="true"/>
