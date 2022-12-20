@@ -12,14 +12,14 @@
     <include>
       <uri>model://table</uri>
       <name>table_1</name>
-      <pose>0 1.5 -0.34 0 0 0</pose>
+      <pose>0 -0.8 -0.33 0 0 0</pose>
     </include>
 
     <!-- RotaryArm 1--> 
     <include>
       <uri>model://rotary_arm</uri>
       <name>rotaryarm_part_1</name>
-      <pose>0 1.5 0.675 0 0 -3.140717</pose>
+      <pose>0 -0.7 0.685 0 0 -3.140717</pose>
     </include>
 
 
