@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<sdf version='1.7'>
+  <world name="default">
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Table 1--> 
+    <include>
+      <uri>model://table</uri>
+      <name>table_1</name>
+      <pose>0 1.5 -0.34 0 0 0</pose>
+    </include>
+
+    <!-- RotaryArm 1--> 
+    <include>
+      <uri>model://rotary_arm</uri>
+      <name>rotaryarm_part_1</name>
+      <pose>0 1.5 0.675 0 0 -3.140717</pose>
+    </include>
+
+
+  </world>
+</sdf>
