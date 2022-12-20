@@ -7,6 +7,7 @@
   <arg name="use_rviz" default="false" />
 
   <!-- Gazebo specific options -->
+  <arg name="world_name" value="$(find worlds)/lab_world.world"/>
   <arg name="gazebo_gui" default="true"/>
   <arg name="paused" default="false"/>
   <arg name="robot_name" default="kmriiwa" />
@@ -15,6 +16,7 @@
 
   <!-- launch the gazebo simulator and spawn the robot -->
   <include file="$(dirname)/gazebo.launch" >
+    <arg name="world_name" value="$(arg world_name)"/>
     <arg name="paused" value="$(arg paused)"/>
     <arg name="gazebo_gui" value="$(arg gazebo_gui)"/>
     <arg name="robot_name" value="$(arg robot_name)" />
