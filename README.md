@@ -3,6 +3,19 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
 
 ![Example 0](./images/demo.png)
 
+## Table of Contents
+
+- [Repository Structure](#repository-structure)
+- [Usages](#usages)
+    - [Download Process](#download-process)
+    - [Gazebo](#gazebo)
+    - [MoveIt](#moveit)
+    - [MoveIt & Gazebo](#MoveIt-&-gazebo)
+- [Potential Extensions](#potential-extensions)
+- [ToDo Lists](#todo-lists)
+
+---
+
 ## Repository Structure
     ├── data_generation
     │   └── src         # source codes
@@ -25,7 +38,8 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
     └── worlds
 
 ## Usages
-Download the repository:
+
+### Download Process:
 
     cd ~/catkin_ws/src
     git clone https://github.com/kidpaul94/kmr-iiwa-gripkit-cr-plus-l.git
@@ -33,15 +47,15 @@ Download the repository:
     catkin_make
     source devel/setup.bash
     
-To visual the URDF in gazebo:
+### Gazebo:
 
     roslaunch kmriiwa_description gazebo.launch robot_name:=(choose iiwa or kmriiwa) hardware_interface:=(choose Position, Velocity, or Effort) ee_type:=(choose ad, bb, cc, or dd)
     
-To run the MoveIt:
+### MoveIt:
 
     roslaunch kmriiwa_moveit demo.launch robot_name:=(choose iiwa or kmriiwa) hardware_interface:=(choose Position, Velocity, or Effort) ee_type:=(choose ad, bb, cc, or dd)
 
-To run the MoveIt with gazebo:
+### MoveIt & Gazebo:
 
     roslaunch kmriiwa_moveit demo_gazebo.launch robot_name:=(choose iiwa or kmriiwa) hardware_interface:=(choose Position, Velocity, or Effort) ee_type:=(choose ad, bb, cc, or dd)
 
@@ -52,3 +66,4 @@ To run your own world with other objects, simply put them in the **models** and 
 
 ## ToDo Lists
 - [ ] Tune physical parameters of ROS controller
+- [ ] Automation of pick&place
