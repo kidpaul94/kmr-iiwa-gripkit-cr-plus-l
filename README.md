@@ -42,7 +42,7 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
 ## Requirements
 
 This repository has been tested on [ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu) and [Ubuntu 20.04](https://releases.ubuntu.com/focal/).
-It also depends on **numpy**, and **scipy**:
+It also depends on **numpy** and **scipy**:
 
     pip3 install -r requirements.txt
 
