@@ -4,26 +4,52 @@ from gazebo_msgs.srv import GetWorldProperties, SpawnModel, DeleteModel, GetMode
 
 class Model():
     def __init__(self, name: str = None, pose: Pose = None, sdf_name: str = None) -> None:  
-        self.name, self.pose, self.sdf_name = name, pose, sdf_name
+        self.name, self.init_pose, self.sdf_name = name, pose, sdf_name
 
-    def sucess(self, object_pose: Pose, gripper_pose: Pose) -> bool:
+    def grasp_configs(self, grasp_dict: list) -> Pose:
         """
-        Check whether grasping is successful or not
+        Generate grasp dictionary based on the current object pose.
+
+        Parameters
+        ----------
+        grasp_dict : 1xN : obj : `list`
+            list of potential contact point pairs on the object
+
+        Returns
+        -------
+        configs : 1xN : obj : `list`
+            list of potential gripper configurations
+        """
+        return
+
+    def isgrasped(self, current_pose: Pose, gripper_pose: Pose) -> bool:
+        """
+        Check whether grasping is successful or not.
+
+        Parameters
+        ----------
+        current_pose : obj : `Pose`
+            current object pose
+        gripper_pose : obj : `Pose`
+            current gripper pose
 
         Returns
         -------
         success : bool
             result of the grasping
         """
-        return
+        success = True
+        
+        return success
 
 class EnvManager():
     def __init__(self) -> None:
         self.permanent_objects = self.get_gazebo_objects()
+        self.added_objects = []
 
     def get_gazebo_objects(self) -> list:
         """
-        Save a list of objects in the gazebo world
+        Save a list of objects in the gazebo world.
 
         Returns
         -------
@@ -39,13 +65,22 @@ class EnvManager():
 
         return obj_list
 
-    def sync_with_gazebo(self) -> list:
-        self.permanent_objects = self.get_gazebo_objects()
-
-    @staticmethod
-    def spawn_object(name: str, pose: Pose, sdf_name: str):
+    def sync_with_gazebo(self) -> None:
         """
-        Spawn an object in the gazebo world
+        Sync EnvManager objects with the list of objects in
+        the gazebo world after deletion.
+        """
+        check_objects = self.get_gazebo_objects()
+        org = set(x.name for x in check_objects) 
+        left_1 = [y for y in self.added_objects if y.name in org]
+        self.added_objects = left_1
+
+        left_2 = [z for z in self.permanent_objects if z.name in org]
+        self.permanent_objects = left_2
+        
+    def spawn_object(self, name: str, pose: Pose, sdf_name: str) -> None:
+        """
+        Spawn an object in the gazebo world.
 
         Parameters
         ----------
@@ -61,11 +96,12 @@ class EnvManager():
         spawn_model_client(model_name=name,
         model_xml=open(f'../../models/{sdf_name}/model.sdf', 'r').read(),
         robot_namespace='/foo', initial_pose=pose, reference_frame='world')
+        self.added_objects.append(Model(name, pose, sdf_name))
 
     @staticmethod
-    def delete_object(name: str):
+    def delete_object(name: str) -> None:
         """
-        Delete an object in the gazebo world
+        Delete an object in the gazebo world.
 
         Parameters
         ----------
@@ -79,7 +115,7 @@ class EnvManager():
     @staticmethod
     def get_gazebo_pose(name: str) -> Pose:
         """
-        Retrieve an object pose from the gazebo world
+        Retrieve an object pose from the gazebo world.
 
         Parameters
         ----------

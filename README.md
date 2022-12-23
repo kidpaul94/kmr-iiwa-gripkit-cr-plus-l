@@ -6,6 +6,7 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
 ## Table of Contents
 
 - [Repository Structure](#repository-structure)
+- [Requirements](#requirements)
 - [Usages](#usages)
     - [Download Process](#download-process)
     - [Gazebo](#gazebo)
@@ -37,6 +38,13 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
     ├── models
     │   └── rotary_arm  # object folder
     └── worlds
+
+## Requirements
+
+This repository has been tested on [ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu) and [Ubuntu 20.04](https://releases.ubuntu.com/focal/).
+It also depends on **numpy**, and **scipy**:
+
+    pip3 install -r requirements.txt
 
 ## Usages
 
