@@ -10,8 +10,8 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
     - [Download Process](#download-process)
     - [Gazebo](#gazebo)
     - [MoveIt](#moveit)
-    - [MoveIt & Gazebo](#MoveIt-&-gazebo)
-    - [Pick & Place](#pick-&-place)
+    - [MoveIt and Gazebo](#moveit-and-gazebo)
+    - [Automated Pick](#automated-pick)
 - [Potential Extensions](#potential-extensions)
 - [ToDo Lists](#todo-lists)
 
@@ -56,15 +56,15 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
 
     roslaunch kmriiwa_moveit demo.launch robot_name:=(choose iiwa or kmriiwa) hardware_interface:=(choose Position, Velocity, or Effort) ee_type:=(choose ad, bb, cc, or dd)
 
-### MoveIt & Gazebo:
+### MoveIt and Gazebo:
 
     roslaunch kmriiwa_moveit demo_gazebo.launch robot_name:=(choose iiwa or kmriiwa) hardware_interface:=(choose Position, Velocity, or Effort) ee_type:=(choose ad, bb, cc, or dd)
 
-### Pick & Place:
-    
-Automated pick and palce
-**TO BE CONTINUE**
+### Automated Pick:
 
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Anton&size=29&pause=1000&color=F70000&width=435&lines=TO+BE+CONTINUE" alt="Typing SVG" />
+</a>
+</br>
 **Note:** You can also checkout more arguments in each launch file.
 
 ## Potential Extensions
