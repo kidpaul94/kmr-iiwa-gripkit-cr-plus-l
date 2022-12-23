@@ -35,7 +35,6 @@
   <!-- Load default settings for kinematics; these settings are overridden by settings in a node's namespace -->
   <group ns="$(arg robot_description)_kinematics">
     <rosparam command="load" file="$(find kmriiwa_moveit)/config/kinematics.yaml"/>
-
   </group>
 
 </launch>

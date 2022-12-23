@@ -6,6 +6,17 @@ class Model():
     def __init__(self, name: str = None, pose: Pose = None, sdf_name: str = None) -> None:  
         self.name, self.pose, self.sdf_name = name, pose, sdf_name
 
+    def sucess(self, object_pose: Pose, gripper_pose: Pose) -> bool:
+        """
+        Check whether grasping is successful or not
+
+        Returns
+        -------
+        success : bool
+            result of the grasping
+        """
+        return
+
 class EnvManager():
     def __init__(self) -> None:
         self.permanent_objects = self.get_gazebo_objects()

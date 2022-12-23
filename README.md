@@ -11,14 +11,13 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
     - [Gazebo](#gazebo)
     - [MoveIt](#moveit)
     - [MoveIt & Gazebo](#MoveIt-&-gazebo)
+    - [Pick & Place](#pick-&-place)
 - [Potential Extensions](#potential-extensions)
 - [ToDo Lists](#todo-lists)
 
 ---
 
 ## Repository Structure
-    ├── data_generation
-    │   └── src         # source codes
     ├── gripkit_cr_plus_l_ad_description
     ├── gripkit_cr_plus_l_ad_description
     │   ├── meshes      # STL files
@@ -35,6 +34,8 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
     │   └── launch      # ROS-launch files
     ├── models
     │   └── rotary_arm  # object folder
+    ├── pick_place
+    │   └── src         # source codes
     └── worlds
 
 ## Usages
@@ -58,6 +59,11 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
 ### MoveIt & Gazebo:
 
     roslaunch kmriiwa_moveit demo_gazebo.launch robot_name:=(choose iiwa or kmriiwa) hardware_interface:=(choose Position, Velocity, or Effort) ee_type:=(choose ad, bb, cc, or dd)
+
+### Pick & Place:
+    
+Automated pick and palce
+**TO BE CONTINUE**
 
 **Note:** You can also checkout more arguments in each launch file.
 
