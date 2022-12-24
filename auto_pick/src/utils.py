@@ -43,11 +43,26 @@ def noisy_pose(vals: list) -> list:
 
     return vals
 
-def read_txt(path: str) -> list:
-    
-    return
+def cpp2T(path: str = None) -> list:
+    """
+    Convert list of contact point pairs (cpps) to transformation matrices.
 
-def cpp2trans(cpps: list) -> np.ndarray:
-    trans = []
+    Parameters
+    ----------
+    path : string
+        path to a .txt file of cpps
 
-    return trans
+    Returns
+    -------
+    trans : 1xN : obj : `np.ndarray`
+        list of transformation matrices (np.ndarray).
+    """
+    T = []
+    with open(path) as f:
+        list = eval(f.read())
+
+    for item in list:
+        center = (item[:3] + item[3:]) / 2
+        direction = item[3:] - item[:3]
+
+    return np.asarray(T)

@@ -1,26 +1,37 @@
 import rospy
+import numpy as np
 from geometry_msgs.msg import Pose
+from scipy.spatial.transform import Rotation as R
 from gazebo_msgs.srv import GetWorldProperties, SpawnModel, DeleteModel, GetModelState
 
 class Model():
     def __init__(self, name: str = None, pose: Pose = None, sdf_name: str = None) -> None:  
         self.name, self.init_pose, self.sdf_name = name, pose, sdf_name
+        self.grasp_configs = self.grasp_gen()
 
-    def grasp_configs(self, grasp_dict: list) -> Pose:
+    def grasp_gen(self, grasp_dict: np.ndarray) -> np.ndarray:
         """
         Generate grasp dictionary based on the current object pose.
 
         Parameters
         ----------
-        grasp_dict : 1xN : obj : `list`
-            list of potential contact point pairs on the object
+        grasp_dict : Nx4x4 : obj : `np.ndarray`
+            array of potential gripper configurations w.r.t the object frame
 
         Returns
         -------
-        configs : 1xN : obj : `list`
-            list of potential gripper configurations
+        configs : Nx4x4 : obj : `np.ndarray`
+            array of potential gripper configurations w.r.t the world frame
         """
-        return
+        base2obj = np.eye(4)
+        base2obj[:3,3] = [self.init_pose.position.x, self.init_pose.position.y, 
+                          self.init_pose.position.z]
+        quat = [self.init_pose.orientation.x, self.init_pose.orientation.y, 
+                self.init_pose.orientation.z, self.init_pose.orientation.w]
+        base2obj[:3,:3] = R.from_quat(quat).as_matrix()
+        configs = grasp_dict @ base2obj
+
+        return configs
 
     def isgrasped(self, current_pose: Pose, gripper_pose: Pose) -> bool:
         """

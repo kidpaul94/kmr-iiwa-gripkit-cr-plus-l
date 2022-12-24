@@ -36,6 +36,7 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
     │   ├── config      # config files
     │   └── launch      # ROS-launch files
     ├── models
+    │   ├── dict        # grasp dictionaries
     │   └── rotary_arm  # object folder
     └── worlds
 
