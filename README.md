@@ -20,11 +20,11 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
 
 ## Repository Structure
     ├── auto_pick
-    │   └── src         # source codes
+    │   └── src                           # source codes
     ├── gripkit_cr_plus_l_ad_description
     ├── gripkit_cr_plus_l_ad_description
-    │   ├── meshes      # STL files
-    |   └── urdf        # URDF description
+    │   ├── meshes                        # STL files
+    |   └── urdf                          # URDF description
     ├── gripkit_cr_plus_l_bb_description
     ├── gripkit_cr_plus_l_cc_description
     ├── gripkit_cr_plus_l_dd_description
@@ -33,11 +33,11 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
     ├── kmp200_description
     ├── kmriiwa_description  
     ├── kmriiwa_moveit
-    │   ├── config      # config files
-    │   └── launch      # ROS-launch files
+    │   ├── config                        # config files
+    │   └── launch                        # ROS-launch files
     ├── models
-    │   ├── dict        # grasp dictionaries
-    │   └── rotary_arm  # object folder
+    │   ├── dict                          # grasp dictionaries
+    │   └── rotary_arm                    # object folder
     └── worlds
 
 ## Requirements
