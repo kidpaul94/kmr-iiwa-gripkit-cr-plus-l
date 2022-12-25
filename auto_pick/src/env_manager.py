@@ -4,34 +4,45 @@ from geometry_msgs.msg import Pose
 from scipy.spatial.transform import Rotation as R
 from gazebo_msgs.srv import GetWorldProperties, SpawnModel, DeleteModel, GetModelState
 
+from utils import Conversion
+
 class Model():
     def __init__(self, name: str = None, pose: Pose = None, sdf_name: str = None) -> None:  
         self.name, self.init_pose, self.sdf_name = name, pose, sdf_name
-        self.grasp_configs = self.grasp_gen()
+        self.base2obj = Conversion().pose2T(pose)
 
-    def grasp_gen(self, grasp_dict: np.ndarray) -> np.ndarray:
+    def grasp_gen(self, path: str = None) -> np.ndarray:
         """
-        Generate grasp dictionary based on the current object pose.
+        Generate grasp dictionary based on the current object pose and 
+        contact point pairs (cpp).
 
         Parameters
         ----------
-        grasp_dict : Nx4x4 : obj : `np.ndarray`
-            array of potential gripper configurations w.r.t the object frame
+        path : string
+            path to a .txt file of cpps
 
         Returns
         -------
-        configs : Nx4x4 : obj : `np.ndarray`
-            array of potential gripper configurations w.r.t the world frame
+        centers : 3xN : obj : `np.ndarray`
+            array of potential gripper centers w.r.t the world frame
+        directions : 3xN : obj : `np.ndarray`
+            array of potential gripper directions w.r.t the world frame
         """
-        base2obj = np.eye(4)
-        base2obj[:3,3] = [self.init_pose.position.x, self.init_pose.position.y, 
-                          self.init_pose.position.z]
-        quat = [self.init_pose.orientation.x, self.init_pose.orientation.y, 
-                self.init_pose.orientation.z, self.init_pose.orientation.w]
-        base2obj[:3,:3] = R.from_quat(quat).as_matrix()
-        configs = grasp_dict @ base2obj
+        with open(path) as f:
+            cpps = eval(f.read())
+        cpps = np.asarray(cpps).T
+        
+        # array of potential gripper configurations w.r.t the object frame
+        add_row = np.ones(cpps.shape[1])
+        centers = 0.5 * (cpps[:3,:] + cpps[3:,:])
+        directions = cpps[:3,:] - cpps[3:,:]
 
-        return configs
+        # array of potential gripper configurations w.r.t the world frame
+        temp = self.base2obj @ np.vstack((centers, add_row))
+        centers = temp[:3,:]
+        directions = self.base2obj[:3,:3] @ directions
+
+        return centers, directions
 
     def isgrasped(self, current_pose: Pose, gripper_pose: Pose) -> bool:
         """
