@@ -81,4 +81,4 @@ To run your own world with other objects, simply put them in the **models** and 
 
 ## ToDo Lists
 - [ ] Tune physical parameters of ROS controller
-- [ ] Automation of pick&place
+- [90%] Automation of pick&place
