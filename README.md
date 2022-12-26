@@ -80,5 +80,7 @@ It also depends on **numpy** and **scipy**:
 To run your own world with other objects, simply put them in the **models** and **worlds** folders.
 
 ## ToDo Lists
-- [ ] Tune physical parameters of ROS controller
-- [90%] Automation of pick&place
+
+| **ROS controller parameter tuning** | ![Progress](https://progress-bar.dev/15) |
+| --- | --- |
+| **Automation of pick&place** | ![Progress](https://progress-bar.dev/58) |
