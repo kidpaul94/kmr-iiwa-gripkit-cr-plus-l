@@ -83,4 +83,4 @@ To run your own world with other objects, simply put them in the **models** and 
 
 | **ROS controller parameter tuning** | ![Progress](https://progress-bar.dev/15) |
 | --- | --- |
-| **Automation of pick&place** | ![Progress](https://progress-bar.dev/58) |
+| **Automation of pick&place** | ![Progress](https://progress-bar.dev/90) |
