@@ -1,7 +1,6 @@
 import rospy
 import numpy as np
 from geometry_msgs.msg import Pose
-from scipy.spatial.transform import Rotation as R
 from gazebo_msgs.srv import GetWorldProperties, SpawnModel, DeleteModel, GetModelState
 
 from utils import Conversion
@@ -33,8 +32,9 @@ class Model():
         cpps = np.asarray(cpps).T
         
         # array of potential gripper configurations w.r.t the object frame
+        # 0.005 = 0.001(mm to m) * 0.5
         add_row = np.ones(cpps.shape[1])
-        centers = 0.5 * (cpps[:3,:] + cpps[3:,:])
+        centers = 0.0005 * (cpps[:3,:] + cpps[3:,:])
         directions = cpps[:3,:] - cpps[3:,:]
 
         # array of potential gripper configurations w.r.t the world frame
@@ -66,7 +66,7 @@ class Model():
 
 class EnvManager():
     def __init__(self) -> None:
-        self.permanent_objects = self.get_gazebo_objects()
+        self.permanet_objects = self.get_gazebo_objects()
         self.added_objects = []
 
     def get_gazebo_objects(self) -> list:
@@ -93,12 +93,16 @@ class EnvManager():
         the gazebo world after deletion.
         """
         check_objects = self.get_gazebo_objects()
-        org = set(x.name for x in check_objects) 
-        left_1 = [y for y in self.added_objects if y.name in org]
-        self.added_objects = left_1
+        added_org = set(temp.name for temp in self.added_objects)
+        added_left, added_perm = [], []
+        for obj in check_objects:
+            if obj.name in added_org:
+                added_left.append(obj)
+            else:
+                added_perm.append(obj)
 
-        left_2 = [z for z in self.permanent_objects if z.name in org]
-        self.permanent_objects = left_2
+        self.added_objects = added_left
+        self.permanet_objects = added_perm
         
     def spawn_object(self, name: str, pose: Pose, sdf_name: str) -> None:
         """

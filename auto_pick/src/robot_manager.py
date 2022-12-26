@@ -46,8 +46,8 @@ class Move_Robot():
 
         return success
     
-    def cartesian_space(self, waypoints: list, center: np.ndarray, 
-                        direction: np.ndarray, top_down: bool = True) -> bool:
+    def cartesian_space(self, waypoints: list, center: np.ndarray = None, 
+                        direction: np.ndarray = None, top_down: bool = True) -> bool:                
         """
         Command robot's movement in cartesian space.
 
