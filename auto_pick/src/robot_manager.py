@@ -13,8 +13,8 @@ class Move_Robot():
         self.arm = mc.MoveGroupCommander("iiwa")
         self.gripper = mc.MoveGroupCommander("gripper")
         self.arm_home = self.arm.get_current_joint_values()
-        self.gripper_home = self.gripper.get_current_joint_values()
         self.tdR = np.array([[-1.,0.,0.],[0.,1.,0.],[0.,0.,-1.]])
+        self.gripper_control()
         
     def joint_space(self, goal_config: list, degrees: bool = True) -> bool:
         """
@@ -146,8 +146,35 @@ class Move_Robot():
     def go_home(self):
         """
         Return the robot to home configurations.
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        None
         """
         self.arm.go(self.arm_home, wait=True)
         self.gripper.go(self.gripper_home, wait=True)
         self.arm.stop()
+        self.gripper.stop()
+
+    def gripper_control(self, command: bool = True) -> None:
+        """
+        Open or close gripper. 
+
+        Parameters
+        ----------
+        command: bool
+            close (True) or open (False) the robot gripper
+
+        Returns
+        -------
+        None
+        """
+        if command:
+            self.gripper.go([0.0065, -0.0065], wait=True)
+        else:
+            self.gripper.go([-0.021, 0.021], wait=True)
         self.gripper.stop()

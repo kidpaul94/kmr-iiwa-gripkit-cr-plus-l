@@ -70,10 +70,11 @@ It also depends on **numpy** and **scipy**:
     roslaunch kmriiwa_moveit demo_gazebo.launch robot_name:=(choose iiwa or kmriiwa) hardware_interface:=(choose Position, Velocity, or Effort) ee_type:=(choose ad, bb, cc, or dd)
 
 ### Automated Pick:
+simulation.py receives several different arguments. Run the --help command to see everything it receives.
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Anton&size=29&pause=1000&color=F70000&width=435&lines=TO+BE+CONTINUE" alt="Typing SVG" />
-</a>
-</br>
+    cd auto_pick/src
+    python3 simulation.py
+
 **Note:** You can also checkout more arguments in each launch file.
 
 ## Potential Extensions
@@ -83,4 +84,4 @@ To run your own world with other objects, simply put them in the **models** and 
 
 | **ROS controller parameter tuning** | ![Progress](https://progress-bar.dev/15) |
 | --- | --- |
-| **Automation of pick&place** | ![Progress](https://progress-bar.dev/90) |
+| **Automation of pick&place** | ![Progress](https://progress-bar.dev/94) |

@@ -72,7 +72,11 @@ class EnvManager():
     def get_gazebo_objects(self) -> list:
         """
         Save a list of objects in the gazebo world.
-
+        
+        Parameters
+        ----------
+        None
+        
         Returns
         -------
         obj_list : 1xN : obj : `list`
@@ -91,6 +95,14 @@ class EnvManager():
         """
         Sync EnvManager objects with the list of objects in
         the gazebo world after deletion.
+
+        Parameters
+        ----------
+        None
+            
+        Returns
+        -------
+        None
         """
         check_objects = self.get_gazebo_objects()
         added_org = set(temp.name for temp in self.added_objects)
@@ -116,7 +128,10 @@ class EnvManager():
             pose of the object when spawning
         sdf_name : string
             sdf file of the object we spawn in the gazebo world
+
+        Returns
         -------
+        None
         """
         spawn_model_client = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
         spawn_model_client(model_name=name,
@@ -133,6 +148,10 @@ class EnvManager():
         ----------
         name : string
             name of the object in the gazebo world
+
+        Returns
+        -------
+        None
         """
         rospy.wait_for_service('/gazebo/delete_model')
         delete_model_client = rospy.ServiceProxy("/gazebo/delete_model", DeleteModel)
