@@ -65,17 +65,19 @@ It also depends on **numpy** and **scipy**:
 
     roslaunch kmriiwa_moveit demo.launch robot_name:=(choose iiwa or kmriiwa) hardware_interface:=(choose Position, Velocity, or Effort) ee_type:=(choose ad, bb, cc, or dd)
 
+**Note:** You can also checkout more arguments in the launch file.
+
 ### MoveIt and Gazebo:
 
     roslaunch kmriiwa_moveit demo_gazebo.launch robot_name:=(choose iiwa or kmriiwa) hardware_interface:=(choose Position, Velocity, or Effort) ee_type:=(choose ad, bb, cc, or dd)
 
+**Note:** You can also checkout more arguments in the launch file.
+
 ### Automated Pick:
-simulation.py receives several different arguments. Run the --help command to see everything it receives.
+simulation.py receives several different arguments. Run the `--help` command to see everything it receives.
 
     cd auto_pick/src
-    python3 simulation.py
-
-**Note:** You can also checkout more arguments in each launch file.
+    python3 simulation.py --help
 
 ## Potential Extensions
 To run your own world with other objects, simply put them in the **models** and **worlds** folders.
