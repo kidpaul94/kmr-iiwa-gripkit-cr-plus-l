@@ -44,26 +44,6 @@ class Model():
 
         return centers, directions
 
-    def isgrasped(self, current_pose: Pose, gripper_pose: Pose) -> bool:
-        """
-        Check whether grasping is successful or not.
-
-        Parameters
-        ----------
-        current_pose : obj : `Pose`
-            current object pose
-        gripper_pose : obj : `Pose`
-            current gripper pose
-
-        Returns
-        -------
-        success : bool
-            result of the grasping
-        """
-        success = True
-        
-        return success
-
 class EnvManager():
     def __init__(self) -> None:
         self.permanet_objects = self.get_gazebo_objects()

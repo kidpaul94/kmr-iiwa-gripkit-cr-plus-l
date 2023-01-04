@@ -14,7 +14,7 @@ class Move_Robot():
         self.gripper = mc.MoveGroupCommander("gripper")
         self.arm_home = self.arm.get_current_joint_values()
         self.tdR = np.array([[-1.,0.,0.],[0.,1.,0.],[0.,0.,-1.]])
-        self.gripper_control()
+        self.gripper_control(command=False)
         
     def joint_space(self, goal_config: list, degrees: bool = True) -> bool:
         """
@@ -103,7 +103,7 @@ class Move_Robot():
             waypoints that the robot follows
         """
         waypoints = []
-        wpose = object_pose
+        wpose = copy.deepcopy(object_pose)
 
         # Put the gripper on top of the object center
         wpose.orientation.x = 0.0
@@ -156,9 +156,8 @@ class Move_Robot():
         None
         """
         self.arm.go(self.arm_home, wait=True)
-        self.gripper.go(self.gripper_home, wait=True)
         self.arm.stop()
-        self.gripper.stop()
+        self.gripper_control(command=False)
 
     def gripper_control(self, command: bool = True) -> None:
         """
