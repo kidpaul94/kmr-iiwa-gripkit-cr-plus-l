@@ -60,7 +60,8 @@ class Autopick():
 
         return selected_idx
 
-    def isgrasped(self, current_pose: np.ndarray, gripper_pose: np.ndarray) -> bool:
+    def isgrasped(self, current_pose: np.ndarray, gripper_pose: np.ndarray, 
+                  threshold: float = 0.05) -> bool:
         """
         Check whether grasping is successful or not.
 
@@ -70,19 +71,40 @@ class Autopick():
             current object pose (transformation matrix)
         gripper_pose : 4x4 : obj : `np.ndarray`
             current gripper pose (transformation matrix)
+        threshold : float
+            threshold value to determin whether the object is 
+            within two fingers
 
         Returns
         -------
         success : bool
             result of the grasping
         """
-        success = True
         dist = np.linalg.norm(current_pose[:3,3] - gripper_pose[:3,3])
+        success = True if dist < threshold else False
         
         return success
 
     def execute(self, center: np.ndarray, direction: np.ndarray, sdf_name: str, 
                 repeat: int = 100) -> float:
+        """
+        Execute a given grasp configuration # times to obtain its probability of success
+
+        Parameters
+        ----------
+        center : 3xN : obj : `np.ndarray`
+            array of potential gripper centers w.r.t the world frame
+        direction : 3xN : obj : `np.ndarray`
+            array of potential gripper directions w.r.t the world frame
+        sdf_name : string
+            sdf file of objects we spawn in the gazebo world
+        repreat : int
+            number of iteration to execute the grasp configuration
+
+        Returns
+        -------
+        float : probability of successing the grasp
+        """
         temp = 0
         for _ in range(repeat):
             self.mr.cartesian_space(waypoints=[self.pose], tp_heights=self.tp_heights, 
@@ -119,7 +141,8 @@ class Autopick():
 
     def initialize(self) -> None:
         """
-        Calculate grasp configurations w.r.t the world frame and execute them.
+        Initialize auto pick process by spawning a target object and calculate 
+        grasp configurations w.r.t the world frame.
 
         Parameters
         ----------
