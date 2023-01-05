@@ -81,6 +81,6 @@ To run your own world with other objects, simply put them in the **models** and 
 
 ## ToDo Lists
 
-| **ROS controller parameter tuning** | ![Progress](https://progress-bar.dev/15) |
+| **Model/Controller parameters tuning** | ![Progress](https://progress-bar.dev/15) |
 | --- | --- |
 | **Automation of picking** | ![Progress](https://progress-bar.dev/100) |
