@@ -25,7 +25,7 @@ def parse_args(argv=None) -> None:
     args = parser.parse_args(argv)
 
 class Autopick():
-    def __init__ (self, args):
+    def __init__(self, args):
         self.EM, self.conv = EnvManager(), Conversion()
         self.mr = Move_Robot()
         self.pose = self.conv.list2pose(sixd=args.sixd)
