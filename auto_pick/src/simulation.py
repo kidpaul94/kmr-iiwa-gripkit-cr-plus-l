@@ -48,14 +48,11 @@ class Autopick():
             indicies of selected gripper centers and directions
         """
         selected_idx = []
-        x, y = np.array([1., 0., 0.]), np.array([0., 1., 0.])
 
         for i in range(directions.shape[1]):
-            angle_x = np.math.atan2(np.linalg.det([directions[:,i],x]),
-                                    np.dot(directions[:,i],x))
-            angle_y = np.math.atan2(np.linalg.det([directions[:,i],y]),
-                                    np.dot(directions[:,i],y))
-            if angle_x < 0.785 and angle_y < 0.785:
+            roll = np.arctan2(directions[2,i], directions[1,i])
+            pitch = np.arctan2(directions[2,i], directions[0,i])
+            if np.abs(roll) < 0.785 and np.abs(pitch) < 0.785:
                 selected_idx.append(i)
 
         return selected_idx
@@ -105,7 +102,7 @@ class Autopick():
         -------
         float : probability of successing the grasp
         """
-        temp = 0
+        attempt = 0
         for _ in range(repeat):
             self.mr.cartesian_space(waypoints=[self.pose], tp_heights=self.tp_heights, 
                             center=center, direction=direction)
@@ -124,11 +121,11 @@ class Autopick():
             obj_pose = self.EM.get_gazebo_pose(name=self.name)
             obj_T = self.conv.pose2T(obj_pose)
             gripper_T = self.conv.pose2T(pick_up)
-            temp = gripper_T @ np.array([0., 0., -0.25, 1.])
+            temp = gripper_T @ np.array([0., 0., -0.24, 1.])
             gripper_T[:3,3] = temp[:3]
 
             if self.isgrasped(obj_T, gripper_T):
-                temp = temp + 1
+                attempt = attempt + 1
 
             self.mr.go_home()
             self.EM.delete_object(name=self.name)
@@ -137,7 +134,7 @@ class Autopick():
             time.sleep(2)
             self.EM.sync_with_gazebo()
 
-        return temp / repeat
+        return attempt / repeat
 
     def initialize(self) -> None:
         """
@@ -163,19 +160,20 @@ class Autopick():
             centers, directions = self.EM.added_objects[0].grasp_gen(path=path_dict)
 
             # Choose a grasp configuration that avoids collision with the environment (table)
-            # refined = self.avoid_collision(directions)
+            refined = self.avoid_collision(directions)
 
-            for idx in range(1):
+            for idx in refined:
                 # Check the executing grasp configuration
-                print(f'Grasp Center: {centers[:,0]}')
-                print(f'Grasp Direction: {directions[:,0]}')
+                print(f'Grasp Center: {centers[:,idx]}')
+                print(f'Grasp Direction: {directions[:,idx]}')
 
-                res = self.execute(centers[:,0], directions[:,0], obj, 1)
+                res = self.execute(centers[:,idx], directions[:,idx], obj, 1)
                 success_prob.append(res)
 
             self.EM.delete_object(name=self.name)
             time.sleep(2)
 
+        print(f'Probabilities: {success_prob}')
         print('Finished the simulation!!!')
     
 if __name__ == "__main__":
