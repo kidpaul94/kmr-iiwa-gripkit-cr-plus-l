@@ -134,7 +134,7 @@ class Move_Robot():
         waypoints.append(copy.deepcopy(wpose))
 
         # Move the gripper towards the grasping center
-        res = temp @ np.array([0., 0., -0.24, 1.])
+        res = temp @ np.array([0., 0., -0.20, 1.])
 
         wpose.position.x = res[0]
         wpose.position.y = res[1]
