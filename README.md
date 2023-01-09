@@ -1,5 +1,5 @@
 # kmr-iiwa-gripkit-cr-plus-l
-URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-robotics.com/gripkit/) and [KRM-iiwa 7](https://www.kuka.com/en-us/products/mobility/mobile-robot-systems/kmr-iiwa). Depending on user's inputs (e.g., end_effector, mobile_base, and controllers), the URDF and MoveIt **reconfigure** themselves.
+URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-robotics.com/gripkit/) and [KRM-iiwa 7](https://www.kuka.com/en-us/products/mobility/mobile-robot-systems/kmr-iiwa). Depending on user's inputs (e.g., end_effector, mobile_base, and controllers), the URDF and MoveIt ***reconfigure*** themselves. The reposity also provides a simple Gazebo environment and Python classes and functions to experiment ***object grasping***.  
 
 ![Example 0](./images/demo.png)
 
@@ -77,7 +77,7 @@ simulation.py receives several different arguments. Run the `--help` command to 
     python3 simulation.py --help
 
 ## Potential Extensions
-To run your own world with other objects, simply put them in the **models** and **worlds** folders.
+To run your own world with other objects, simply put them in the **models** and **worlds** folders. You can also swap **iiwa 7** with **iiwa 14**.
 
 ## ToDo Lists
 
