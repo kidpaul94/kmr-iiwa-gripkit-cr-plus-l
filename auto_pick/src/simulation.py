@@ -116,7 +116,7 @@ class Autopick():
             pick_up.orientation.w = 0.0
             pick_up.position.z += self.tp_heights[0]
 
-            self.mr.cartesian_space(waypoints=[pick_up], top_down=False)
+            self.mr.cartesian_space(waypoints=[pick_up], top_down=False, visualize=False)
 
             obj_pose = self.EM.get_gazebo_pose(name=self.name)
             obj_T = self.conv.pose2T(obj_pose)

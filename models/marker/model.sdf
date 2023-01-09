@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<sdf version='1.7'>
+    <model name="marker">
+        <link name="marker">
+            <visual name="marker">
+                <pose>0 0 0 0 0 0</pose>
+                <geometry>
+                    <sphere>
+                        <radius>0.02</radius>
+                    </sphere>
+                </geometry>
+                <material>
+                    <script>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                        <name>Gazebo/Green</name>
+                    </script>
+                </material>
+            </visual>
+        </link>
+        <static>true</static>
+    </model>
+</sdf>

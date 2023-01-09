@@ -1,9 +1,11 @@
 import sys
 import copy
+import rospy
 import numpy as np
 import moveit_commander as mc
 from geometry_msgs.msg import Pose
 from scipy.spatial.transform import Rotation as R
+from gazebo_msgs.srv import SpawnModel, DeleteModel
 
 from utils import rot_matrix
 
@@ -49,7 +51,7 @@ class Move_Robot():
     
     def cartesian_space(self, waypoints: list, tp_heights: list = None, 
                         center: np.ndarray = None, direction: np.ndarray = None, 
-                        top_down: bool = True) -> bool:                
+                        top_down: bool = True, visualize: bool = True) -> bool:                
         """
         Command robot's movement in cartesian space.
 
@@ -65,6 +67,8 @@ class Move_Robot():
             array of potential gripper directions w.r.t the world frame
         top_down : bool
             whether execute top_down grasping or not
+        visualize : bool
+            whether visualize waypoints or not
             
         Returns
         -------
@@ -73,11 +77,17 @@ class Move_Robot():
         """
         if top_down:
             waypoints = self.top_down(waypoints[0], tp_heights, center, direction)
+        
+        if visualize:
+            self.spawn_markers(waypoints)
 
         (plan, _) = self.arm.compute_cartesian_path(waypoints, 0.01, 0.0)  
         success = self.arm.execute(plan, wait=True)
         self.arm.stop()
         self.arm.clear_pose_targets()
+
+        if visualize:
+            self.delete_markers(waypoints)
 
         return success
 
@@ -177,3 +187,42 @@ class Move_Robot():
         else:
             self.gripper.go([-0.021, 0.021], wait=True)
         self.gripper.stop()
+
+    @staticmethod
+    def spawn_markers(waypoints: list) -> None:
+        """
+        Spawn markers in the gazebo world.
+
+        Parameters
+        ----------
+        waypoints : 1x3 : obj : `list`
+            waypoints that the robot follows
+
+        Returns
+        -------
+        None
+        """
+        spawn_model_client = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
+        for i in range(len(waypoints)):
+            spawn_model_client(model_name=f'marker_{i}',
+            model_xml=open(f'../../models/marker/model.sdf', 'r').read(),
+            robot_namespace='/foo', initial_pose=waypoints[i], reference_frame='world')
+
+    @staticmethod
+    def delete_markers(waypoints: list) -> None:
+        """
+        Delete markers in the gazebo world.
+
+        Parameters
+        ----------
+        waypoints : 1x3 : obj : `list`
+            waypoints that the robot follows
+
+        Returns
+        -------
+        None
+        """
+        rospy.wait_for_service('/gazebo/delete_model')
+        delete_model_client = rospy.ServiceProxy("/gazebo/delete_model", DeleteModel)
+        for i in range(len(waypoints)):
+            delete_model_client.call(model_name=f'marker_{i}')
