@@ -76,10 +76,10 @@ class Move_Robot():
             whether the execution is successful or not
         """
         if top_down:
-            waypoints = self.top_down(waypoints[0], tp_heights, center, direction)
-        
+            waypoints, grasp_pose = self.top_down(waypoints[0], tp_heights, center, direction)
+
         if visualize:
-            self.spawn_markers(waypoints)
+            self.spawn_markers(waypoints, grasp_pose)
 
         (plan, _) = self.arm.compute_cartesian_path(waypoints, 0.01, 0.0)  
         success = self.arm.execute(plan, wait=True)
@@ -149,9 +149,13 @@ class Move_Robot():
         wpose.position.x = res[0]
         wpose.position.y = res[1]
         wpose.position.z = res[2]
-        waypoints.append(wpose)
+        waypoints.append(copy.deepcopy(wpose))
+
+        wpose.position.x = temp[0,3]
+        wpose.position.y = temp[1,3]
+        wpose.position.z = temp[2,3]
         
-        return waypoints
+        return waypoints, wpose
 
     def go_home(self):
         """
@@ -189,7 +193,7 @@ class Move_Robot():
         self.gripper.stop()
 
     @staticmethod
-    def spawn_markers(waypoints: list) -> None:
+    def spawn_markers(waypoints: list, grasp_pose: Pose) -> None:
         """
         Spawn markers in the gazebo world.
 
@@ -197,11 +201,14 @@ class Move_Robot():
         ----------
         waypoints : 1x3 : obj : `list`
             waypoints that the robot follows
+        grasp_pose : obj : `Pose`
+            pose of the grasp w.r.t the world frame
 
         Returns
         -------
         None
         """
+        waypoints.append(grasp_pose)
         spawn_model_client = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
         for i in range(len(waypoints)):
             spawn_model_client(model_name=f'marker_{i}',
