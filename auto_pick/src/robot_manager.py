@@ -144,7 +144,7 @@ class Move_Robot():
         waypoints.append(copy.deepcopy(wpose))
 
         # Move the gripper towards the grasping center
-        res = temp @ np.array([0., 0., -0.20, 1.])
+        res = temp @ np.array([0., 0., -0.198, 1.])
 
         wpose.position.x = res[0]
         wpose.position.y = res[1]
@@ -208,12 +208,15 @@ class Move_Robot():
         -------
         None
         """
-        waypoints.append(grasp_pose)
         spawn_model_client = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
-        for i in range(len(waypoints)):
+        num_wp = len(waypoints)
+        for i in range(num_wp):
             spawn_model_client(model_name=f'marker_{i}',
             model_xml=open(f'../../models/marker/model.sdf', 'r').read(),
             robot_namespace='/foo', initial_pose=waypoints[i], reference_frame='world')
+        spawn_model_client(model_name=f'marker_{num_wp}',
+        model_xml=open(f'../../models/marker/model.sdf', 'r').read(),
+        robot_namespace='/foo', initial_pose=grasp_pose, reference_frame='world')
 
     @staticmethod
     def delete_markers(waypoints: list) -> None:
@@ -231,5 +234,6 @@ class Move_Robot():
         """
         rospy.wait_for_service('/gazebo/delete_model')
         delete_model_client = rospy.ServiceProxy("/gazebo/delete_model", DeleteModel)
-        for i in range(len(waypoints)):
+        num_wp = len(waypoints)
+        for i in range(num_wp + 1):
             delete_model_client.call(model_name=f'marker_{i}')

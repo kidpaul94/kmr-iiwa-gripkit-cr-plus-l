@@ -121,7 +121,7 @@ class Autopick():
             obj_pose = self.EM.get_gazebo_pose(name=self.name)
             obj_T = self.conv.pose2T(obj_pose)
             gripper_T = self.conv.pose2T(pick_up)
-            temp = gripper_T @ np.array([0., 0., -0.20, 1.])
+            temp = gripper_T @ np.array([0., 0., 0.198, 1.])
             gripper_T[:3,3] = temp[:3]
 
             if self.isgrasped(obj_T, gripper_T):

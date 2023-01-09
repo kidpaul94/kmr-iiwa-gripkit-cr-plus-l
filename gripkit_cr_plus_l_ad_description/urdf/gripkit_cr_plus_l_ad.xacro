@@ -435,7 +435,7 @@
   <parent link="CRG200_body"/>
   <child link="CRG200_base_jaw_1"/>
   <axis xyz="1.0 0.0 0.0"/>
-  <limit upper="0.021" lower="-0.021" effort="100" velocity="100"/>
+  <limit upper="0.021" lower="-0.021" effort="100" velocity="10"/>
 </joint>
 
 <joint name="Slider02" type="prismatic">
@@ -443,7 +443,7 @@
   <parent link="CRG200_body"/>
   <child link="CRG200_base_jaw_2"/>
   <axis xyz="1.0 0.0 0.0"/>
-  <limit upper="0.021" lower="-0.021" effort="100" velocity="100"/>
+  <limit upper="0.021" lower="-0.021" effort="100" velocity="10"/>
 </joint>
 
 <joint name="Rigid11" type="fixed">

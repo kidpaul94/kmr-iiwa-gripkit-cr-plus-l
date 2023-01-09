@@ -3,6 +3,8 @@
 
 <gazebo reference="screw_1">
   <material>${body_color}</material>
+  <kp>1e+13</kp>
+  <kd>1</kd>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
@@ -10,6 +12,8 @@
 
 <gazebo reference="screw_2">
   <material>${body_color}</material>
+  <kp>1e+13</kp>
+  <kd>1</kd>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
@@ -17,6 +21,8 @@
 
 <gazebo reference="screw_3">
   <material>${body_color}</material>
+  <kp>1e+13</kp>
+  <kd>1</kd>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
@@ -24,6 +30,8 @@
 
 <gazebo reference="screw_4">
   <material>${body_color}</material>
+  <kp>1e+13</kp>
+  <kd>1</kd>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
@@ -31,6 +39,8 @@
 
 <gazebo reference="screw_5">
   <material>${body_color}</material>
+  <kp>1e+13</kp>
+  <kd>1</kd>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
@@ -38,6 +48,8 @@
 
 <gazebo reference="screw_6">
   <material>${body_color}</material>
+  <kp>1e+13</kp>
+  <kd>1</kd>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
@@ -45,6 +57,8 @@
 
 <gazebo reference="link_0">
   <material>${body_color}</material>
+  <kp>1e+13</kp>
+  <kd>1</kd>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
@@ -53,6 +67,8 @@
 
 <gazebo reference="link_1">
   <material>${body_color}</material>
+  <kp>1e+13</kp>
+  <kd>1</kd>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
@@ -60,6 +76,8 @@
 
 <gazebo reference="link_2">
   <material>${body_color}</material>
+  <kp>1e+13</kp>
+  <kd>1</kd>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
@@ -67,6 +85,8 @@
 
 <gazebo reference="link_3">
   <material>${body_color}</material>
+  <kp>1e+13</kp>
+  <kd>1</kd>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
@@ -74,6 +94,8 @@
 
 <gazebo reference="link_4">
   <material>${body_color}</material>
+  <kp>1e+13</kp>
+  <kd>1</kd>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
@@ -81,6 +103,8 @@
 
 <gazebo reference="link_5">
   <material>${body_color}</material>
+  <kp>1e+13</kp>
+  <kd>1</kd>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
@@ -88,6 +112,8 @@
 
 <gazebo reference="link_6">
   <material>${body_color}</material>
+  <kp>1e+13</kp>
+  <kd>1</kd>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
@@ -95,6 +121,8 @@
 
 <gazebo reference="link_7">
   <material>${body_color}</material>
+  <kp>1e+13</kp>
+  <kd>1</kd>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>

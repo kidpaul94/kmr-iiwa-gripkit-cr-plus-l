@@ -3,6 +3,8 @@
 
 <gazebo reference="base_link">
   <material>${body_color}</material>
+  <kp>1e+13</kp>
+  <kd>1</kd>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
@@ -11,6 +13,8 @@
 
 <gazebo reference="cover">
   <material>${body_color}</material>
+  <kp>1e+13</kp>
+  <kd>1</kd>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>

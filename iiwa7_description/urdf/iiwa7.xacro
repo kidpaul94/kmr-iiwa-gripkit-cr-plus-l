@@ -339,7 +339,7 @@
   <parent link="link_0"/>
   <child link="link_1"/>
   <axis xyz="0.0 0.0 1.0"/>
-  <limit upper="2.96706" lower="-2.96706" effort="100" velocity="100"/>
+  <limit upper="2.96706" lower="-2.96706" effort="100" velocity="10"/>
 </joint>
 
 <joint name="Rev02" type="revolute">
@@ -347,7 +347,7 @@
   <parent link="link_1"/>
   <child link="link_2"/>
   <axis xyz="0.0 1.0 0.0"/>
-  <limit upper="2.094395" lower="-2.094395" effort="100" velocity="100"/>
+  <limit upper="2.094395" lower="-2.094395" effort="100" velocity="10"/>
 </joint>
 
 <joint name="Rev03" type="revolute">
@@ -355,7 +355,7 @@
   <parent link="link_2"/>
   <child link="link_3"/>
   <axis xyz="0.0 0.0 1.0"/>
-  <limit upper="2.96706" lower="-2.96706" effort="100" velocity="100"/>
+  <limit upper="2.96706" lower="-2.96706" effort="100" velocity="10"/>
 </joint>
 
 <joint name="Rev04" type="revolute">
@@ -363,7 +363,7 @@
   <parent link="link_3"/>
   <child link="link_4"/>
   <axis xyz="0.0 -1.0 0.0"/>
-  <limit upper="2.094395" lower="-2.094395" effort="100" velocity="100"/>
+  <limit upper="2.094395" lower="-2.094395" effort="100" velocity="10"/>
 </joint>
 
 <joint name="Rev05" type="revolute">
@@ -371,7 +371,7 @@
   <parent link="link_4"/>
   <child link="link_5"/>
   <axis xyz="0.0 0.0 1.0"/>
-  <limit upper="2.96706" lower="-2.96706" effort="100" velocity="100"/>
+  <limit upper="2.96706" lower="-2.96706" effort="100" velocity="10"/>
 </joint>
 
 <joint name="Rev06" type="revolute">
@@ -379,7 +379,7 @@
   <parent link="link_5"/>
   <child link="link_6"/>
   <axis xyz="0.0 1.0 0.0"/>
-  <limit upper="2.094395" lower="-2.094395" effort="100" velocity="100"/>
+  <limit upper="2.094395" lower="-2.094395" effort="100" velocity="10"/>
 </joint>
 
 <joint name="Rev07" type="revolute">
@@ -387,7 +387,7 @@
   <parent link="link_6"/>
   <child link="link_7"/>
   <axis xyz="0.0 0.0 1.0"/>
-  <limit upper="3.054326" lower="-3.054326" effort="100" velocity="100"/>
+  <limit upper="3.054326" lower="-3.054326" effort="100" velocity="10"/>
 </joint>
 
 </robot>

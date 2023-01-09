@@ -81,6 +81,6 @@ To run your own world with other objects, simply put them in the **models** and 
 
 ## ToDo Lists
 
-| **Model & Controller parameters tuning** | ![Progress](https://progress-bar.dev/50) |
+| **Model & Controller parameters tuning** | ![Progress](https://progress-bar.dev/65) |
 | --- | --- |
 | **Automation of picking** | ![Progress](https://progress-bar.dev/100) |
