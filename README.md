@@ -19,7 +19,7 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
 
 ## Repository Structure
     ├── auto_pick
-    │   └── src                           # source codes
+    │   └── src                           # Python source codes
     ├── gripkit_cr_plus_l_ad_description
     ├── gripkit_cr_plus_l_ad_description
     │   ├── meshes                        # STL files
