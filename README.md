@@ -11,14 +11,14 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
     - [Gazebo](#gazebo)
     - [MoveIt](#moveit)
     - [MoveIt and Gazebo](#moveit-and-gazebo)
-    - [Automated Pick](#automated-pick)
+    - [Automated Pickup](#automated-pickup)
 - [Potential Extensions](#potential-extensions)
 - [ToDo Lists](#todo-lists)
 
 ---
 
 ## Repository Structure
-    ├── auto_pick
+    ├── auto_pickup
     │   └── src                           # Python source codes
     ├── gripkit_cr_plus_l_ad_description
     ├── gripkit_cr_plus_l_ad_description
@@ -70,10 +70,10 @@ It also depends on **numpy** and **scipy**:
 
 **Note:** You can also checkout more arguments in the launch file.
 
-### Automated Pick:
+### Automated Pickup:
 simulation.py receives several different arguments. Run the `--help` command to see everything it receives.
 
-    cd auto_pick/src
+    cd auto_pickup/src
     python3 simulation.py --help
 
 ## Potential Extensions
@@ -83,4 +83,4 @@ To run your own world with other objects, simply put them in the **models** and 
 
 | **Model & Controller parameters tuning** | ![Progress](https://progress-bar.dev/65) |
 | --- | --- |
-| **Automation of picking** | ![Progress](https://progress-bar.dev/100) |
+| **Automation of picking up** | ![Progress](https://progress-bar.dev/100) |
