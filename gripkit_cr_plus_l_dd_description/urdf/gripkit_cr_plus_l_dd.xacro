@@ -4,6 +4,9 @@
 <xacro:include filename="$(find gripkit_cr_plus_l_dd_description)/urdf/gripkit_cr_plus_l_dd.trans" />
 <xacro:include filename="$(find gripkit_cr_plus_l_dd_description)/urdf/gripkit_cr_plus_l_dd.gazebo" />
 
+<xacro:property name="max_velocity" value="10"/>
+<xacro:property name="max_effort" value="100"/>
+
 <link name="SF-ISO50-CRG200_Customer">
   <inertial>
     <origin xyz="-0.000839387245317249 1.3268462236734284e-07 0.0056277999249054874" rpy="0 0 0"/>
@@ -372,7 +375,7 @@
   <parent link="CRG200_body"/>
   <child link="CRG200_base_jaw_1"/>
   <axis xyz="1.0 0.0 0.0"/>
-  <limit upper="0.021" lower="-0.021" effort="100" velocity="10"/>
+  <limit upper="0.021" lower="-0.021" effort="${max_effort}" velocity="${max_velocity}"/>
 </joint>
 
 <joint name="Slider02" type="prismatic">
@@ -380,7 +383,7 @@
   <parent link="CRG200_body"/>
   <child link="CRG200_base_jaw_2"/>
   <axis xyz="1.0 0.0 0.0"/>
-  <limit upper="0.021" lower="-0.021" effort="100" velocity="10"/>
+  <limit upper="0.021" lower="-0.021" effort="${max_effort}" velocity="${max_velocity}"/>
 </joint>
 
 <joint name="Rigid11" type="fixed">

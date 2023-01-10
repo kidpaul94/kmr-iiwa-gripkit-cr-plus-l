@@ -81,7 +81,7 @@ class Move_Robot():
         if visualize:
             self.spawn_markers(waypoints, grasp_pose)
 
-        (plan, _) = self.arm.compute_cartesian_path(waypoints, 0.01, 0.0)  
+        (plan, _) = self.arm.compute_cartesian_path(waypoints, 0.001, 0.0)  
         success = self.arm.execute(plan, wait=True)
         self.arm.stop()
         self.arm.clear_pose_targets()

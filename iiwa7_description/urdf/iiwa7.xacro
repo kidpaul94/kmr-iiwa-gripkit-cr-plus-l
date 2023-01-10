@@ -4,6 +4,10 @@
 <xacro:include filename="$(find iiwa7_description)/urdf/iiwa7.trans" />
 <xacro:include filename="$(find iiwa7_description)/urdf/iiwa7.gazebo" />
 
+<!-- <xacro:property name="safety_controller_k_pos" value="100" />
+<xacro:property name="safety_controller_k_vel" value="2" />  -->
+<xacro:property name="max_velocity" value="10"/>
+
 <link name="screw_1">
   <inertial>
     <origin xyz="-1.4832773006889655e-05 -0.0010378724707667056 6.521979453832927e-06" rpy="0 0 0"/>
@@ -339,7 +343,9 @@
   <parent link="link_0"/>
   <child link="link_1"/>
   <axis xyz="0.0 0.0 1.0"/>
-  <limit upper="2.96706" lower="-2.96706" effort="320" velocity="10"/>
+  <limit upper="2.96706" lower="-2.96706" effort="320" velocity="${max_velocity}"/>
+  <!-- <safety_controller soft_upper_limit="2.93215" soft_lower_limit="-2.93215"
+                     k_position="${safety_controller_k_pos}" k_velocity="${safety_controller_k_vel}"/>  -->
 </joint>
 
 <joint name="Rev02" type="revolute">
@@ -347,7 +353,9 @@
   <parent link="link_1"/>
   <child link="link_2"/>
   <axis xyz="0.0 1.0 0.0"/>
-  <limit upper="2.094395" lower="-2.094395" effort="320" velocity="10"/>
+  <limit upper="2.094395" lower="-2.094395" effort="320" velocity="${max_velocity}"/>
+  <!-- <safety_controller soft_upper_limit="2.05949" soft_lower_limit="-2.05949"
+                     k_position="${safety_controller_k_pos}" k_velocity="${safety_controller_k_vel}"/>  -->
 </joint>
 
 <joint name="Rev03" type="revolute">
@@ -355,7 +363,9 @@
   <parent link="link_2"/>
   <child link="link_3"/>
   <axis xyz="0.0 0.0 1.0"/>
-  <limit upper="2.96706" lower="-2.96706" effort="176" velocity="10"/>
+  <limit upper="2.96706" lower="-2.96706" effort="176" velocity="${max_velocity}"/>
+  <!-- <safety_controller soft_upper_limit="2.93215" soft_lower_limit="-2.93215"
+                     k_position="${safety_controller_k_pos}" k_velocity="${safety_controller_k_vel}"/>  -->
 </joint>
 
 <joint name="Rev04" type="revolute">
@@ -363,7 +373,9 @@
   <parent link="link_3"/>
   <child link="link_4"/>
   <axis xyz="0.0 -1.0 0.0"/>
-  <limit upper="2.094395" lower="-2.094395" effort="176" velocity="10"/>
+  <limit upper="2.094395" lower="-2.094395" effort="176" velocity="${max_velocity}"/>
+  <!-- <safety_controller soft_upper_limit="2.05949" soft_lower_limit="-2.05949"
+                     k_position="${safety_controller_k_pos}" k_velocity="${safety_controller_k_vel}"/>  -->
 </joint>
 
 <joint name="Rev05" type="revolute">
@@ -371,7 +383,9 @@
   <parent link="link_4"/>
   <child link="link_5"/>
   <axis xyz="0.0 0.0 1.0"/>
-  <limit upper="2.96706" lower="-2.96706" effort="110" velocity="10"/>
+  <limit upper="2.96706" lower="-2.96706" effort="110" velocity="${max_velocity}"/>
+  <!-- <safety_controller soft_upper_limit="2.93215" soft_lower_limit="-2.93215"
+                     k_position="${safety_controller_k_pos}" k_velocity="${safety_controller_k_vel}"/>  -->
 </joint>
 
 <joint name="Rev06" type="revolute">
@@ -379,7 +393,9 @@
   <parent link="link_5"/>
   <child link="link_6"/>
   <axis xyz="0.0 1.0 0.0"/>
-  <limit upper="2.094395" lower="-2.094395" effort="40" velocity="10"/>
+  <limit upper="2.094395" lower="-2.094395" effort="40" velocity="${max_velocity}"/>
+  <!-- <safety_controller soft_upper_limit="2.05949" soft_lower_limit="-2.05949"
+                     k_position="${safety_controller_k_pos}" k_velocity="${safety_controller_k_vel}"/>  -->
 </joint>
 
 <joint name="Rev07" type="revolute">
@@ -387,7 +403,9 @@
   <parent link="link_6"/>
   <child link="link_7"/>
   <axis xyz="0.0 0.0 1.0"/>
-  <limit upper="3.054326" lower="-3.054326" effort="40" velocity="10"/>
+  <limit upper="3.054326" lower="-3.054326" effort="40" velocity="${max_velocity}"/>
+  <!-- <safety_controller soft_upper_limit="3.01942" soft_lower_limit="-3.01942"
+                     k_position="${safety_controller_k_pos}" k_velocity="${safety_controller_k_vel}"/>  -->
 </joint>
 
 </robot>
