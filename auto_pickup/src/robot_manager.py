@@ -14,7 +14,6 @@ class Move_Robot():
         mc.roscpp_initialize(sys.argv)
         self.arm = mc.MoveGroupCommander("iiwa")
         self.gripper = mc.MoveGroupCommander("gripper")
-        self.arm_home = self.arm.get_current_joint_values()
         self.tdR = np.array([[-1.,0.,0.],[0.,1.,0.],[0.,0.,-1.]])
         self.gripper_control(command=False)
         
@@ -157,20 +156,20 @@ class Move_Robot():
         
         return waypoints, wpose
 
-    def go_home(self):
+    def go_home(self, home_config: list):
         """
         Return the robot to home configurations.
 
         Parameters
         ----------
-        None
+        home_config : 1xN : obj : `list`
+            list of joint angles that the robot takes
 
         Returns
         -------
         None
         """
-        self.arm.go(self.arm_home, wait=True)
-        self.arm.stop()
+        self.joint_space(goal_config=home_config, degrees=False)
         self.gripper_control(command=False)
 
     def gripper_control(self, command: bool = True) -> None:

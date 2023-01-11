@@ -130,7 +130,7 @@ class Autopick():
             self.EM.delete_object(name=self.name)
             time.sleep(2)
 
-            self.mr.go_home()
+            self.mr.go_home([0.]*7)
             
             self.EM.spawn_object(name=self.name, pose=self.pose, sdf_name=sdf_name)
             time.sleep(2)

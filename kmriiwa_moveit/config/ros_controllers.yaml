@@ -24,21 +24,21 @@ iiwa_Effort_controller:
     Rev07:
       goal: *goal_pos_constraint
   gains:
-    Rev01: {p: 1000,  d: 50, i: 10, i_clamp: 100}
-    Rev02: {p: 5000,  d: 30, i: 100, i_clamp: 400}
-    Rev03: {p: 5000,  d: 50, i: 10, i_clamp: 100}
-    Rev04: {p: 200,  d: 20, i: 10, i_clamp: 100}
-    Rev05: {p: 100,  d: 10, i: 0.1, i_clamp: 100}
-    Rev06: {p: 50,  d: 5, i: 0.1, i_clamp: 100}
-    Rev07: {p: 10,  d: 1, i: 0.1, i_clamp: 100}
+    Rev01: {p: 1000, i: 10, d: 50, i_clamp: 100}
+    Rev02: {p: 5000, i: 100, d: 30, i_clamp: 100}
+    Rev03: {p: 5000, i: 10, d: 50, i_clamp: 100}
+    Rev04: {p: 200, i: 10, d: 20, i_clamp: 100}
+    Rev05: {p: 100, i: 0.1, d: 10, i_clamp: 100}
+    Rev06: {p: 50, i: 0.1, d: 5, i_clamp: 100}
+    Rev07: {p: 10, i: 0.1, d: 1, i_clamp: 100}
 gripper_Effort_controller:
   type: effort_controllers/JointTrajectoryController
   joints:
     - Slider01
     - Slider02
   gains:
-    Slider01: {p: 10000,  d: 1, i: 10, i_clamp: 1}
-    Slider02: {p: 10000,  d: 1, i: 10, i_clamp: 1}
+    Slider01: {p: 10000, i: 10, d: 1, i_clamp: 1}
+    Slider02: {p: 10000, i: 10, d: 1, i_clamp: 1}
 iiwa_Position_controller:
   type: position_controllers/JointTrajectoryController
   joints:
@@ -95,31 +95,31 @@ iiwa_Velocity_controller:
     Rev07:
       goal: *goal_pos_constraint
   gains:
-    Rev01: {p: 1000,  d: 50, i: 10, i_clamp: 100}
-    Rev02: {p: 5000,  d: 30, i: 100, i_clamp: 400}
-    Rev03: {p: 5000,  d: 50, i: 10, i_clamp: 100}
-    Rev04: {p: 200,  d: 20, i: 10, i_clamp: 100}
-    Rev05: {p: 100,  d: 10, i: 0.1, i_clamp: 100}
-    Rev06: {p: 50,  d: 5, i: 0.1, i_clamp: 100}
-    Rev07: {p: 10,  d: 1, i: 0.1, i_clamp: 100}
+    Rev01: {p: 1000, i: 10, d: 50, i_clamp: 100}
+    Rev02: {p: 5000, i: 100, d: 30, i_clamp: 100}
+    Rev03: {p: 5000, i: 10, d: 50, i_clamp: 100}
+    Rev04: {p: 200, i: 10, d: 20, i_clamp: 100}
+    Rev05: {p: 100, i: 0.1, d: 10, i_clamp: 100}
+    Rev06: {p: 50, i: 0.1, d: 5, i_clamp: 100}
+    Rev07: {p: 10, i: 0.1, d: 1, i_clamp: 100}
 gripper_Velocity_controller:
   type: velocity_controllers/JointTrajectoryController
   joints:
     - Slider01
     - Slider02
   gains:
-    Slider01: {p: 10000,  d: 1, i: 10, i_clamp: 1}
-    Slider02: {p: 10000,  d: 1, i: 10, i_clamp: 1}
+    Slider01: {p: 10000, i: 10, d: 1, i_clamp: 1}
+    Slider02: {p: 10000, i: 10, d: 1, i_clamp: 1}
 # Provide random PID gains to gazebo_ros_control 
 # to suppress ERROR when using position_controllers and velocity_controllers
 gazebo_ros_control:
   pid_gains:
-    Rev01: {p: 1000,  d: 50, i: 10, i_clamp: 100}
-    Rev02: {p: 5000,  d: 30, i: 100, i_clamp: 400}
-    Rev03: {p: 5000,  d: 50, i: 10, i_clamp: 100}
-    Rev04: {p: 200,  d: 20, i: 10, i_clamp: 100}
-    Rev05: {p: 100,  d: 10, i: 0.1, i_clamp: 100}
-    Rev06: {p: 50,  d: 5, i: 0.1, i_clamp: 100}
-    Rev07: {p: 10,  d: 1, i: 0.1, i_clamp: 100}
-    Slider01: {p: 10000,  d: 1, i: 10, i_clamp: 1}
-    Slider02: {p: 10000,  d: 1, i: 10, i_clamp: 1}
+    Rev01: {p: 1000, i: 10, d: 50, i_clamp: 100}
+    Rev02: {p: 5000, i: 100, d: 30, i_clamp: 100}
+    Rev03: {p: 5000, i: 10, d: 50, i_clamp: 100}
+    Rev04: {p: 200, i: 10, d: 20, i_clamp: 100}
+    Rev05: {p: 100, i: 0.1, d: 10, i_clamp: 100}
+    Rev06: {p: 50, i: 0.1, d: 5, i_clamp: 100}
+    Rev07: {p: 10, i: 0.1, d: 1, i_clamp: 100}
+    Slider01: {p: 10000, i: 10, d: 1, i_clamp: 1}
+    Slider02: {p: 10000, i: 10, d: 1, i_clamp: 1}
