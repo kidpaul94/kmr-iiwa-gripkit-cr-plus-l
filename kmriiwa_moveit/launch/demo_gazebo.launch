@@ -1,0 +1,36 @@
+<launch>
+
+  <!-- specify the planning pipeline -->
+  <arg name="pipeline" default="ompl" />
+
+  <!-- Rviz specific options -->
+  <arg name="use_rviz" default="false" />
+
+  <!-- Gazebo specific options -->
+  <arg name="world_name" value="$(find worlds)/lab_world.world"/>
+  <arg name="gazebo_gui" default="true"/>
+  <arg name="paused" default="false"/>
+  <arg name="robot_name" default="kmriiwa" />
+  <arg name="hardware_interface" default="Effort" />
+  <arg name="ee_type" default="bb" />
+
+  <!-- launch the gazebo simulator and spawn the robot -->
+  <include file="$(dirname)/gazebo.launch" >
+    <arg name="world_name" value="$(arg world_name)"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="gazebo_gui" value="$(arg gazebo_gui)"/>
+    <arg name="robot_name" value="$(arg robot_name)" />
+    <arg name="hardware_interface" value="$(arg hardware_interface)" />
+    <arg name="ee_type" value="$(arg ee_type)" />
+  </include>
+
+  <include file="$(dirname)/demo.launch" pass_all_args="true">
+    <!-- robot description is loaded by gazebo.launch, to enable Gazebo features -->
+    <arg name="load_robot_description" value="false" />
+    <arg name="moveit_controller_manager" value="ros_control" />
+    <arg name="use_rviz" default="$(arg use_rviz)" />
+    <arg name="robot_name" value="$(arg robot_name)" />
+    <arg name="hardware_interface" value="$(arg hardware_interface)" />
+    <arg name="ee_type" value="$(arg ee_type)" />
+  </include>
+</launch>

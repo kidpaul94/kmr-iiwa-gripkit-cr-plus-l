@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<robot name="iiwa7" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<transmission name="Rev01_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev01">
+    <hardwareInterface>hardware_interface/$(arg hardware_interface)JointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev01_actr">
+    <hardwareInterface>hardware_interface/$(arg hardware_interface)JointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev02_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev02">
+    <hardwareInterface>hardware_interface/$(arg hardware_interface)JointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev02_actr">
+    <hardwareInterface>hardware_interface/$(arg hardware_interface)JointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev03_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev03">
+    <hardwareInterface>hardware_interface/$(arg hardware_interface)JointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev03_actr">
+    <hardwareInterface>hardware_interface/$(arg hardware_interface)JointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev04_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev04">
+    <hardwareInterface>hardware_interface/$(arg hardware_interface)JointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev04_actr">
+    <hardwareInterface>hardware_interface/$(arg hardware_interface)JointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev05_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev05">
+    <hardwareInterface>hardware_interface/$(arg hardware_interface)JointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev05_actr">
+    <hardwareInterface>hardware_interface/$(arg hardware_interface)JointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev06_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev06">
+    <hardwareInterface>hardware_interface/$(arg hardware_interface)JointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev06_actr">
+    <hardwareInterface>hardware_interface/$(arg hardware_interface)JointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rev07_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev07">
+    <hardwareInterface>hardware_interface/$(arg hardware_interface)JointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev07_actr">
+    <hardwareInterface>hardware_interface/$(arg hardware_interface)JointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>

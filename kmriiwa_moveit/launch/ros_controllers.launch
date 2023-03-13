@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="hardware_interface" default="Effort" />
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find kmriiwa_moveit)/config/ros_controllers.yaml" command="load"/>
+
+  <!-- Load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" args="iiwa_$(arg hardware_interface)_controller gripper_$(arg hardware_interface)_controller "/>
+
+</launch>

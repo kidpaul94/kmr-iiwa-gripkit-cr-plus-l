@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+  <env name="GAZEBO_MODEL_PATH" value="$(find models)" />
+
+  <arg name="robot_name" default="kmriiwa" />
+  <arg name="hardware_interface" default="Effort" />
+  <arg name="ee_type" default="bb" />
+  <param name="robot_description" command="$(find xacro)/xacro $(find kmriiwa_description)/urdf/kmriiwa.xacro
+  robot_name:=$(arg robot_name) hardware_interface:=$(arg hardware_interface) ee_type:=$(arg ee_type)"/>
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model kmriiwa"/>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find worlds)/lab_world.world"/>
+    <arg name="paused" value="true"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+    <arg name="extra_gazebo_args" default="--verbose"/>
+  </include>
+</launch>
