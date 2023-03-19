@@ -166,7 +166,7 @@ class Move_Robot():
     def is_grasped(joint_names: list = ['Slider01', 'Slider02'], close_pos: list = [0.0065, -0.0065],
                    threshold: float = 0.0005):
         """
-        Return the robot to home configurations.
+        Check if an object is successfully grasped.
 
         Parameters
         ----------
