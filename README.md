@@ -1,3 +1,7 @@
+<p align="center">
+<img src=./images/logo.png width=40% height=40%>
+</p>
+
 # kmr-iiwa-gripkit-cr-plus-l
 
 URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-robotics.com/gripkit/) and [KRM-iiwa 7](https://www.kuka.com/en-us/products/mobility/mobile-robot-systems/kmr-iiwa). Depending on user's inputs (e.g., end_effector, mobile_base, and controllers), the URDF and MoveIt ***reconfigure*** themselves. The reposity also provides a simple Gazebo environment and Python classes and functions to experiment ***object grasping***.  
@@ -5,6 +9,8 @@ URDF and MoveIt configuration (ROS1) files of [Gripkit-CR-Plus-L](https://weiss-
 <p align="center">
 <img src=./images/demo.png width=60% height=60%> <img src=./images/demo.gif width=38% height=38%>
 </p>
+
+The project was done while [Hojun Lee](https://www.linkedin.com/in/hjunlee94/) was working for Barton Research Group ([BRG](https://brg.engin.umich.edu/)) at the University of Michigan.
 
 ## Table of Contents
 
