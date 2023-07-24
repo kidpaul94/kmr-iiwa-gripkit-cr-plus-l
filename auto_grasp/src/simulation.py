@@ -13,7 +13,7 @@ def parse_args(argv=None) -> None:
     parser = argparse.ArgumentParser(description='auto_pick')
     parser.add_argument('--name', default='object_1', type=str,
                         help='name of the object in the gazebo world.')
-    parser.add_argument('--sixd', default=[0., -0.65, 0.75, 0, 0, 0.], type=list,
+    parser.add_argument('--sixd', default=[0., -0.65, 0.75, 0., 0., 0.], type=list,
                         help='list of xyz and three euler angles.')
     parser.add_argument('--sdf_names', default=['obj_01'], type=str, nargs='+',
                         help='sdf files of objects we sequentially spawn in the gazebo world.')
