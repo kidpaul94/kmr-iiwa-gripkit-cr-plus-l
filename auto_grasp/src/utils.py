@@ -49,6 +49,29 @@ class Conversion():
 
         return res
 
+    @staticmethod
+    def cpp2R(direction: np.ndarray, aprv: list) -> np.ndarray:
+        """
+        Convert contact point pair format to rotation matrix. 
+
+        Parameters
+        ----------
+        direction : 3x1 : obj : `np.ndarray`
+            gripper direction w.r.t the world frame
+        aprv : 3x1 : obj : `list`
+            approach vector of a gripper of a cpp
+
+        Returns
+        -------
+        res : 4x4 : obj : `np.ndarray`
+            homegeneous transformation format
+        """
+        last_ax = np.cross(aprv, direction)
+        R = np.eye(3)
+        R[:,0], R[:,1], R[:,2] = direction, last_ax, aprv
+        
+        return R
+
 def rot_matrix(axis_1: np.ndarray, axis_2: np.ndarray) -> np.ndarray:
     """ 
     Calculate a rotation matrix that aligns the axis_2 with the axis_1.
@@ -77,19 +100,29 @@ def rot_matrix(axis_1: np.ndarray, axis_2: np.ndarray) -> np.ndarray:
 
     return R
 
-def noisy_pose(sixd: list) -> list:
+def noisy_pose(mu: list = [0.0, 0.0], sigma: list = [0.4, 2.0]) -> list:
     """
     Add gaussian noise on pose values.
 
     Parameters
     ----------
-    sixd : 1x6 : obj : `list`
-        list of xyz and three euler angles
+    mu : 1x2 : obj : `list`
+        means of gaussian noise models
+    sigma : 1x2 : obj : `list`
+        standard deviations of gaussian noise models
 
     Returns
     -------
-    `list` : xyz and three euler angles that we add noise on
+    noise_position : 3x1 : obj : `np.ndarray`
+        array of position noise in xyz
+    noise_orientation : 4x1 : obj : `np.ndarray`
+        array of orientation noise in quaternion
     """
-    noise = np.random.normal(0,1,6)
+    np.random.seed()
+    noise_position = np.random.normal(mu[0],sigma[0],3)
+    noise_orientation = np.random.normal(mu[1],sigma[1],3)
+    noise_position = np.clip(noise_position, -1, 1) * 0.01
+    noise_orientation = np.clip(noise_orientation, -5, 5) * np.pi / 180
+    noise_orientation = R.from_euler('xyz', noise_orientation).as_quat()
 
-    return sixd + noise
+    return noise_position, noise_orientation 

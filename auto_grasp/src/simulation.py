@@ -13,16 +13,24 @@ def parse_args(argv=None) -> None:
     parser = argparse.ArgumentParser(description='auto_pick')
     parser.add_argument('--name', default='object_1', type=str,
                         help='name of the object in the gazebo world.')
-    parser.add_argument('--sixd', default=[0., -0.65, 0.715, 0, 0, -180.], type=list,
+    parser.add_argument('--sixd', default=[0., -0.65, 0.75, 0, 0, 0.], type=list,
                         help='list of xyz and three euler angles.')
-    parser.add_argument('--sdf_names', default=['obj_05'], type=str, nargs='+',
+    parser.add_argument('--sdf_names', default=['obj_01'], type=str, nargs='+',
                         help='sdf files of objects we sequentially spawn in the gazebo world.')
+    parser.add_argument('--is_6dof', default=True, type=bool,
+                        help='whether provided grasp dataset is in 6-dof representation.')
     parser.add_argument('--grasp_dicts', default='../../models/dict', type=str,
-                        help='root_dir to a .txt file of cpps.')
+                        help='root_dir to a .txt file of cpps and aprvs.')
+    parser.add_argument('--single_grasp', default=True, type=bool,
+                        help='whether test all grasps vs. execute a single best grasp.')
     parser.add_argument('--iter_sample', default=1, type=int,
                         help='number of iteration per grasp sample.')
     parser.add_argument('--tp_heights', default=[0.45, 0.3], type=list,
                         help='heights of waypoints that the robot follow before grasping.')
+    parser.add_argument('--table_height', default=0.695, type=float,
+                        help='heights of the table surface.')
+    parser.add_argument('--noisy_pose', default=True, type=bool,
+                        help='whether add gaussion noise models on an object pose.')
     parser.add_argument('--save_probs', default=True, type=bool,
                         help='whether to save the simulation results.')
 
@@ -39,7 +47,8 @@ class Autopick():
         self.iter_sample, self.tp_heights = args.iter_sample, args.tp_heights
     
     @staticmethod
-    def avoid_collision(directions: np.ndarray) -> np.ndarray:
+    def avoid_collision(table_height: float, centers: np.ndarray, directions: np.ndarray,
+                        aprvs: list = None) -> np.ndarray:
         """
         Remove grasp configurations that potentially causes collision with the table
 
@@ -58,14 +67,17 @@ class Autopick():
         num_selected = 0
         refined_list = []
         for i in range(directions.shape[1]):
-            # pitch = np.arctan(directions[2,i] / directions[0,i])
-            roll = np.arctan(directions[2,i] / directions[1,i])
+            # Check whether side of each gripper finger is potentially bellow the table surface (collision)
+            ftip_loc1 = centers[:,i] + 0.006 * directions[:,i] / np.linalg.norm(directions[:,i])
+            ftip_loc2 = centers[:,i] - 0.006 * directions[:,i] / np.linalg.norm(directions[:,i])
 
-            if abs(roll) < 0.785:
+            if ftip_loc1[2] > table_height and ftip_loc2[2] > table_height:
                 refined_list.append(i)
                 num_selected = num_selected + 1
-            else:
+            elif aprvs is not None:
                 refined_list.append(False)
+            else:
+                continue
 
         return refined_list, num_selected
 
@@ -94,8 +106,8 @@ class Autopick():
         
         return success
 
-    def execute(self, center: np.ndarray, direction: np.ndarray, sdf_name: str, 
-                repeat: int = 100) -> float:
+    def execute(self, center: np.ndarray, direction: np.ndarray, sdf_name: str, sub_aprvs: list = None,
+                prob: list = None, repeat: int = None) -> float:
         """
         Execute a given grasp configuration # times to obtain its probability of success
 
@@ -114,12 +126,16 @@ class Autopick():
         -------
         float : probability of successing the grasp
         """
+        if prob is not None:
+            idx = prob.index(max(prob)) 
+            center, direction, sub_aprvs = center[:,idx], direction[:,idx], sub_aprvs[idx]
+
         attempt, total = 0, repeat
         for _ in range(repeat):
-            self.mr.gripper_control(command=False)
+            _ = self.mr.gripper_control(width=0.021, command=False)
             time.sleep(1)
-            executed, recorded = self.mr.cartesian_space(waypoints=[self.pose], tp_heights=self.tp_heights, 
-                                                         center=center, direction=direction)
+            executed, recorded, closing_width = self.mr.cartesian_space(waypoints=[self.pose], tp_heights=self.tp_heights, 
+                                                         sub_aprvs=sub_aprvs, center=center, direction=direction)
             time.sleep(1)
             if executed:
                 link7_pose = self.mr.get_link_pose(name='link_7')
@@ -130,14 +146,14 @@ class Autopick():
 
                 if self.final_check(ref_T, gripper_T):
                     print('Object is inbetween the gripper fingers...')
-                    self.mr.gripper_control()
+                    _ = self.mr.gripper_control(width=closing_width * 0.5)
                     time.sleep(1)
 
                     # Put the gripper on top of the object center
                     self.mr.cartesian_space(waypoints=[recorded[0]], top_down=False, visualize=False)
                     time.sleep(1)
 
-                    if self.mr.is_grasped():
+                    if self.mr.is_grasped_F():
                         attempt = attempt + 1
                     print(f'{attempt} out of {total} succeeded!!!')
                 else:
@@ -147,14 +163,13 @@ class Autopick():
                 total = total - 1
 
             self.EM.delete_object(name=self.name)
-            time.sleep(1)
-
+            time.sleep(0.5)
             self.mr.joint_space(goal_config=[0.]*7, degrees=False)
-            time.sleep(1)
-            self.EM.spawn_object(name=self.name, pose=self.pose, sdf_name=sdf_name)
-            time.sleep(1)
+            time.sleep(0.5)
+            self.EM.spawn_object(name=self.name, pose=self.pose, sdf_name=sdf_name, is_noisy=args.noisy_pose)
+            time.sleep(0.5)
             self.EM.sync_with_gazebo()
-            time.sleep(1)
+            time.sleep(0.5)
 
         return attempt / total if total >= 1 else -1.0
 
@@ -178,41 +193,49 @@ class Autopick():
 
         for obj in self.sdf_names:
             success_prob, entire_list = [], []
-            self.EM.spawn_object(name=self.name, pose=self.pose, sdf_name=obj)
+            self.EM.spawn_object(name=self.name, pose=self.pose, sdf_name=obj, is_noisy=args.noisy_pose)
             time.sleep(1)
             self.EM.sync_with_gazebo()
             time.sleep(1)
-            self.mr.gripper_control(command=False)
+            _ = self.mr.gripper_control(width=0.021, command=False)
 
-            path_dict = f'{self.grasp_dicts}/{obj}.txt'
-            centers, directions = self.EM.added_objects[0].grasp_gen(path=path_dict)
+            path_dict = f'{self.grasp_dicts}/{obj}'
+            centers, directions, aprvs, probs = self.EM.added_objects[0].grasp_gen(path=path_dict, is_6dof=args.is_6dof,
+                                                                                   marker=True)
 
             # Choose a grasp configuration that avoids collision with the environment (table)
-            refined, num_selected = self.avoid_collision(directions)
+            refined, num_selected = self.avoid_collision(args.table_height, centers, directions, aprvs)
             print(f'There are some infeasible grasp configurations in the provided set...')
             print(f'Number of refined configuration set: {num_selected} from {directions.shape[1]}')
 
-            for idx in tqdm(refined):
-                # Check the executing grasp configuration
-                if idx:
-                    res = self.execute(centers[:,idx], directions[:,idx], obj, self.iter_sample)
-                    if res >= 0:
-                        success_prob.append(res)
-                        print(f'Object: {obj}')
-                        print(f'Probabilities: {success_prob}')
-                        print(f'Mean: {np.mean(success_prob)}, STD: {np.std(success_prob)}')
-                    entire_list.append(res)
-                else:
-                    entire_list.append(idx)
+            if aprvs is not None:
+                aprvs = [aprvs[i] for i in refined]
+            if args.single_grasp:
+                probs = [probs[i] for i in refined]
+                res = self.execute(centers[:,refined], directions[:,refined], obj, aprvs, probs, self.iter_sample)
+                print(f"Result: {res}")
+            else:
+                for idx in tqdm(refined):
+                    # Check the executing grasp configuration
+                    if idx:
+                        res = self.execute(centers[:,idx], directions[:,idx], obj, aprvs, self.iter_sample)
+                        if res >= 0:
+                            success_prob.append(res)
+                            print(f'Object: {obj}')
+                            print(f'Probabilities: {success_prob}')
+                            print(f'Mean: {np.mean(success_prob)}, STD: {np.std(success_prob)}')
+                        entire_list.append(res)
+                    else:
+                        entire_list.append(idx)
+
+                if args.save_probs:
+                    with open(f'{directory}/{obj}.txt', 'w') as output:
+                        print(f'Generate {obj} grasp dictionaries...')
+                        output.write(repr(entire_list))
+                        output.close()
 
             self.EM.delete_object(name=self.name)
             time.sleep(1)
-
-            if args.save_probs:
-                with open(f'{directory}/{obj}.txt', 'w') as output:
-                    print(f'Generate {obj} grasp dictionaries...')
-                    output.write(repr(entire_list))
-                    output.close()
 
         print('Finished the simulation!!!')
     

@@ -3,14 +3,15 @@ import numpy as np
 from geometry_msgs.msg import Pose
 from gazebo_msgs.srv import GetWorldProperties, SpawnModel, DeleteModel, GetModelState
 
-from utils import Conversion
+from utils import Conversion, noisy_pose
 
 class Model():
     def __init__(self, name: str = None, pose: Pose = None, sdf_name: str = None) -> None:  
         self.name, self.init_pose, self.sdf_name = name, pose, sdf_name
         self.base2obj = Conversion().pose2T(pose)
 
-    def grasp_gen(self, path: str = None) -> np.ndarray:
+    def grasp_gen(self, path: str = None, is_6dof: bool = False, 
+                  marker: bool = False) -> np.ndarray:
         """
         Generate grasp dictionary based on the current object pose and 
         contact point pairs (cpp).
@@ -27,9 +28,18 @@ class Model():
         directions : 3xN : obj : `np.ndarray`
             array of potential gripper directions w.r.t the world frame
         """
-        with open(path) as f:
+        with open(f"{path}_cpps.txt") as f:
             cpps = eval(f.read())
         cpps = np.asarray(cpps).T
+
+        if is_6dof is True:
+            with open(f"{path}_aprvs.txt") as f:
+                aprvs = eval(f.read())
+            for i in range(len(aprvs)):
+                for j in range(len(aprvs[i])):
+                    aprvs[i][j] = self.base2obj[:3,:3] @ aprvs[i][j]
+        else:
+            aprvs = None
         
         # array of potential gripper configurations w.r.t the object frame
         # 0.005 = 0.001(mm to m) * 0.5
@@ -41,8 +51,17 @@ class Model():
         temp = self.base2obj @ np.vstack((centers, add_row))
         centers = temp[:3,:]
         directions = self.base2obj[:3,:3] @ directions
+        if marker is True:
+            with open(f"{path}_probs.txt") as f:
+                probs = eval(f.read())
+            idx = [ind for ind, ele in enumerate(probs) if ele > 0.5]
+            aprvs = [aprvs[i] for i in idx]
+            probs = [probs[i] for i in idx]
+            centers, directions = centers[:,idx], directions[:,idx]
+        else:
+            probs = None
 
-        return centers, directions
+        return centers, directions, aprvs, probs
 
 class EnvManager():
     def __init__(self) -> None:
@@ -96,7 +115,7 @@ class EnvManager():
         self.added_objects = added_left
         self.permanet_objects = added_perm
         
-    def spawn_object(self, name: str, pose: Pose, sdf_name: str) -> None:
+    def spawn_object(self, name: str, pose: Pose, sdf_name: str, is_noisy: bool = False) -> None:
         """
         Spawn an object in the gazebo world.
 
@@ -108,6 +127,8 @@ class EnvManager():
             pose of the object when spawning
         sdf_name : string
             sdf file of the object we spawn in the gazebo world
+        is_noisy : bool
+            whether add gaussian noise to the object pose
 
         Returns
         -------
@@ -117,6 +138,15 @@ class EnvManager():
         spawn_model_client(model_name=name,
         model_xml=open(f'../../models/{sdf_name}/model.sdf', 'r').read(),
         robot_namespace='/foo', initial_pose=pose, reference_frame='world')
+        if is_noisy:
+            noise_position, noise_orientation = noisy_pose()
+            pose.position.x = pose.position.x + noise_position[0]
+            pose.position.y = pose.position.y + noise_position[1]
+            pose.position.z = pose.position.z + noise_position[2]
+            pose.orientation.x = pose.orientation.x + noise_orientation[0]
+            pose.orientation.y = pose.orientation.y + noise_orientation[1]
+            pose.orientation.z = pose.orientation.z + noise_orientation[2]
+            pose.orientation.w = pose.orientation.w + noise_orientation[3]
         self.added_objects.append(Model(name, pose, sdf_name))
 
     @staticmethod
