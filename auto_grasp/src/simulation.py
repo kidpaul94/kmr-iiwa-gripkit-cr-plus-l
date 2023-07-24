@@ -1,6 +1,7 @@
 import os
 import time
 import rospy
+import random
 import argparse
 import numpy as np
 from tqdm import tqdm
@@ -13,7 +14,7 @@ def parse_args(argv=None) -> None:
     parser = argparse.ArgumentParser(description='auto_pick')
     parser.add_argument('--name', default='object_1', type=str,
                         help='name of the object in the gazebo world.')
-    parser.add_argument('--sixd', default=[0., -0.65, 0.75, 0., 0., 0.], type=list,
+    parser.add_argument('--sixd', default=[0., -0.65, 0.71, 0., 0., 0.], type=list,
                         help='list of xyz and three euler angles.')
     parser.add_argument('--sdf_names', default=['obj_01'], type=str, nargs='+',
                         help='sdf files of objects we sequentially spawn in the gazebo world.')
@@ -27,7 +28,7 @@ def parse_args(argv=None) -> None:
                         help='number of iteration per grasp sample.')
     parser.add_argument('--tp_heights', default=[0.45, 0.3], type=list,
                         help='heights of waypoints that the robot follow before grasping.')
-    parser.add_argument('--table_height', default=0.695, type=float,
+    parser.add_argument('--table_height', default=0.7, type=float,
                         help='heights of the table surface.')
     parser.add_argument('--noisy_pose', default=True, type=bool,
                         help='whether add gaussion noise models on an object pose.')
@@ -68,8 +69,8 @@ class Autopick():
         refined_list = []
         for i in range(directions.shape[1]):
             # Check whether side of each gripper finger is potentially bellow the table surface (collision)
-            ftip_loc1 = centers[:,i] + 0.006 * directions[:,i] / np.linalg.norm(directions[:,i])
-            ftip_loc2 = centers[:,i] - 0.006 * directions[:,i] / np.linalg.norm(directions[:,i])
+            ftip_loc1 = centers[:,i] + 0.007 * directions[:,i] / np.linalg.norm(directions[:,i])
+            ftip_loc2 = centers[:,i] - 0.007 * directions[:,i] / np.linalg.norm(directions[:,i])
 
             if ftip_loc1[2] > table_height and ftip_loc2[2] > table_height:
                 refined_list.append(i)
@@ -127,7 +128,11 @@ class Autopick():
         float : probability of successing the grasp
         """
         if prob is not None:
-            idx = prob.index(max(prob)) 
+            idx = prob.index(max(prob))
+            center, direction, sub_aprvs = center[:,idx], direction[:,idx], sub_aprvs[idx]
+        elif sub_aprvs is not None:
+            random.seed()
+            idx = random.randint(0, len(sub_aprvs) - 1)
             center, direction, sub_aprvs = center[:,idx], direction[:,idx], sub_aprvs[idx]
 
         attempt, total = 0, repeat
@@ -191,6 +196,10 @@ class Autopick():
             print(f'Generate {directory} folder...')
             os.mkdir(directory)
 
+        # If you want to spawn a basket for an object
+        # basket_pose = self.conv.list2pose(sixd=[0., -0.70, 0.72, 0, 0., 90.])
+        # self.EM.spawn_object(name='basket', pose=basket_pose, sdf_name='basket', is_noisy=False)
+
         for obj in self.sdf_names:
             success_prob, entire_list = [], []
             self.EM.spawn_object(name=self.name, pose=self.pose, sdf_name=obj, is_noisy=args.noisy_pose)
@@ -201,17 +210,20 @@ class Autopick():
 
             path_dict = f'{self.grasp_dicts}/{obj}'
             centers, directions, aprvs, probs = self.EM.added_objects[0].grasp_gen(path=path_dict, is_6dof=args.is_6dof,
-                                                                                   marker=True)
+                                                                                   marker=False)
 
             # Choose a grasp configuration that avoids collision with the environment (table)
             refined, num_selected = self.avoid_collision(args.table_height, centers, directions, aprvs)
             print(f'There are some infeasible grasp configurations in the provided set...')
             print(f'Number of refined configuration set: {num_selected} from {directions.shape[1]}')
+            if num_selected < 1:
+                raise Exception("There are no feasible grasps!!!") 
 
             if aprvs is not None:
                 aprvs = [aprvs[i] for i in refined]
             if args.single_grasp:
-                probs = [probs[i] for i in refined]
+                if probs is not None:
+                    probs = [probs[i] for i in refined]
                 res = self.execute(centers[:,refined], directions[:,refined], obj, aprvs, probs, self.iter_sample)
                 print(f"Result: {res}")
             else:
