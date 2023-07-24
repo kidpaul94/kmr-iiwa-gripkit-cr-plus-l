@@ -100,7 +100,7 @@ def rot_matrix(axis_1: np.ndarray, axis_2: np.ndarray) -> np.ndarray:
 
     return R
 
-def noisy_pose(mu: list = [0.0, 0.0], sigma: list = [0.4, 2.0]) -> list:
+def noisy_pose(mu: list = [0.0, 0.0], sigma: list = [0.5, 2.0], bouds: list = [1.5, 5.0]) -> list:
     """
     Add gaussian noise on pose values.
 
@@ -121,8 +121,8 @@ def noisy_pose(mu: list = [0.0, 0.0], sigma: list = [0.4, 2.0]) -> list:
     np.random.seed()
     noise_position = np.random.normal(mu[0],sigma[0],3)
     noise_orientation = np.random.normal(mu[1],sigma[1],3)
-    noise_position = np.clip(noise_position, -1, 1) * 0.01
-    noise_orientation = np.clip(noise_orientation, -5, 5) * np.pi / 180
+    noise_position = np.clip(noise_position, -bouds[0], bouds[0]) * 0.01
+    noise_orientation = np.clip(noise_orientation, -bouds[1], bouds[1]) * np.pi / 180
     noise_orientation = R.from_euler('xyz', noise_orientation).as_quat()
 
     return noise_position, noise_orientation 
