@@ -122,7 +122,7 @@ To run your own world with other objects, simply put them in the models and worl
 ## Issues
 
 > **Warning**
-[MoveIt](https://ros-planning.github.io/moveit_tutorials/) trajectory execution sometimes fails **without any error or warning**. At the moment, the program skips the trial by checking whether the gripper reaches to a final grasping configuration. 
+[MoveIt](https://ros-planning.github.io/moveit_tutorials/) trajectory execution sometimes fails **without any error or warning**. At the moment, the program skips the trial by checking whether the gripper reaches to a final grasping configuration. More stable trajectory planning/execution can be achieved by swaping KDL Kinematics Solver (default) with [IKFast Kinematics Solver](https://ros-planning.github.io/moveit_tutorials/doc/ikfast/ikfast_tutorial.html) or [TRAC-IK Kinematics Solver](https://ros-planning.github.io/moveit_tutorials/doc/trac_ik/trac_ik_tutorial.html).
 
 ## ToDo Lists
 
