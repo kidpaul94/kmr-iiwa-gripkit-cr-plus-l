@@ -61,7 +61,7 @@ The project was done while [Hojun Lee](https://www.linkedin.com/in/hjunlee94/) w
 
 ## Download Process
 
-> **Note**
+> [!NOTE]
 This repository has been tested on [ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu) and [Ubuntu 20.04](https://releases.ubuntu.com/focal/).
 It also depends on **numpy**, **scipy**, and **tqdm**:
 
@@ -77,7 +77,7 @@ It also depends on **numpy**, **scipy**, and **tqdm**:
   
 ### Gazebo Only:
 
-> **Note**
+> [!NOTE]
 This launch file is only for **model visualization** purpose. No ROS controllers will get initialized.
 
     roslaunch kmriiwa_description gazebo.launch robot_name:=(choose iiwa or kmriiwa) hardware_interface:=(choose Position, Velocity, or Effort) ee_type:=(choose ad, bb, cc, or dd)
@@ -94,7 +94,7 @@ This launch file is only for **model visualization** purpose. No ROS controllers
 
 ### How to Run:
 
-> **Note**
+> [!NOTE]
 `simulation.py` receives several different arguments. Run the `--help` command to see everything it receives.
 
     cd auto_grasp/src
@@ -106,7 +106,7 @@ The current implementation of the reposity supports [top-down grasp](https://git
 
 ### Grasp Representation:
 
-> **Note**
+> [!NOTE]
 The representation is defined based on a coordinate system of each object 3D model.
 
 <p align="center">
@@ -121,7 +121,7 @@ To run your own world with other objects, simply put them in the models and worl
 
 ## Issues
 
-> **Warning**
+> [!WARNING]
 [MoveIt](https://ros-planning.github.io/moveit_tutorials/) trajectory execution sometimes fails **without any error or warning**. At the moment, the program skips the trial by checking whether the gripper reaches to a final grasping configuration. More stable trajectory planning/execution can be achieved by swaping KDL Kinematics Solver (default) with [IKFast Kinematics Solver](https://ros-planning.github.io/moveit_tutorials/doc/ikfast/ikfast_tutorial.html) or [TRAC-IK Kinematics Solver](https://ros-planning.github.io/moveit_tutorials/doc/trac_ik/trac_ik_tutorial.html).
 
 ## ToDo Lists
