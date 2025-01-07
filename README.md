@@ -126,6 +126,6 @@ To run your own world with other objects, simply put them in the models and worl
 
 ## ToDo Lists
 
-| **Model & Controller parameters tuning** | ![Progress](https://progress-bar.dev/100) |
+| **Model & Controller parameters tuning** | ![Progress](https://geps.dev/progress/100) |
 | --- | --- |
-| **Automation of grasping** | ![Progress](https://progress-bar.dev/100) |
+| **Automation of grasping** | ![Progress](https://geps.dev/progress/100) |
